@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.6 on darwin)" generated="20231221 16:09:14.248" rpa="false" schemaversion="4">
+<suite id="s1" name="Rest" source="/Users/dominiquemereaux/code/TPSEPT2023/rest">
+<suite id="s1-s1" name="chuckNorris" source="/Users/dominiquemereaux/code/TPSEPT2023/rest/chuckNorris.robot">
+<test id="s1-s1-t1" name="Afficher une blage" line="10">
+<kw name="Ouvrir session" library="chuckMotCle" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>chuck</arg>
+<arg>${CHUCKENDPOINT}</arg>
+<arg>disable_warnings=${True}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231221 16:09:14.390" level="INFO">Creating Session using : alias=chuck, url=https://api.chucknorris.io, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231221 16:09:14.389" endtime="20231221 16:09:14.390"/>
+</kw>
+<status status="PASS" starttime="20231221 16:09:14.389" endtime="20231221 16:09:14.390"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>toto</arg>
+<arg>${CHUCKENDPOINT}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231221 16:09:14.391" level="INFO">Creating Session using : alias=toto, url=https://api.chucknorris.io, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231221 16:09:14.390" endtime="20231221 16:09:14.391"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>toto</arg>
+<arg>${BLAGUEAUHASRD}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231221 16:09:14.642" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random 
+ path_url=/jokes/random 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231221 16:09:14.642" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 21 Dec 2023 15:09:14 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1703171354&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=IEPdf0m78TCNHCSQDKQCWv%2B7%2BNNLRXdX6kgpjuzBph8%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1703171354&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=IEPdf0m78TCNHCSQDKQCWv%2B7%2BNNLRXdX6kgpjuzBph8%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '83910b85fa9b0203-CDG', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"categories":[],"created_at":"2020-01-05 13:42:19.324003","icon_url":"https://assets.chucknorris.host/img/avatar/chuck-norris.png","id":"UmqUOtiUQ1mQ6S7gT4bICQ","updated_at":"2020-01-05 13:42:19.324003","url":"https://api.chucknorris.io/jokes/UmqUOtiUQ1mQ6S7gT4bICQ","value":"Chuck Norris can unring bells."} 
+ </msg>
+<msg timestamp="20231221 16:09:14.642" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 16:09:14.392" endtime="20231221 16:09:14.642"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}[value]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231221 16:09:14.642" endtime="20231221 16:09:14.643"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${blage}</var>
+<arg>${resp.json()}</arg>
+<arg>value</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231221 16:09:14.644" level="INFO">${blage} = Chuck Norris can unring bells.</msg>
+<status status="PASS" starttime="20231221 16:09:14.643" endtime="20231221 16:09:14.644"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${blage}</arg>
+<arg>${resp.json()}[value]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231221 16:09:14.644" endtime="20231221 16:09:14.645"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>@{blage}</var>
+<arg>${resp.json()}</arg>
+<arg>value</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20231221 16:09:14.660" level="INFO">@{blage} = [ Chuck Norris can unring bells. ]</msg>
+<status status="PASS" starttime="20231221 16:09:14.645" endtime="20231221 16:09:14.660"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${blage}[0]</arg>
+<arg>${resp.json()}[value]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231221 16:09:14.660" endtime="20231221 16:09:14.661"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>toto</arg>
+<arg>${BLAGUEAUHASRD}</arg>
+<arg>params=category=animal</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231221 16:09:14.720" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=animal 
+ path_url=/jokes/random?category=animal 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231221 16:09:14.721" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=animal 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 21 Dec 2023 15:09:14 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1703171354&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=IEPdf0m78TCNHCSQDKQCWv%2B7%2BNNLRXdX6kgpjuzBph8%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1703171354&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=IEPdf0m78TCNHCSQDKQCWv%2B7%2BNNLRXdX6kgpjuzBph8%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '83910b86fbd70203-CDG', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"categories":["animal"],"created_at":"2020-01-05 13:42:19.104863","icon_url":"https://assets.chucknorris.host/img/avatar/chuck-norris.png","id":"o0sukejatqchi7oyjms6mw","updated_at":"2020-01-05 13:42:19.104863","url":"https://api.chucknorris.io/jokes/o0sukejatqchi7oyjms6mw","value":"Chuck Norris can set ants on fire with a magnifying glass. At night."} 
+ </msg>
+<msg timestamp="20231221 16:09:14.721" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231221 16:09:14.661" endtime="20231221 16:09:14.721"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.json()}[value]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231221 16:09:14.722" endtime="20231221 16:09:14.723"/>
+</kw>
+<kw name="fermer session" library="chuckMotCle" type="TEARDOWN">
+<kw name="Delete All Sessions" library="RequestsLibrary">
+<doc>Removes all the session objects</doc>
+<msg timestamp="20231221 16:09:14.723" level="INFO">Deleting All Sessions</msg>
+<status status="PASS" starttime="20231221 16:09:14.723" endtime="20231221 16:09:14.723"/>
+</kw>
+<status status="PASS" starttime="20231221 16:09:14.723" endtime="20231221 16:09:14.723"/>
+</kw>
+<status status="PASS" starttime="20231221 16:09:14.388" endtime="20231221 16:09:14.723"/>
+</test>
+<status status="PASS" starttime="20231221 16:09:14.263" endtime="20231221 16:09:14.724"/>
+</suite>
+<status status="PASS" starttime="20231221 16:09:14.250" endtime="20231221 16:09:14.724"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Rest">Rest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="chuckNorris">Rest.chuckNorris</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

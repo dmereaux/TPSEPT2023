@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.046059" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="connectionDistance" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/connectionDistance.robot">
+<test id="s1-s1-s1-t1" name="Test" line="5">
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>home233633473.1and1-data.host</arg>
+<arg>port=22</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.226638" elapsed="0.000195"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2024-01-17T16:01:45.227003" level="INFO">Logging into 'home233633473.1and1-data.host:22' as 'u48143663'.</msg>
+<msg time="2024-01-17T16:01:47.597268" level="INFO">Read output: Linux infong708 4.4.400-icpu-097 #2 SMP Thu Oct 12 05:36:45 UTC 2023 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+[?2004h(uiserver):u48143663:~$</msg>
+<arg>u48143663</arg>
+<arg>1ForMaTion!</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.226913" elapsed="2.370436"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-01-17T16:01:47.597620" level="INFO">Executing command 'echo 'Hello John!''.</msg>
+<msg time="2024-01-17T16:01:47.750485" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-01-17T16:01:47.750684" level="INFO">${stdout} = Hello John!</msg>
+<var>${stdout}</var>
+<arg>echo 'Hello John!'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-01-17T16:01:47.597490" elapsed="0.153218"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>resultat:${stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:47.750909" elapsed="0.000205"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${stdout}</arg>
+<arg>Hello John!</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-01-17T16:01:47.751196" elapsed="0.000110"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-01-17T16:01:47.751457" level="INFO">Executing command 'ls'.</msg>
+<msg time="2024-01-17T16:01:48.049460" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-01-17T16:01:48.049605" level="INFO">${stdout} = ActivityA.apk
+App2.apk
+CI
+CV.html
+DM.html
+Demo1.apk
+Gallery_Restore
+GestionTest
+Outil
+__MACOSX
+blog-old
+catalogue.pdf
+clickandbuilds
+css
+design
+essai.sh
+examples
+formation.html
+gal048143663
+images
+ind...</msg>
+<var>${stdout}</var>
+<arg>ls</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-01-17T16:01:47.751387" elapsed="0.298249"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:48.049800" elapsed="0.000225"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.226334" elapsed="2.823799"/>
+</test>
+<status status="PASS" start="2024-01-17T16:01:45.068505" elapsed="2.981878"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.064116" elapsed="2.986695"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.054938" elapsed="2.996212"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="connectionDistance">TPSEPT2023.Basic.connectionDistance</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

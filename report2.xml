@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T15:46:41.053541" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="Helloworld" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/helloworld.robot">
+<kw name="gestion suite de test" owner="clef" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>charger la config</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T15:46:41.064901" elapsed="0.000063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialiser le matériel</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T15:46:41.065033" elapsed="0.000047"/>
+</kw>
+<status status="PASS" start="2024-01-17T15:46:41.064729" elapsed="0.000384"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Comparer un entier avec une chaine" line="57">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T15:46:41.065458" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>80</arg>
+<arg>${80}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T15:46:41.065288" elapsed="0.000194"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>le ttest ne s'est pas arreté</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T15:46:41.065543" elapsed="0.000046"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}staut:${PREV_TEST_STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T15:46:41.065638" elapsed="0.000073"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T15:46:41.065793" elapsed="0.000038"/>
+</kw>
+<status status="PASS" start="2024-01-17T15:46:41.065142" elapsed="0.000724"/>
+</test>
+<doc>de la doc de suite
+suite de la doc</doc>
+<status status="PASS" start="2024-01-17T15:46:41.061868" elapsed="0.004113"/>
+</suite>
+<status status="PASS" start="2024-01-17T15:46:41.061312" elapsed="0.004874"/>
+</suite>
+<status status="PASS" start="2024-01-17T15:46:41.054231" elapsed="0.012115"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Helloworld">TPSEPT2023.Basic.Helloworld</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

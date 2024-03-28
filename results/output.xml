@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-03-28T11:58:02.461082" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Bibli" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli">
+<suite id="s1-s1-s1" name="UtilRatp" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli/UtilRatp.robot">
+<test id="s1-s1-s1-t1" name="test du skip" line="11">
+<kw name="Skippy" owner="ratp">
+<msg time="2024-03-28T11:58:02.511121" level="SKIP">ceci est un skip:titi</msg>
+<arg>titi</arg>
+<status status="SKIP" start="2024-03-28T11:58:02.510446" elapsed="0.002306">ceci est un skip:titi</status>
+</kw>
+<status status="SKIP" start="2024-03-28T11:58:02.509501" elapsed="0.003743">ceci est un skip:titi</status>
+</test>
+<status status="SKIP" start="2024-03-28T11:58:02.502554" elapsed="0.019773"/>
+</suite>
+<status status="SKIP" start="2024-03-28T11:58:02.499130" elapsed="0.024903"/>
+</suite>
+<status status="SKIP" start="2024-03-28T11:58:02.467232" elapsed="0.057891"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="0" skip="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="0" skip="1" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="0" fail="0" skip="1" id="s1-s1" name="Bibli">TPSEPT2023.Bibli</stat>
+<stat pass="0" fail="0" skip="1" id="s1-s1-s1" name="UtilRatp">TPSEPT2023.Bibli.UtilRatp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

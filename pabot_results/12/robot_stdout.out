@@ -1,0 +1,47 @@
+==============================================================================
+TPSEPT2023                                                                    
+==============================================================================
+TPSEPT2023.Rest                                                               
+==============================================================================
+TPSEPT2023.Rest.chuckNorris                                                   
+==============================================================================
+Afficher une blage                                                    By the time you see Chuck Norris' beard, it's already too late.
+Chuck Norris once kicked a horse in the chin. Its decendants are known today as Giraffes.
+| PASS |
+------------------------------------------------------------------------------
+blague test                                                           Chuck Norris can sing bohemian rhapsody with his farts.
+| PASS |
+------------------------------------------------------------------------------
+blague dans fichier                                                   | PASS |
+------------------------------------------------------------------------------
+blague animal                                                         Chuck Norris once rode a bull, and nine months later it had a calf.
+| PASS |
+------------------------------------------------------------------------------
+afficher et contrôler une blague de chaque catégorie                  Chuck Norris once rode a bull, and nine months later it had a calf.
+Chuck Norris' first job was as a paperboy. There were no survivors.
+Chuck Norris smells what the Rock is cooking... because the Rock is Chuck Norris' personal chef.
+Chuck Norris programs do not accept input.
+Little Johnny's teacher asked him to use the word "ape" in a sentence. Johnny said "Chuck Norris was after my dad and he ran like a raped ape". Little Johnny got detention.
+Chuck Norris does not follow fashion trends, they follow him. But then he turns around and kicks their ass. Nobody follows Chuck Norris.
+Chuck Norris drinks napalm to quell his heartburn.
+After returning from World War 2 unscrathed, Bob Dole was congratulated by Chuck Norris with a handshake. The rest is history.
+Body armor: $2999.99 Missile launcher: $50,000.99 Getting roundhouse kicked after hitting Chuck Norris with a missile and having body armor, missile launcher and your very being disintegrate on impact: priceless. There are some things money can't buy, a life free from the constant fear of Chuck Norris is one of them.
+Arnold Schwarzenegger always says he'll be back. But Chuck Norris always handles things the first time
+Chuck Norris can touch MC Hammer.
+When Barack Obama said "Yes we can," he actually was referring to Chuck Norris
+It's widely believed that Jesus was Chuck Norris' stunt double for crucifixion due to the fact that it is impossible for nails to pierce Chuck Norris' skin.
+If tapped, a Chuck Norris roundhouse kick could power the country of Australia for 44 minutes.
+Chuck Norris qualified with a top speed of 324 mph at the Daytona 500, without a car.
+As an infant, Chuck Norris' parents gave him a toy hammer. He gave the world Stonehenge.
+| PASS |
+------------------------------------------------------------------------------
+TPSEPT2023.Rest.chuckNorris                                           | PASS |
+5 tests, 5 passed, 0 failed
+==============================================================================
+TPSEPT2023.Rest                                                       | PASS |
+5 tests, 5 passed, 0 failed
+==============================================================================
+TPSEPT2023                                                            | PASS |
+5 tests, 5 passed, 0 failed
+==============================================================================
+Output:  /Users/dominiquemereaux/code/TPSEPT2023/pabot_results/12/output.xml

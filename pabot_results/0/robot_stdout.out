@@ -1,0 +1,53 @@
+==============================================================================
+TPSEPT2023                                                                    
+==============================================================================
+TPSEPT2023.Basic                                                              
+==============================================================================
+TPSEPT2023.Basic.Bibli1 :: Ma suite qui fait pas grand chose                  
+==============================================================================
+Util LibCalcul                                                          
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot:6
+    T:  Util LibCalcul    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot:7
+      Calcul Tarif    20
+______________________________________________________________________________
+| FAIL |
+No keyword with name 'Calcul Tarif' found.
+------------------------------------------------------------------------------
+Util plusieurs arguments                                                
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot:9
+    T:  Util plusieurs arguments    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot:10
+      any_arguments    un    deux    trois
+______________________________________________________________________________
+| FAIL |
+No keyword with name 'any_arguments' found.
+------------------------------------------------------------------------------
+skkipy                                                                  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot:11
+    T:  skkipy    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot:12
+      Example Keyword    
+______________________________________________________________________________
+| FAIL |
+No keyword with name 'Example Keyword' found.
+------------------------------------------------------------------------------
+TPSEPT2023.Basic.Bibli1 :: Ma suite qui fait pas grand chose          | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+TPSEPT2023.Basic                                                      | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+TPSEPT2023                                                            | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+Output:  /Users/dominiquemereaux/code/TPSEPT2023/pabot_results/0/output.xml

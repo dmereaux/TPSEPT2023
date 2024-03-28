@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-02-27T14:10:47.894896" rpa="false" schemaversion="5">
+<suite id="s1" name="Web" source="/Users/dominiquemereaux/code/TPSEPT2023/web">
+<suite id="s1-s1" name="Recherche" source="/Users/dominiquemereaux/code/TPSEPT2023/web/recherche.robot">
+<test id="s1-s1-t1" name="test bidon" line="9">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>bidon</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-27T14:10:47.953093" elapsed="0.000195"/>
+</kw>
+<status status="PASS" start="2024-02-27T14:10:47.952471" elapsed="0.000973"/>
+</test>
+<status status="PASS" start="2024-02-27T14:10:47.906950" elapsed="0.046775"/>
+</suite>
+<status status="PASS" start="2024-02-27T14:10:47.896769" elapsed="0.057409"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Web">Web</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Recherche">Web.Recherche</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

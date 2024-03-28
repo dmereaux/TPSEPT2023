@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-03-28T12:00:31.756193" rpa="false" schemaversion="5">
+<suite id="s1" name="UtilRatp" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli/UtilRatp.robot">
+<test id="s1-t1" name="vérification import" line="5">
+<kw name="Get Limit" owner="ratp">
+<msg time="2024-03-28T12:00:31.772487" level="INFO">${lim} = 11</msg>
+<var>${lim}</var>
+<status status="PASS" start="2024-03-28T12:00:31.772388" elapsed="0.000120"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-03-28T12:00:31.772707" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${lim}</arg>
+<arg>11</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-03-28T12:00:31.772610" elapsed="0.000133"/>
+</kw>
+<status status="PASS" start="2024-03-28T12:00:31.772012" elapsed="0.000815"/>
+</test>
+<test id="s1-t2" name="appel du tarif" line="8">
+<kw name="tarif 2024" owner="ratp">
+<msg time="2024-03-28T12:00:31.773285" level="INFO">${val} = 1.0</msg>
+<var>${val}</var>
+<arg>10</arg>
+<status status="PASS" start="2024-03-28T12:00:31.773148" elapsed="0.000158"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-03-28T12:00:31.773513" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${val}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-03-28T12:00:31.773410" elapsed="0.000145"/>
+</kw>
+<status status="PASS" start="2024-03-28T12:00:31.772945" elapsed="0.000696"/>
+</test>
+<test id="s1-t3" name="test du skip" line="11">
+<kw name="Skippy" owner="ratp">
+<msg time="2024-03-28T12:00:31.774041" level="SKIP">ceci est un skip:titi</msg>
+<arg>titi</arg>
+<status status="SKIP" start="2024-03-28T12:00:31.773913" elapsed="0.000574">ceci est un skip:titi</status>
+</kw>
+<status status="SKIP" start="2024-03-28T12:00:31.773750" elapsed="0.000873">ceci est un skip:titi</status>
+</test>
+<status status="PASS" start="2024-03-28T12:00:31.756937" elapsed="0.017917"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="1" id="s1" name="UtilRatp">UtilRatp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

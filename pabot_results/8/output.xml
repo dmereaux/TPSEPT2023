@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.458297" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Rest 2" source="/Users/dominiquemereaux/code/TPSEPT2023/rest 2">
+<suite id="s1-s1-s1" name="Google" source="/Users/dominiquemereaux/code/TPSEPT2023/rest 2/google.robot">
+<test id="s1-s1-s1-t1" name="test1" line="6">
+<kw name="Ouvrir session" owner="googleMotcle" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-01-17T16:01:45.541292" level="INFO">Creating Session using : alias=google, url=http://maps.googleapis.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>google</arg>
+<arg>${GOOGLEENDPOINT}</arg>
+<arg>disable_warnings=${True}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-01-17T16:01:45.541083" elapsed="0.000421"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.540326" elapsed="0.001244"/>
+</kw>
+<kw name="Faire une requete" owner="googleMotcle">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-01-17T16:01:45.843163" level="INFO">GET Request : url=http://maps.googleapis.com/maps/api/geocode/xml?address=92120%2CFR+sensor%3Dfalse 
+ path_url=/maps/api/geocode/xml?address=92120%2CFR+sensor%3Dfalse 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-01-17T16:01:45.843244" level="INFO">GET Response : url=http://maps.googleapis.com/maps/api/geocode/xml?address=92120%2CFR+sensor%3Dfalse 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/xml; charset=UTF-8', 'Date': 'Wed, 17 Jan 2024 15:01:45 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-cache, must-revalidate', 'Vary': 'Accept-Language', 'Access-Control-Allow-Origin': '*', 'Server': 'mafe', 'Content-Length': '300', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Server-Timing': 'gfet4t7; dur=7'} 
+ body=&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;GeocodeResponse&gt;
+ &lt;status&gt;REQUEST_DENIED&lt;/status&gt;
+ &lt;error_message&gt;You must use an API key to authenticate each request to Google Maps Platform APIs. For additional information, please refer to http://g.co/dev/maps-no-account&lt;/error_message&gt;
+&lt;/GeocodeResponse&gt;
+ 
+ </msg>
+<msg time="2024-01-17T16:01:45.843333" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>google</arg>
+<arg>${requete}</arg>
+<arg>params=&amp;{params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.541836" elapsed="0.301513"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${resp.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.843464" elapsed="0.000416"/>
+</kw>
+<kw name="Parse Xml" owner="XML">
+<msg time="2024-01-17T16:01:45.844224" level="INFO">${structXML} = &lt;Element 'GeocodeResponse' at 0x10277eed0&gt;</msg>
+<var>${structXML}</var>
+<arg>${resp.content}</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.843946" elapsed="0.000292"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${structXML}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.844294" elapsed="0.000083"/>
+</kw>
+<kw name="Element Text Should Be" owner="XML">
+<arg>${structXML}</arg>
+<arg>REQUEST_DENIED</arg>
+<arg>status</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.844434" elapsed="0.000096"/>
+</kw>
+<kw name="Get Elements Texts" owner="XML">
+<msg time="2024-01-17T16:01:45.844681" level="INFO">@{liste} = [ REQUEST_DENIED | You must use an API key to authenticate each request to Google Maps Platform APIs. For additional information, please refer to http://g.co/dev/maps-no-account ]</msg>
+<var>@{liste}</var>
+<arg>${structXML}</arg>
+<arg>*</arg>
+<doc>Returns text of all elements matching ``xpath`` as a list.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.844584" elapsed="0.000111"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.844872" elapsed="0.000075"/>
+</kw>
+<var name="${elt}">REQUEST_DENIED</var>
+<status status="PASS" start="2024-01-17T16:01:45.844820" elapsed="0.000147"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.845047" elapsed="0.000063"/>
+</kw>
+<var name="${elt}">You must use an API key to authenticate each request to Google Maps Platform APIs. For additional information, please refer to http://g.co/dev/maps-no-account</var>
+<status status="PASS" start="2024-01-17T16:01:45.845010" elapsed="0.000119"/>
+</iter>
+<var>${elt}</var>
+<value>@{liste}</value>
+<status status="PASS" start="2024-01-17T16:01:45.844741" elapsed="0.000407"/>
+</for>
+<status status="PASS" start="2024-01-17T16:01:45.541697" elapsed="0.303492"/>
+</kw>
+<kw name="fermer session" owner="googleMotcle" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-01-17T16:01:45.845448" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-01-17T16:01:45.845411" elapsed="0.000073"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.845298" elapsed="0.000212"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.539787" elapsed="0.305745"/>
+</test>
+<status status="PASS" start="2024-01-17T16:01:45.479834" elapsed="0.365858"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.479145" elapsed="0.366779"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.467152" elapsed="0.378956"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Rest 2">TPSEPT2023.Rest 2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Google">TPSEPT2023.Rest 2.Google</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

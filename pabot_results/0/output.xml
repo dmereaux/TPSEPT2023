@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.075444" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="Bibli1" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot">
+<test id="s1-s1-s1-t1" name="Util LibCalcul" line="6">
+<kw name="Calcul Tarif">
+<msg time="2024-01-17T16:01:45.100269" level="FAIL">No keyword with name 'Calcul Tarif' found.</msg>
+<var>${x}</var>
+<arg>20</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.100212" elapsed="0.000094">No keyword with name 'Calcul Tarif' found.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${x}</arg>
+<arg>plein tarif</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.100429" elapsed="0.000029"/>
+</kw>
+<status status="FAIL" start="2024-01-17T16:01:45.098853" elapsed="0.001706">No keyword with name 'Calcul Tarif' found.</status>
+</test>
+<test id="s1-s1-s1-t2" name="Util plusieurs arguments" line="9">
+<kw name="any_arguments">
+<msg time="2024-01-17T16:01:45.101412" level="FAIL">No keyword with name 'any_arguments' found.</msg>
+<arg>un</arg>
+<arg>deux</arg>
+<arg>trois</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.101313" elapsed="0.000184">No keyword with name 'any_arguments' found.</status>
+</kw>
+<status status="FAIL" start="2024-01-17T16:01:45.100672" elapsed="0.001097">No keyword with name 'any_arguments' found.</status>
+</test>
+<test id="s1-s1-s1-t3" name="skkipy" line="11">
+<kw name="Example Keyword">
+<msg time="2024-01-17T16:01:45.102802" level="FAIL">No keyword with name 'Example Keyword' found.</msg>
+<status status="FAIL" start="2024-01-17T16:01:45.102759" elapsed="0.000067">No keyword with name 'Example Keyword' found.</status>
+</kw>
+<status status="FAIL" start="2024-01-17T16:01:45.102025" elapsed="0.000889">No keyword with name 'Example Keyword' found.</status>
+</test>
+<doc>Ma suite qui fait pas grand chose</doc>
+<status status="FAIL" start="2024-01-17T16:01:45.096161" elapsed="0.006898"/>
+</suite>
+<status status="FAIL" start="2024-01-17T16:01:45.095456" elapsed="0.007863"/>
+</suite>
+<status status="FAIL" start="2024-01-17T16:01:45.085732" elapsed="0.017785"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="0" fail="3" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="0" fail="3" skip="0" id="s1-s1-s1" name="Bibli1">TPSEPT2023.Basic.Bibli1</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-01-17T16:01:45.098095" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/Bibli1.robot' on line 3: Importing library 'LibCalcul.MaLibrairie' failed: ModuleNotFoundError: No module named 'LibCalcul'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/lib/python3.11/site-packages/gpg-1.22.0-py3.11-macosx-12-arm64.egg
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+</errors>
+</robot>

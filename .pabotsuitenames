@@ -1,0 +1,21 @@
+datasources:7c3f8f27c70b2ce422b5da099f1ef1936e1c7fda
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:950dd68bc05566b9b1b76f1ddcd99678823de5f1
+--suite TPSEPT2023.Basic.Bibli1
+--suite TPSEPT2023.Basic.Helloworld
+--suite TPSEPT2023.Basic.Testvar
+--suite TPSEPT2023.Basic.UtilisationBibli
+--suite TPSEPT2023.Basic.UtilisationDialogs
+--suite TPSEPT2023.Basic.connectionDistance
+--suite TPSEPT2023.Basic.premierPas
+--suite TPSEPT2023.Basic.testVariabilise
+--suite TPSEPT2023.Rest 2.Google
+--suite TPSEPT2023.Rest 2.SaintLouis
+--suite TPSEPT2023.Rest 2.chuckNorris
+--suite TPSEPT2023.Rest.Google
+--suite TPSEPT2023.Rest.chuckNorris
+--suite TPSEPT2023.Web.Recherche
+--suite TPSEPT2023.Web.RechercheMultiple
+--suite TPSEPT2023.Web.UtilLib
+--suite TPSEPT2023.Web2.Web

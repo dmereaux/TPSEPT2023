@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.058914" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>debut de suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.080841" elapsed="0.000370"/>
+</kw>
+<test id="s1-s1-s1-t1" name="test variable globale" line="9">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.082191" elapsed="0.000235"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.081876" elapsed="0.000633"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>site à tester: ${URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.082625" elapsed="0.000215"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.083021" elapsed="0.000114"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.081388" elapsed="0.001804"/>
+</test>
+<test id="s1-s1-s1-t2" name="test de la liste" line="12">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>2 item de la liste: ${maListe}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.084056" elapsed="0.000288"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.084844" level="INFO">${maListe2} = ['rouge', 'blanc', 'vert', 'jaune']</msg>
+<var>${maListe2}</var>
+<arg>rouge</arg>
+<arg>blanc</arg>
+<arg>vert</arg>
+<arg>jaune</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.084518" elapsed="0.000350"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>2 item de la liste: ${maListe2}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.084958" elapsed="0.000121"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${maListe2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.085140" elapsed="0.000083"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.085412" level="INFO">${maListe2} = ['rouge', 'blanc', 'vert', 'jaune']</msg>
+<arg>${maListe2}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.085277" elapsed="0.000155"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.085652" elapsed="0.000090"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${elt}&quot;==&quot;un&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hourra</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.085908" elapsed="0.000436"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.085790" elapsed="0.000583"/>
+</branch>
+<status status="PASS" start="2024-01-17T16:01:45.085778" elapsed="0.000621"/>
+</if>
+<var name="${elt}">un</var>
+<status status="PASS" start="2024-01-17T16:01:45.085601" elapsed="0.000812"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.086541" elapsed="0.000091"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${elt}&quot;==&quot;un&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hourra</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.086754" elapsed="0.000015"/>
+</kw>
+<status status="NOT RUN" start="2024-01-17T16:01:45.086672" elapsed="0.000115"/>
+</branch>
+<status status="PASS" start="2024-01-17T16:01:45.086663" elapsed="0.000140"/>
+</if>
+<var name="${elt}">deux</var>
+<status status="PASS" start="2024-01-17T16:01:45.086494" elapsed="0.000319"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.086910" elapsed="0.000081"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${elt}&quot;==&quot;un&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hourra</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.087090" elapsed="0.000015"/>
+</kw>
+<status status="NOT RUN" start="2024-01-17T16:01:45.087023" elapsed="0.000099"/>
+</branch>
+<status status="PASS" start="2024-01-17T16:01:45.087016" elapsed="0.000122"/>
+</if>
+<var name="${elt}">trois</var>
+<status status="PASS" start="2024-01-17T16:01:45.086874" elapsed="0.000272"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.087240" elapsed="0.000075"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${elt}&quot;==&quot;un&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hourra</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.087501" elapsed="0.000033"/>
+</kw>
+<status status="NOT RUN" start="2024-01-17T16:01:45.087345" elapsed="0.000207"/>
+</branch>
+<status status="PASS" start="2024-01-17T16:01:45.087338" elapsed="0.000229"/>
+</if>
+<var name="${elt}">quatre</var>
+<status status="PASS" start="2024-01-17T16:01:45.087202" elapsed="0.000374"/>
+</iter>
+<var>${elt}</var>
+<value>@{maListe}</value>
+<status status="PASS" start="2024-01-17T16:01:45.085478" elapsed="0.002129"/>
+</for>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.087719" elapsed="0.000051"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.083691" elapsed="0.004102"/>
+</test>
+<test id="s1-s1-s1-t3" name="test du dictionnaire" line="28">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.088402" elapsed="0.000098"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.088079" elapsed="0.000458"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${monDict}[ville]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.088586" elapsed="0.000081"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${monDict.nom}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.088708" elapsed="0.000281"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.089062" elapsed="0.000044"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.087907" elapsed="0.001221"/>
+</test>
+<test id="s1-s1-s1-t4" name="test affichage global var" line="32">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.089469" elapsed="0.000066"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.089376" elapsed="0.000187"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>var glob:${maListe2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.089611" elapsed="0.000142"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.089815" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.089228" elapsed="0.000643"/>
+</test>
+<test id="s1-s1-s1-t5" name="test des mot cles" line="34">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.090160" elapsed="0.000065"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.090077" elapsed="0.000176"/>
+</kw>
+<kw name="mot clef simple" owner="bibli">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>pas de problèmes</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.090381" elapsed="0.000049"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.090304" elapsed="0.000153"/>
+</kw>
+<kw name="Mot clef complexe" owner="bibli">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.090614" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.090708" elapsed="0.000054"/>
+</kw>
+<return>
+<value>${arg1}</value>
+<status status="PASS" start="2024-01-17T16:01:45.090788" elapsed="0.000038"/>
+</return>
+<msg time="2024-01-17T16:01:45.090887" level="INFO">${sortie} = hello</msg>
+<var>${sortie}</var>
+<arg>hello</arg>
+<arg>world</arg>
+<doc>ceci est un mot cle propriétaire</doc>
+<status status="PASS" start="2024-01-17T16:01:45.090524" elapsed="0.000378"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>sortie :${sortie}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.090941" elapsed="0.000058"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.091058" elapsed="0.000037"/>
+</kw>
+<doc>cas de test 1</doc>
+<status status="PASS" start="2024-01-17T16:01:45.089951" elapsed="0.001165"/>
+</test>
+<test id="s1-s1-s1-t6" name="test 2" line="39">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.091397" elapsed="0.000982"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.091319" elapsed="0.001090"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>test2</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.092452" elapsed="0.000051"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.092565" elapsed="0.000034"/>
+</kw>
+<doc>cas de test 2</doc>
+<tag>regression</tag>
+<status status="PASS" start="2024-01-17T16:01:45.091198" elapsed="0.001422"/>
+</test>
+<test id="s1-s1-s1-t7" name="Affichage repertoire" line="44">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.092909" elapsed="0.000062"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.092819" elapsed="0.000179"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${EXECDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.093034" elapsed="0.000067"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}/Users/dominiquemereaux/code/TPSEPT2023/Basic</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.093136" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${TEMPDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.093229" elapsed="0.000064"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.093350" elapsed="0.000037"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.092702" elapsed="0.000705"/>
+</test>
+<test id="s1-s1-s1-t8" name="variable predefinies" line="48">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.093687" elapsed="0.000115"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.093597" elapsed="0.000250"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>bonjour${SPACE}${SPACE}toto</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.093903" elapsed="0.000094"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.094273" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>80</arg>
+<arg>${80}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.094043" elapsed="0.000258"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.094372" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.093486" elapsed="0.000956"/>
+</test>
+<test id="s1-s1-s1-t9" name="test du statut" line="53">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.094733" elapsed="0.000068"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.094648" elapsed="0.000179"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${TEST NAME}:${PREV_TEST_STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.094864" elapsed="0.000090"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.095055" level="INFO">bonjour</msg>
+<arg>bonjour</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.094995" elapsed="0.000078"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.095153" level="ERROR">il y a un pb</msg>
+<arg>il y a un pb</arg>
+<arg>ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.095111" elapsed="0.000085"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.095256" elapsed="0.000034"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.094531" elapsed="0.000780"/>
+</test>
+<test id="s1-s1-s1-t10" name="verification tarif RATP" line="58">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.095577" elapsed="0.000060"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.095500" elapsed="0.000193"/>
+</kw>
+<kw name="verification" owner="bibli">
+<kw name="Nouveau Nom">
+<msg time="2024-01-17T16:01:45.096209" level="FAIL">No keyword with name 'Nouveau Nom' found.</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.096186" elapsed="0.000047">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.096324" elapsed="0.000015"/>
+</kw>
+<arg>12</arg>
+<arg>demi tarif</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.095743" elapsed="0.000656">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="verification" owner="bibli">
+<kw name="Nouveau Nom">
+<msg time="2024-01-17T16:01:45.096867" level="FAIL">No keyword with name 'Nouveau Nom' found.</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.096848" elapsed="0.000035">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.096959" elapsed="0.000014"/>
+</kw>
+<arg>11</arg>
+<arg>demi tarif</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.096453" elapsed="0.000567">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="verification" owner="bibli">
+<kw name="Nouveau Nom">
+<msg time="2024-01-17T16:01:45.097584" level="FAIL">No keyword with name 'Nouveau Nom' found.</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.097566" elapsed="0.000034">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.097670" elapsed="0.000013"/>
+</kw>
+<arg>4</arg>
+<arg>demi tarif</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.097072" elapsed="0.000653">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="verification" owner="bibli">
+<kw name="Nouveau Nom">
+<msg time="2024-01-17T16:01:45.099109" level="FAIL">No keyword with name 'Nouveau Nom' found.</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.099066" elapsed="0.000064">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.099224" elapsed="0.000016"/>
+</kw>
+<arg>2</arg>
+<arg>demi tarif</arg>
+<status status="FAIL" start="2024-01-17T16:01:45.097947" elapsed="0.001348">No keyword with name 'Nouveau Nom' found.</status>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="fin de test" owner="bibli">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} fin de test en :${TEST STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.099602" elapsed="0.000105"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.099503" elapsed="0.000230"/>
+</kw>
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.099402" elapsed="0.000348"/>
+</kw>
+<status status="FAIL" start="2024-01-17T16:01:45.095389" elapsed="0.004381">Several failures occurred:
+
+1) No keyword with name 'Nouveau Nom' found.
+
+2) No keyword with name 'Nouveau Nom' found.
+
+3) No keyword with name 'Nouveau Nom' found.
+
+4) No keyword with name 'Nouveau Nom' found.</status>
+</test>
+<test id="s1-s1-s1-t11" name="test a skipper" line="65">
+<kw name="debut de test" owner="bibli" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.100764" elapsed="0.000286"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.100275" elapsed="0.000875"/>
+</kw>
+<kw name="Skip If" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.101580" level="SKIP">"FAIL"=="FAIL"</msg>
+<arg>"${PREV TEST STATUS}"=="FAIL"</arg>
+<doc>Skips the rest of the current test if the ``condition`` is True.</doc>
+<status status="SKIP" start="2024-01-17T16:01:45.101263" elapsed="0.000430">"FAIL"=="FAIL"</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>test non skippé</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.101772" elapsed="0.000029"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.101900" elapsed="0.000049"/>
+</kw>
+<status status="SKIP" start="2024-01-17T16:01:45.099871" elapsed="0.002200">"FAIL"=="FAIL"</status>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.102735" elapsed="0.000210"/>
+</kw>
+<doc>Ma suite qui fait pas grand chose</doc>
+<status status="FAIL" start="2024-01-17T16:01:45.070604" elapsed="0.032393"/>
+</suite>
+<status status="FAIL" start="2024-01-17T16:01:45.069937" elapsed="0.033928"/>
+</suite>
+<status status="FAIL" start="2024-01-17T16:01:45.063294" elapsed="0.041137"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="1" skip="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat pass="9" fail="1" skip="1" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="9" fail="1" skip="1" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="9" fail="1" skip="1" id="s1-s1-s1" name="premierPas">TPSEPT2023.Basic.premierPas</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-01-17T16:01:45.072728" level="WARN">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource' on line 23: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-01-17T16:01:45.075648" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource' on line 3: Importing library 'calcul.MaLibrairie2' failed: ModuleNotFoundError: No module named 'calcul'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/lib/python3.11/site-packages/gpg-1.22.0-py3.11-macosx-12-arm64.egg
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+<msg time="2024-01-17T16:01:45.079232" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource' on line 4: Importing library 'calcul.MaLibrairie' failed: ModuleNotFoundError: No module named 'calcul'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/lib/python3.11/site-packages/gpg-1.22.0-py3.11-macosx-12-arm64.egg
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+<msg time="2024-01-17T16:01:45.095153" level="ERROR">il y a un pb</msg>
+</errors>
+</robot>

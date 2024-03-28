@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.042869" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="Helloworld" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/helloworld.robot">
+<kw name="gestion suite de test" owner="clef" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>charger la config</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.060742" elapsed="0.002278"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialiser le matériel</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.063153" elapsed="0.000099"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.060119" elapsed="0.003181"/>
+</kw>
+<test id="s1-s1-s1-t1" name="afficher Variables" line="15">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.063649" level="INFO" html="true">toto level=WARN</msg>
+<arg>toto level=WARN</arg>
+<arg>html=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.063548" elapsed="0.000126"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}liste:${liste1}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.063732" elapsed="0.000102"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}dict:${dictionnaire}[animal]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.063881" elapsed="0.000091"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-01-17T16:01:45.064094" level="INFO">@{l} = [ il | neige ]</msg>
+<var>@{l}</var>
+<arg>il neige</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.064022" elapsed="0.000084"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}liste:${l}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.064155" elapsed="0.000090"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.064376" level="INFO">@{maliste} = [ il | neige ]</msg>
+<var>@{maliste}</var>
+<arg>@{l}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.064297" elapsed="0.000090"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}liste:${maliste}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.064428" elapsed="0.000076"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.064656" level="INFO">@{maliste} = [ il | neige ]</msg>
+<arg>@{maliste}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.064552" elapsed="0.000121"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.063347" elapsed="0.001384"/>
+</test>
+<test id="s1-s1-s1-t2" name="afficher liste1" line="25">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}valeur: ${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.065051" elapsed="0.000074"/>
+</kw>
+<var name="${elt}">1</var>
+<status status="PASS" start="2024-01-17T16:01:45.065009" elapsed="0.000134"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}valeur: ${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.065222" elapsed="0.000072"/>
+</kw>
+<var name="${elt}">2</var>
+<status status="PASS" start="2024-01-17T16:01:45.065183" elapsed="0.000128"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}valeur: ${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.065384" elapsed="0.000069"/>
+</kw>
+<var name="${elt}">3</var>
+<status status="PASS" start="2024-01-17T16:01:45.065346" elapsed="0.000124"/>
+</iter>
+<var>${elt}</var>
+<value>@{liste1}</value>
+<status status="PASS" start="2024-01-17T16:01:45.064932" elapsed="0.000554"/>
+</for>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.065564" elapsed="0.000042"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.064826" elapsed="0.000801"/>
+</test>
+<test id="s1-s1-s1-t3" name="test du if" line="29">
+<if>
+<branch type="IF" condition="&quot;${PREV_TEST_STATUS}&quot; == &quot;PASS&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>le test précédent est OK</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.065898" elapsed="0.000051"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.065814" elapsed="0.000154"/>
+</branch>
+<status status="PASS" start="2024-01-17T16:01:45.065801" elapsed="0.000184"/>
+</if>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.066042" elapsed="0.000038"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.065708" elapsed="0.000392"/>
+</test>
+<test id="s1-s1-s1-t4" name="vérif platform" line="33">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.068894" level="INFO">${ret} = Darwin</msg>
+<var>${ret}</var>
+<arg>platform.system()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.066283" elapsed="0.002628"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${ret}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.068968" elapsed="0.000078"/>
+</kw>
+<if>
+<branch type="IF" condition="platform.system() == 'Linux'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>ce n'est pas la bonne plateforme</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-01-17T16:01:45.069144" elapsed="0.000014"/>
+</kw>
+<status status="NOT RUN" start="2024-01-17T16:01:45.069082" elapsed="0.000092"/>
+</branch>
+<status status="PASS" start="2024-01-17T16:01:45.069073" elapsed="0.000117"/>
+</if>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.069253" elapsed="0.000048"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.066182" elapsed="0.003141"/>
+</test>
+<test id="s1-s1-s1-t5" name="afficher variable 2" line="39">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}liste:${maliste}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.069740" elapsed="0.000396"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.070353" elapsed="0.000122"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.069409" elapsed="0.001126"/>
+</test>
+<test id="s1-s1-s1-t6" name="afficher les constantes" line="41">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}IP:${IP},firmware:${FIRMWARE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.071049" elapsed="0.000229"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.071453" elapsed="0.000079"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.070762" elapsed="0.000890"/>
+</test>
+<test id="s1-s1-s1-t7" name="Helloworld" line="43">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bonjour</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.071898" elapsed="0.000071"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.072041" elapsed="0.000041"/>
+</kw>
+<doc>doc de test</doc>
+<tag>regression</tag>
+<tag>toto titi</tag>
+<tag>world</tag>
+<status status="PASS" start="2024-01-17T16:01:45.071761" elapsed="0.000343"/>
+</test>
+<test id="s1-s1-s1-t8" name="hello" line="47">
+<kw name="mot clef" owner="clef">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.072626" level="INFO">${ret} = hello-world</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=-</arg>
+<arg>${arg1}</arg>
+<arg>${arg2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.072540" elapsed="0.000099"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.072753" level="WARN">msg</msg>
+<arg>msg</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.072687" elapsed="0.000129"/>
+</kw>
+<return>
+<value>${ret}</value>
+<status status="PASS" start="2024-01-17T16:01:45.072844" elapsed="0.000038"/>
+</return>
+<msg time="2024-01-17T16:01:45.072941" level="INFO">${toto} = hello-world</msg>
+<var>${toto}</var>
+<arg>hello</arg>
+<arg>world</arg>
+<doc>documentation mot clef</doc>
+<status status="PASS" start="2024-01-17T16:01:45.072403" elapsed="0.000548"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${toto}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.072998" elapsed="0.000071"/>
+</kw>
+<kw name="mot clef" owner="clef">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.073313" level="INFO">${ret} = hello-toto</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=-</arg>
+<arg>${arg1}</arg>
+<arg>${arg2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.073243" elapsed="0.000080"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.073424" level="WARN">msg</msg>
+<arg>msg</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.073366" elapsed="0.000100"/>
+</kw>
+<return>
+<value>${ret}</value>
+<status status="PASS" start="2024-01-17T16:01:45.073488" elapsed="0.000023"/>
+</return>
+<msg time="2024-01-17T16:01:45.073561" level="INFO">${toto} = hello-toto</msg>
+<var>${toto}</var>
+<arg>hello</arg>
+<doc>documentation mot clef</doc>
+<status status="PASS" start="2024-01-17T16:01:45.073138" elapsed="0.000432"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${toto}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.073610" elapsed="0.000056"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.073784" level="INFO">Set tag 'hello-toto'.</msg>
+<arg>${toto}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.073705" elapsed="0.000096"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.073867" elapsed="0.000037"/>
+</kw>
+<tag>/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin</tag>
+<tag>hello-toto</tag>
+<status status="PASS" start="2024-01-17T16:01:45.072241" elapsed="0.001684"/>
+</test>
+<test id="s1-s1-s1-t9" name="afficher variables prédéfinies" line="55">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}/Users/dominiquemereaux/code/TPSEPT2023/Basic,${\n}${TEMPDIR},${\n}${EXECDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.074120" elapsed="0.000095"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.074274" elapsed="0.000034"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.074014" elapsed="0.000314"/>
+</test>
+<test id="s1-s1-s1-t10" name="Comparer un entier avec une chaine" line="57">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.075149" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>80</arg>
+<arg>${80}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.074844" elapsed="0.000389"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>le ttest ne s'est pas arreté</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.075391" elapsed="0.000195"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}staut:${PREV_TEST_STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.075700" elapsed="0.000167"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.075950" elapsed="0.000049"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.074400" elapsed="0.001623"/>
+</test>
+<test id="s1-s1-s1-t11" name="test skippé" line="62">
+<kw name="Skip If" owner="BuiltIn">
+<arg>"${PREV_TEST_STATUS}" == "FAIL"</arg>
+<doc>Skips the rest of the current test if the ``condition`` is True.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.076217" elapsed="0.000116"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.076397" elapsed="0.000036"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.076108" elapsed="0.000345"/>
+</test>
+<test id="s1-s1-s1-t12" name="modele" line="64">
+<kw name="Comparer un entier avec une chaine 2" owner="clef">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.077003" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${arg1}</arg>
+<arg>${arg2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.076929" elapsed="0.000103"/>
+</kw>
+<arg>80</arg>
+<arg>${80}</arg>
+<status status="PASS" start="2024-01-17T16:01:45.076648" elapsed="0.000416"/>
+</kw>
+<kw name="Comparer un entier avec une chaine 2" owner="clef">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.077901" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${arg1}</arg>
+<arg>${arg2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.077836" elapsed="0.000089"/>
+</kw>
+<arg>90</arg>
+<arg>${90}</arg>
+<status status="PASS" start="2024-01-17T16:01:45.077425" elapsed="0.000673"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.078309" elapsed="0.000062"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.076526" elapsed="0.001871"/>
+</test>
+<test id="s1-s1-s1-t13" name="test valeur inf à 10" line="68">
+<kw name="valeur inferieure à 10" owner="clef">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.078831" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.078734" elapsed="0.000108"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2024-01-17T16:01:45.078869" elapsed="0.000034"/>
+</return>
+<msg time="2024-01-17T16:01:45.078957" level="INFO">${x} = 0</msg>
+<var>${x}</var>
+<status status="PASS" start="2024-01-17T16:01:45.078631" elapsed="0.000336"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${x} &lt; 11</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.079008" elapsed="0.000070"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>gestion en cas d'erreur</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.079139" elapsed="0.000037"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.078487" elapsed="0.000710"/>
+</test>
+<doc>de la doc de suite
+suite de la doc</doc>
+<status status="PASS" start="2024-01-17T16:01:45.054626" elapsed="0.024716"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.054000" elapsed="0.025639"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.047437" elapsed="0.032423"/>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin</stat>
+<stat pass="1" fail="0" skip="0">hello-toto</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">toto titi</stat>
+<stat pass="1" fail="0" skip="0">world</stat>
+</tag>
+<suite>
+<stat pass="13" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="13" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="13" fail="0" skip="0" id="s1-s1-s1" name="Helloworld">TPSEPT2023.Basic.Helloworld</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-01-17T16:01:45.072753" level="WARN">msg</msg>
+<msg time="2024-01-17T16:01:45.073424" level="WARN">msg</msg>
+</errors>
+</robot>

@@ -1,0 +1,155 @@
+==============================================================================
+TPSEPT2023                                                                    
+==============================================================================
+TPSEPT2023.Basic                                                              
+==============================================================================
+TPSEPT2023.Basic.premierPas :: Ma suite qui fait pas grand chose              
+==============================================================================
+debut de suite
+test variable globale                                                 
+ debut du test
+site à tester: http://toto.fr
+| PASS |
+------------------------------------------------------------------------------
+test de la liste                                                      2 item de la liste: deux
+2 item de la liste: blanc
+['rouge', 'blanc', 'vert', 'jaune']
+
+un
+Hourra
+
+deux
+
+trois
+
+quatre
+| PASS |
+------------------------------------------------------------------------------
+test du dictionnaire                                                  
+ debut du test
+Bagneux
+mereaux
+| PASS |
+------------------------------------------------------------------------------
+test affichage global var                                             
+ debut du test
+var glob:['rouge', 'blanc', 'vert', 'jaune']
+| PASS |
+------------------------------------------------------------------------------
+test des mot cles :: cas de test 1                                    
+ debut du test
+pas de problèmes
+hello
+world
+sortie :hello
+| PASS |
+------------------------------------------------------------------------------
+test 2 :: cas de test 2                                               
+ debut du test
+test2
+| PASS |
+------------------------------------------------------------------------------
+Affichage repertoire                                                  
+ debut du test
+
+/Users/dominiquemereaux/code/TPSEPT2023
+
+/Users/dominiquemereaux/code/TPSEPT2023/Basic
+
+/var/folders/3b/z_3bn4n12j59v3g7l9pm1x8r0000gn/T
+| PASS |
+------------------------------------------------------------------------------
+variable predefinies                                                  
+ debut du test
+bonjour  toto
+| PASS |
+------------------------------------------------------------------------------
+test du statut                                                        
+ debut du test
+
+test du statut:PASS
+| PASS |
+------------------------------------------------------------------------------
+verification tarif RATP                                               
+ debut du test
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:58
+    T:  verification tarif RATP    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:60
+      verification    12    demi tarif
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource:13
+      Nouveau Nom    ${age}
+      |  ${age} = 12 (str)
+______________________________________________________________________________
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:58
+    T:  verification tarif RATP    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:61
+      verification    11    demi tarif
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource:13
+      Nouveau Nom    ${age}
+      |  ${age} = 11 (str)
+______________________________________________________________________________
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:58
+    T:  verification tarif RATP    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:62
+      verification    4    demi tarif
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource:13
+      Nouveau Nom    ${age}
+      |  ${age} = 4 (str)
+______________________________________________________________________________
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:58
+    T:  verification tarif RATP    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot:63
+      verification    2    demi tarif
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/bibli.resource:13
+      Nouveau Nom    ${age}
+      |  ${age} = 2 (str)
+______________________________________________________________________________
+
+ fin de test en :FAIL
+| FAIL |
+Several failures occurred:
+
+1) No keyword with name 'Nouveau Nom' found.
+
+2) No keyword with name 'Nouveau Nom' found.
+
+3) No keyword with name 'Nouveau Nom' found.
+
+4) No keyword with name 'Nouveau Nom' found.
+------------------------------------------------------------------------------
+test a skipper                                                        
+ debut du test
+| SKIP |
+"FAIL"=="FAIL"
+------------------------------------------------------------------------------
+fin de suite
+TPSEPT2023.Basic.premierPas :: Ma suite qui fait pas grand chose      | FAIL |
+11 tests, 9 passed, 1 failed, 1 skipped
+==============================================================================
+TPSEPT2023.Basic                                                      | FAIL |
+11 tests, 9 passed, 1 failed, 1 skipped
+==============================================================================
+TPSEPT2023                                                            | FAIL |
+11 tests, 9 passed, 1 failed, 1 skipped
+==============================================================================
+Output:  /Users/dominiquemereaux/code/TPSEPT2023/pabot_results/6/output.xml

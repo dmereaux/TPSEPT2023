@@ -1,0 +1,11 @@
+[ ERROR ] Error in file '/Users/dominiquemereaux/code/TPSEPT2023/web/prestaMotcle.resource' on line 2: Importing library 'maLib' failed: ModuleNotFoundError: No module named 'maLib'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/lib/python3.11/site-packages/gpg-1.22.0-py3.11-macosx-12-arm64.egg
+  /opt/homebrew/opt/python-tk@3.11/libexec

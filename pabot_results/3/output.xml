@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.034889" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="UtilisationBibli" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/UtilisationBibli.robot">
+<kw name="rien suite" type="SETUP">
+<msg time="2024-01-17T16:01:45.056984" level="FAIL">No keyword with name 'rien suite' found.</msg>
+<status status="FAIL" start="2024-01-17T16:01:45.056942" elapsed="0.000069">No keyword with name 'rien suite' found.</status>
+</kw>
+<test id="s1-s1-s1-t1" name="test_tarif6" line="7">
+<status status="FAIL" start="2024-01-17T16:01:45.057082" elapsed="0.000447">Parent suite setup failed:
+No keyword with name 'rien suite' found.</status>
+</test>
+<test id="s1-s1-s1-t2" name="test_tarif11" line="10">
+<status status="FAIL" start="2024-01-17T16:01:45.057806" elapsed="0.000411">Parent suite setup failed:
+No keyword with name 'rien suite' found.</status>
+</test>
+<status status="FAIL" start="2024-01-17T16:01:45.054484" elapsed="0.004429">Suite setup failed:
+No keyword with name 'rien suite' found.</status>
+</suite>
+<status status="FAIL" start="2024-01-17T16:01:45.053840" elapsed="0.005700"/>
+</suite>
+<status status="FAIL" start="2024-01-17T16:01:45.047153" elapsed="0.013570"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1-s1" name="UtilisationBibli">TPSEPT2023.Basic.UtilisationBibli</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-01-17T16:01:45.056268" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/UtilisationBibli.robot' on line 2: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.6/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/lib/python3.11/site-packages/gpg-1.22.0-py3.11-macosx-12-arm64.egg
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+</errors>
+</robot>

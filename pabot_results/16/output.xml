@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:46.118767" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Web2" source="/Users/dominiquemereaux/code/TPSEPT2023/web2">
+<suite id="s1-s1-s1" name="Web" source="/Users/dominiquemereaux/code/TPSEPT2023/web2/web.robot">
+<test id="s1-s1-s1-t1" name="Recherche mug" line="10">
+<kw name="ouvrir prestashop" owner="web" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:01:46.183363" level="INFO">Opening browser 'ff' to base url 'http://prestashop.qualifiez.fr'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-17T16:01:46.183242" elapsed="6.834443"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:46.182869" elapsed="6.835033"/>
+</kw>
+<kw name="modele de recherche">
+<kw name="Rechercher produit" owner="web">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:01:53.018964" level="INFO">Typing text 'mug' into text field '//*[@id="search_widget"]/form/input[2]'.</msg>
+<arg>${LOC_RECHERCHE}</arg>
+<arg>${produit}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-17T16:01:53.018589" elapsed="0.034081"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:01:53.053134" level="INFO">Sending key(s) ('RETURN',) to //*[@id="search_widget"]/form/input[2] element.</msg>
+<msg time="2024-01-17T16:01:53.315388" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2024-01-17T16:01:53.315483" level="INFO">Releasing special key RETURN.</msg>
+<arg>${LOC_RECHERCHE}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-01-17T16:01:53.052816" elapsed="0.272431"/>
+</kw>
+<arg>${Item}</arg>
+<status status="PASS" start="2024-01-17T16:01:53.018425" elapsed="0.306930"/>
+</kw>
+<kw name="Verifier resultat recherche" owner="web">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC TEXTE}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-17T16:01:53.325823" elapsed="2.074297"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:01:55.400583" level="INFO">Verifying element 'xpath=//*[@id="js-product-list-top"]/div[1]/p' contains exact text 'Il y a 5 produits.'.</msg>
+<arg>${LOC TEXTE}</arg>
+<arg>${msg_attendu}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-01-17T16:01:55.400306" elapsed="0.012562"/>
+</kw>
+<arg>${res}</arg>
+<status status="PASS" start="2024-01-17T16:01:53.325510" elapsed="2.087447"/>
+</kw>
+<arg>mug</arg>
+<arg>Il y a 5 produits.</arg>
+<status status="PASS" start="2024-01-17T16:01:53.018143" elapsed="2.394870"/>
+</kw>
+<kw name="fermer prestashop" owner="web" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-01-17T16:01:55.413398" elapsed="0.363255"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:55.413198" elapsed="0.363568"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:46.182352" elapsed="9.594457"/>
+</test>
+<test id="s1-s1-s1-t2" name="Recherche pull" line="10">
+<kw name="ouvrir prestashop" owner="web" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:01:55.778215" level="INFO">Opening browser 'ff' to base url 'http://prestashop.qualifiez.fr'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-17T16:01:55.778062" elapsed="5.127757"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:55.777655" elapsed="5.128378"/>
+</kw>
+<kw name="modele de recherche">
+<kw name="Rechercher produit" owner="web">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:02:00.907012" level="INFO">Typing text 'pull' into text field '//*[@id="search_widget"]/form/input[2]'.</msg>
+<arg>${LOC_RECHERCHE}</arg>
+<arg>${produit}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-17T16:02:00.906821" elapsed="0.034050"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:02:00.941274" level="INFO">Sending key(s) ('RETURN',) to //*[@id="search_widget"]/form/input[2] element.</msg>
+<msg time="2024-01-17T16:02:01.202189" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2024-01-17T16:02:01.202309" level="INFO">Releasing special key RETURN.</msg>
+<arg>${LOC_RECHERCHE}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-01-17T16:02:00.941008" elapsed="0.272700"/>
+</kw>
+<arg>${Item}</arg>
+<status status="PASS" start="2024-01-17T16:02:00.906615" elapsed="0.307204"/>
+</kw>
+<kw name="Verifier resultat recherche" owner="web">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC TEXTE}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-17T16:02:01.214254" elapsed="2.093660"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-01-17T16:02:03.308254" level="INFO">Verifying element 'xpath=//*[@id="js-product-list-top"]/div[1]/p' contains exact text 'Il y a 1 produit.'.</msg>
+<arg>${LOC TEXTE}</arg>
+<arg>${msg_attendu}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-01-17T16:02:03.308047" elapsed="0.008416"/>
+</kw>
+<arg>${res}</arg>
+<status status="PASS" start="2024-01-17T16:02:01.213955" elapsed="2.102575"/>
+</kw>
+<arg>pull</arg>
+<arg>Il y a 1 produit.</arg>
+<status status="PASS" start="2024-01-17T16:02:00.906267" elapsed="2.410297"/>
+</kw>
+<kw name="fermer prestashop" owner="web" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-01-17T16:02:03.316860" elapsed="0.347049"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:02:03.316703" elapsed="0.347280"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:55.777023" elapsed="7.886996"/>
+</test>
+<status status="PASS" start="2024-01-17T16:01:46.129582" elapsed="17.534672"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:46.128972" elapsed="17.535578"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:46.122664" elapsed="17.542083"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Web2">TPSEPT2023.Web2</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Web">TPSEPT2023.Web2.Web</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

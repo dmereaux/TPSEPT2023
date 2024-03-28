@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-01-17T16:01:45.001490" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="Testvar" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/testvar.robot">
+<test id="s1-s1-s1-t1" name="test1" line="5">
+<kw name="Comparer un entier avec une chaine 2">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.057161" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${arg1}</arg>
+<arg>${arg2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.056422" elapsed="0.000807"/>
+</kw>
+<arg>80</arg>
+<arg>${80}</arg>
+<status status="PASS" start="2024-01-17T16:01:45.055392" elapsed="0.001900"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.054940" elapsed="0.002428"/>
+</test>
+<test id="s1-s1-s1-t2" name="test2" line="6">
+<kw name="Comparer un entier avec une chaine 2">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2024-01-17T16:01:45.057992" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${arg1}</arg>
+<arg>${arg2}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2024-01-17T16:01:45.057899" elapsed="0.000122"/>
+</kw>
+<arg>90</arg>
+<arg>${90}</arg>
+<status status="PASS" start="2024-01-17T16:01:45.057639" elapsed="0.000420"/>
+</kw>
+<status status="PASS" start="2024-01-17T16:01:45.057486" elapsed="0.000618"/>
+</test>
+<status status="PASS" start="2024-01-17T16:01:45.053372" elapsed="0.004853"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.051800" elapsed="0.006648"/>
+</suite>
+<status status="PASS" start="2024-01-17T16:01:45.040092" elapsed="0.018540"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Testvar">TPSEPT2023.Basic.Testvar</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

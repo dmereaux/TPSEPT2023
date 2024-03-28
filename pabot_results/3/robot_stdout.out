@@ -1,0 +1,34 @@
+==============================================================================
+TPSEPT2023                                                                    
+==============================================================================
+TPSEPT2023.Basic                                                              
+==============================================================================
+TPSEPT2023.Basic.UtilisationBibli                                             
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/Basic/UtilisationBibli.robot:3
+      rien suite    
+______________________________________________________________________________
+test_tarif6                                                           | FAIL |
+Parent suite setup failed:
+No keyword with name 'rien suite' found.
+------------------------------------------------------------------------------
+test_tarif11                                                          | FAIL |
+Parent suite setup failed:
+No keyword with name 'rien suite' found.
+------------------------------------------------------------------------------
+TPSEPT2023.Basic.UtilisationBibli                                     | FAIL |
+Suite setup failed:
+No keyword with name 'rien suite' found.
+
+2 tests, 0 passed, 2 failed
+==============================================================================
+TPSEPT2023.Basic                                                      | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+TPSEPT2023                                                            | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  /Users/dominiquemereaux/code/TPSEPT2023/pabot_results/3/output.xml

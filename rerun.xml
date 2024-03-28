@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on darwin)" generated="20230922 16:08:26.044" rpa="false" schemaversion="4">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>debut de suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230922 16:08:26.053" endtime="20230922 16:08:26.053"/>
+</kw>
+<test id="s1-s1-s1-t1" name="verification tarif RATP" line="59">
+<kw name="debut de test" library="bibli" type="SETUP">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n} debut du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.054"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.054"/>
+</kw>
+<kw name="verification" library="bibli">
+<arg>12</arg>
+<arg>demi tarif</arg>
+<kw name="Calcul Tarif" library="calcul_tarif">
+<var>${prix}</var>
+<arg>${age}</arg>
+<msg timestamp="20230922 16:08:26.054" level="INFO">${prix} = plein tarif</msg>
+<status status="PASS" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.054"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230922 16:08:26.054" level="FAIL">test avec 12 en échec: demi tarif != plein tarif</msg>
+<status status="FAIL" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.054"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.054"/>
+</kw>
+<kw name="verification" library="bibli">
+<arg>11</arg>
+<arg>demi tarif</arg>
+<kw name="Calcul Tarif" library="calcul_tarif">
+<var>${prix}</var>
+<arg>${age}</arg>
+<msg timestamp="20230922 16:08:26.054" level="INFO">${prix} = demi tarif</msg>
+<status status="PASS" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.054"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.055"/>
+</kw>
+<kw name="verification" library="bibli">
+<arg>4</arg>
+<arg>demi tarif</arg>
+<kw name="Calcul Tarif" library="calcul_tarif">
+<var>${prix}</var>
+<arg>${age}</arg>
+<msg timestamp="20230922 16:08:26.055" level="INFO">${prix} = demi tarif</msg>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<kw name="verification" library="bibli">
+<arg>2</arg>
+<arg>demi tarif</arg>
+<kw name="Calcul Tarif" library="calcul_tarif">
+<var>${prix}</var>
+<arg>${age}</arg>
+<msg timestamp="20230922 16:08:26.055" level="INFO">${prix} = demi tarif</msg>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>fin de test</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<kw name="fin de test" library="bibli">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n} fin de test en :${TEST STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.055" endtime="20230922 16:08:26.055"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:26.054" endtime="20230922 16:08:26.055">test avec 12 en échec: demi tarif != plein tarif</status>
+</test>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>fin de suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230922 16:08:26.056" endtime="20230922 16:08:26.056"/>
+</kw>
+<doc>Ma suite qui fait pas grand chose</doc>
+<status status="FAIL" starttime="20230922 16:08:26.052" endtime="20230922 16:08:26.056"/>
+</suite>
+<suite id="s1-s1-s2" name="UtilisationDialogs" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/UtilisationDialogs.robot">
+<test id="s1-s1-s2-t1" name="essai" line="11">
+<kw name="Execute Manual Step" library="Dialogs">
+<arg>verifier</arg>
+<doc>Pauses execution until user sets the keyword status.</doc>
+<status status="PASS" starttime="20230922 16:08:26.073" endtime="20230922 16:08:28.030"/>
+</kw>
+<status status="PASS" starttime="20230922 16:08:26.073" endtime="20230922 16:08:28.031"/>
+</test>
+<status status="PASS" starttime="20230922 16:08:26.056" endtime="20230922 16:08:28.031"/>
+</suite>
+<status status="FAIL" starttime="20230922 16:08:26.051" endtime="20230922 16:08:28.032"/>
+</suite>
+<suite id="s1-s2" name="Web" source="/Users/dominiquemereaux/code/TPSEPT2023/web">
+<suite id="s1-s2-s1" name="Recherche" source="/Users/dominiquemereaux/code/TPSEPT2023/web/recherche.robot">
+<test id="s1-s2-s1-t1" name="recherche MUG" line="9">
+<kw name="ouvrir prestashop" library="prestaMotcle" type="SETUP">
+<kw name="Open Browser">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${PATH}</arg>
+<msg timestamp="20230922 16:08:28.045" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.045" endtime="20230922 16:08:28.045"/>
+</kw>
+<kw name="Set Browser Implicit Wait">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.046" endtime="20230922 16:08:28.046"/>
+</kw>
+<kw name="Title Should Be">
+<arg>monPrestashop</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.047" endtime="20230922 16:08:28.047"/>
+</kw>
+<kw name="Bidon">
+<status status="NOT RUN" starttime="20230922 16:08:28.048" endtime="20230922 16:08:28.048"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.044" endtime="20230922 16:08:28.048"/>
+</kw>
+<kw name="fermer prestashop" library="prestaMotcle" type="TEARDOWN">
+<kw name="Close Browser">
+<msg timestamp="20230922 16:08:28.050" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.050" endtime="20230922 16:08:28.050"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.049" endtime="20230922 16:08:28.050">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.044" endtime="20230922 16:08:28.050">Setup failed:
+No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<test id="s1-s2-s1-t2" name="recup options" line="15">
+<kw name="ouvrir prestashop" library="prestaMotcle" type="SETUP">
+<kw name="Open Browser">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${PATH}</arg>
+<msg timestamp="20230922 16:08:28.051" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.051" endtime="20230922 16:08:28.051"/>
+</kw>
+<kw name="Set Browser Implicit Wait">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.052" endtime="20230922 16:08:28.052"/>
+</kw>
+<kw name="Title Should Be">
+<arg>monPrestashop</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.053" endtime="20230922 16:08:28.053"/>
+</kw>
+<kw name="Bidon">
+<status status="NOT RUN" starttime="20230922 16:08:28.054" endtime="20230922 16:08:28.054"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.050" endtime="20230922 16:08:28.054"/>
+</kw>
+<kw name="fermer prestashop" library="prestaMotcle" type="TEARDOWN">
+<kw name="Close Browser">
+<msg timestamp="20230922 16:08:28.056" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.056" endtime="20230922 16:08:28.056"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.054" endtime="20230922 16:08:28.056">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.050" endtime="20230922 16:08:28.056">Setup failed:
+No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<test id="s1-s2-s1-t3" name="verifier presence menu" line="21">
+<kw name="ouvrir prestashop" library="prestaMotcle" type="SETUP">
+<kw name="Open Browser">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${PATH}</arg>
+<msg timestamp="20230922 16:08:28.057" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.057" endtime="20230922 16:08:28.057"/>
+</kw>
+<kw name="Set Browser Implicit Wait">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.058" endtime="20230922 16:08:28.058"/>
+</kw>
+<kw name="Title Should Be">
+<arg>monPrestashop</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.059" endtime="20230922 16:08:28.059"/>
+</kw>
+<kw name="Bidon">
+<status status="NOT RUN" starttime="20230922 16:08:28.060" endtime="20230922 16:08:28.060"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.056" endtime="20230922 16:08:28.060"/>
+</kw>
+<kw name="fermer prestashop" library="prestaMotcle" type="TEARDOWN">
+<kw name="Close Browser">
+<msg timestamp="20230922 16:08:28.061" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.061" endtime="20230922 16:08:28.061"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.060" endtime="20230922 16:08:28.061">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.056" endtime="20230922 16:08:28.061">Setup failed:
+No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<test id="s1-s2-s1-t4" name="Gestion des alertes" line="31">
+<kw name="ouvrir W3C" library="prestaMotcle" type="SETUP">
+<kw name="Open Browser">
+<arg>${URL2}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${PATH}</arg>
+<msg timestamp="20230922 16:08:28.062" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.062" endtime="20230922 16:08:28.062"/>
+</kw>
+<kw name="Set Browser Implicit Wait">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20230922 16:08:28.063" endtime="20230922 16:08:28.063"/>
+</kw>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" starttime="20230922 16:08:28.064" endtime="20230922 16:08:28.064"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.061" endtime="20230922 16:08:28.064"/>
+</kw>
+<kw name="fermer prestashop" library="prestaMotcle" type="TEARDOWN">
+<kw name="Close Browser">
+<msg timestamp="20230922 16:08:28.065" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.065" endtime="20230922 16:08:28.065"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.064" endtime="20230922 16:08:28.065">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.061" endtime="20230922 16:08:28.065">Setup failed:
+No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20230922 16:08:28.034" endtime="20230922 16:08:28.065"/>
+</suite>
+<suite id="s1-s2-s2" name="UtilLib" source="/Users/dominiquemereaux/code/TPSEPT2023/web/UtilLib.robot">
+<test id="s1-s2-s2-t1" name="test du random" line="5">
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>10</arg>
+<arg>hasard</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20230922 16:08:28.067" level="INFO">Repeating keyword, round 1/10.</msg>
+<kw name="hasard">
+<kw name="maLibPython.random inf 12">
+<var>${x}</var>
+<msg timestamp="20230922 16:08:28.068" level="FAIL">No keyword with name 'maLibPython.random inf 12' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</kw>
+<if>
+<branch type="IF" condition="${x} &gt; 12">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</kw>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</branch>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</if>
+<status status="FAIL" starttime="20230922 16:08:28.067" endtime="20230922 16:08:28.068"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.067" endtime="20230922 16:08:28.068"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, sys.maxsize)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${x}</var>
+<arg>sys.maxsize</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${x}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230922 16:08:28.068" endtime="20230922 16:08:28.068"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.067" endtime="20230922 16:08:28.068">No keyword with name 'maLibPython.random inf 12' found.</status>
+</test>
+<test id="s1-s2-s2-t2" name="test addition" line="12">
+<kw name="addition de chaine">
+<var>${x}</var>
+<arg>1</arg>
+<arg>2</arg>
+<msg timestamp="20230922 16:08:28.069" level="FAIL">No keyword with name 'addition de chaine' found.</msg>
+<status status="FAIL" starttime="20230922 16:08:28.069" endtime="20230922 16:08:28.069"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${x}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230922 16:08:28.069" endtime="20230922 16:08:28.069"/>
+</kw>
+<status status="FAIL" starttime="20230922 16:08:28.069" endtime="20230922 16:08:28.069">No keyword with name 'addition de chaine' found.</status>
+</test>
+<status status="FAIL" starttime="20230922 16:08:28.065" endtime="20230922 16:08:28.070"/>
+</suite>
+<status status="FAIL" starttime="20230922 16:08:28.032" endtime="20230922 16:08:28.070"/>
+</suite>
+<status status="FAIL" starttime="20230922 16:08:26.044" endtime="20230922 16:08:28.070"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="7" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="7" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="premierPas">TPSEPT2023.Basic.premierPas</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="UtilisationDialogs">TPSEPT2023.Basic.UtilisationDialogs</stat>
+<stat pass="0" fail="6" skip="0" id="s1-s2" name="Web">TPSEPT2023.Web</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s2-s1" name="Recherche">TPSEPT2023.Web.Recherche</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s2-s2" name="UtilLib">TPSEPT2023.Web.UtilLib</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230922 16:08:28.036" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/web/recherche.robot' on line 2: Importing library 'maLib' failed: ModuleNotFoundError: No module named 'maLib'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+<msg timestamp="20230922 16:08:28.040" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/web/prestaMotcle.resource' on line 2: Importing library 'maLib' failed: ModuleNotFoundError: No module named 'maLib'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+<msg timestamp="20230922 16:08:28.067" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/web/UtilLib.robot' on line 2: Importing library 'maLibPython' failed: ModuleNotFoundError: No module named 'maLibPython'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/homebrew/bin
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /opt/homebrew/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /opt/homebrew/lib/python3.11/site-packages
+  /opt/homebrew/opt/python-tk@3.11/libexec</msg>
+</errors>
+</robot>
