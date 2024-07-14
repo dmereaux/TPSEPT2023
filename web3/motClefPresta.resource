@@ -1,5 +1,6 @@
 *** Settings ***
-Library   ma_lib_selenium.py
+#Library   ma_lib_selenium.py
+Library   SeleniumLibrary
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
@@ -27,7 +28,6 @@ Afficher l'alerte
 Vérifier alerte présente
    Alert Should Be Present  
 
-
 Vérifier alerte absente
    Alert Should Not Be Present
 
@@ -37,9 +37,10 @@ Accepter RGPD
 Ouvrir Prestashop
    Open Browser  ${URL}  ${NAVIGATEUR}  executable_path=${PATH_GC}
    Title Should Be  monPrestashop
-   ma_lib_selenium.Ma Fonction
+#   ma_lib_selenium.Ma Fonction
 Fermer Prestashop
   Close Browser
+  
 Faire une recherche
   [Arguments]   ${item}
   Input Text   ${LOC_CHAMP_RECHERCHE}   ${item}

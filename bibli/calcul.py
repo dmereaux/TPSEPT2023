@@ -11,7 +11,7 @@ class MaLibrairie():
             return  "plein tarif"
         else :
             return "demi tarif"
-    calcul_tarif.robot_name= "nom"
+
 @library(scope='GLOBAL', auto_keywords=False)        
 class MaLibrairie2():
     __version__ = '0.1'

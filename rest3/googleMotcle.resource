@@ -28,6 +28,7 @@ Contrôler rejet
 
 
 
+
 #   Log To Console   ${structXML}
 #   Element Text Should Be  ${structXML}   REQUEST_DENIED   status
 #   @{liste}   Get Elements Texts   ${structXML}  *

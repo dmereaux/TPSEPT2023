@@ -27,3 +27,5 @@ Blague de catégorie
 recupérer la liste des catégories
     ${resp}   GET On Session   ${SESSION_NAME}   ${CATEGORIES}
     RETURN  ${resp.json()} 
+Fermer session chuck
+    Delete All Sessions 

@@ -1,7 +1,7 @@
 *** Settings ***
 Library   SeleniumLibrary
 Library   DataDriver  file=donnees.csv
-Resource   prestaMotcle.resource
+Resource   motClefPresta.resource
 Test Setup   ouvrir prestashop
 Test Teardown   fermer prestashop
 Test Template   modele de recherche
@@ -11,7 +11,6 @@ ${test}
 *** Keywords ***
 modele de recherche
   [Arguments]   ${item}  ${msg}
-  Faire une recherche avec   ${item}
-  Verifier Page recherche
-  verifier Msg Recherche   ${msg}
-  verifier presence mot  ${item}
+  Faire une recherche   ${item}
+  Contrôler le résultat de recherche égal à   ${msg}
+  Contrôler pertinence de la recherche  ${item}

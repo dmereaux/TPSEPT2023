@@ -16,7 +16,7 @@ Recherches diverses
   MUG   Il y a 5 produits.
   mug   Il y a 5 produits.
   T-Shirt   Il y a 1 produit.
-  Coussin   Il y a 3 produit.
+  Coussin   Il y a 3 produits.
 
 Recherche vide
   Faire une recherche   ${EMPTY}

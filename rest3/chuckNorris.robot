@@ -1,6 +1,7 @@
 *** Settings ***                                                                                       
 Resource  chuckNorris.resource
-Suite Setup    Session Chuck                 
+Suite Setup    Session Chuck 
+Suite Teardown   Fermer session chuck                
                                                                                                        
 *** Test Cases ***     
 Test Blague au hasard
