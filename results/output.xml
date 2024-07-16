@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-15T17:10:23.586583" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<suite id="s1-s1-s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
+<kw name="debut de suite" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.608677" elapsed="0.000239"/>
+</kw>
+<status status="PASS" start="2024-07-15T17:10:23.608324" elapsed="0.000681"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TP7 boucle sur la liste" line="92">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.609540" elapsed="0.000436"/>
+</kw>
+<status status="PASS" start="2024-07-15T17:10:23.609373" elapsed="0.001296"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.611154" elapsed="0.000164"/>
+</kw>
+<var name="${elt}">1</var>
+<status status="PASS" start="2024-07-15T17:10:23.611077" elapsed="0.000329"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.611553" elapsed="0.000282"/>
+</kw>
+<var name="${elt}">2</var>
+<status status="PASS" start="2024-07-15T17:10:23.611489" elapsed="0.000447"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.612196" elapsed="0.000116"/>
+</kw>
+<var name="${elt}">3</var>
+<status status="PASS" start="2024-07-15T17:10:23.612116" elapsed="0.000264"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.612468" elapsed="0.000148"/>
+</kw>
+<var name="${elt}">4</var>
+<status status="PASS" start="2024-07-15T17:10:23.612420" elapsed="0.000263"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.612838" elapsed="0.000135"/>
+</kw>
+<var name="${elt}">2</var>
+<status status="PASS" start="2024-07-15T17:10:23.612756" elapsed="0.000263"/>
+</iter>
+<var>${elt}</var>
+<value>@{maListe}</value>
+<status status="PASS" start="2024-07-15T17:10:23.610916" elapsed="0.002134"/>
+</for>
+<kw name="fin de test" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}status du test:${TEST_STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.613704" elapsed="0.000173"/>
+</kw>
+<status status="PASS" start="2024-07-15T17:10:23.613493" elapsed="0.000469"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2024-07-15T17:10:23.609054" elapsed="0.004979"/>
+</test>
+<kw name="fin de suite" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}fin de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-15T17:10:23.614735" elapsed="0.000207"/>
+</kw>
+<status status="PASS" start="2024-07-15T17:10:23.614579" elapsed="0.000450"/>
+</kw>
+<status status="PASS" start="2024-07-15T17:10:23.603215" elapsed="0.011855"/>
+</suite>
+<status status="PASS" start="2024-07-15T17:10:23.601836" elapsed="0.014027"/>
+</suite>
+<status status="PASS" start="2024-07-15T17:10:23.588685" elapsed="0.027597"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">toto</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="premierPas">TPSEPT2023.Basic.premierPas</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
