@@ -1,84 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-17T09:36:47.351747" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-17T09:58:49.082185" rpa="false" schemaversion="5">
 <suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
 <suite id="s1-s1" name="Web3" source="/Users/dominiquemereaux/code/TPSEPT2023/web3">
 <kw name="init web" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>INIT_ROBOT</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-17T09:36:47.372820" elapsed="0.000310"/>
+<status status="PASS" start="2024-07-17T09:58:49.120296" elapsed="0.000415"/>
 </kw>
-<status status="PASS" start="2024-07-17T09:36:47.372380" elapsed="0.000867"/>
+<status status="PASS" start="2024-07-17T09:58:49.119730" elapsed="0.001516"/>
 </kw>
 <suite id="s1-s1-s1" name="Prestashop" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/prestashop.robot">
-<test id="s1-s1-s1-t1" name="Recherche vide" line="21">
+<test id="s1-s1-s1-t1" name="Test de la librairie" line="44">
 <kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-07-17T09:36:47.470906" level="INFO">Opening browser 'gc' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
+<kw name="Open Browser" owner="ma_lib_selenium">
+<msg time="2024-07-17T09:58:49.242459" level="INFO">Opening browser 'gc' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
 <arg>${URL}</arg>
 <arg>${NAVIGATEUR}</arg>
 <arg>executable_path=${PATH_GC}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-07-17T09:36:47.470631" elapsed="16.917736"/>
+<status status="PASS" start="2024-07-17T09:58:49.242120" elapsed="16.355146"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-07-17T09:37:04.508312" level="INFO">Page title is 'monPrestashop'.</msg>
+<kw name="Title Should Be" owner="ma_lib_selenium">
+<msg time="2024-07-17T09:59:06.004539" level="INFO">Page title is 'monPrestashop'.</msg>
 <arg>monPrestashop</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-07-17T09:37:04.388916" elapsed="0.119687"/>
+<status status="PASS" start="2024-07-17T09:59:05.597781" elapsed="0.407169"/>
 </kw>
-<status status="PASS" start="2024-07-17T09:36:47.470154" elapsed="17.038597"/>
+<status status="PASS" start="2024-07-17T09:58:49.241535" elapsed="16.763605"/>
 </kw>
-<kw name="Faire une recherche" owner="motClefPresta">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-07-17T09:37:04.510427" level="INFO">Typing text '' into text field '//*[@id="search_widget"]/form/input[2]'.</msg>
-<arg>${LOC_CHAMP_RECHERCHE}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-17T09:37:04.509921" elapsed="0.706919"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-07-17T09:37:05.217607" level="INFO">Sending key(s) ('RETURN',) to //*[@id="search_widget"]/form/input[2] element.</msg>
-<msg time="2024-07-17T09:37:05.872050" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2024-07-17T09:37:05.872249" level="INFO">Releasing special key RETURN.</msg>
-<arg>${LOC_CHAMP_RECHERCHE}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-07-17T09:37:05.217096" elapsed="4.232693"/>
-</kw>
-<kw name="Wait For Condition" owner="SeleniumLibrary">
-<arg>return document.title == "Rechercher"</arg>
-<arg>timeout=5</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2024-07-17T09:37:09.450099" elapsed="0.020144"/>
-</kw>
-<arg>${EMPTY}</arg>
-<status status="PASS" start="2024-07-17T09:37:04.509197" elapsed="4.961216"/>
-</kw>
-<kw name="Vérifier message recherche vide" owner="motClefPresta">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2024-07-17T09:37:09.471199" level="INFO">Verifying element '//*[@id="product-search-no-matches"]' contains exact text 'Aucun produit ne correspond à votre recherche'.</msg>
-<arg>${LOC_MESSAGE_ERREUR}</arg>
-<arg>${MESSAGE ERREUR}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2024-07-17T09:37:09.470958" elapsed="0.121644"/>
-</kw>
-<status status="PASS" start="2024-07-17T09:37:09.470636" elapsed="0.122123"/>
+<kw name="Ma Fonction" owner="ma_lib_selenium">
+<status status="PASS" start="2024-07-17T09:59:06.005584" elapsed="0.510627"/>
 </kw>
 <kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
+<kw name="Close Browser" owner="ma_lib_selenium">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-07-17T09:37:09.593379" elapsed="0.090195"/>
+<status status="PASS" start="2024-07-17T09:59:06.517804" elapsed="0.101127"/>
 </kw>
-<status status="PASS" start="2024-07-17T09:37:09.593065" elapsed="0.090680"/>
+<status status="PASS" start="2024-07-17T09:59:06.517364" elapsed="0.101860"/>
 </kw>
-<status status="PASS" start="2024-07-17T09:36:47.469695" elapsed="22.214191"/>
+<status status="PASS" start="2024-07-17T09:58:49.240890" elapsed="17.378519"/>
 </test>
-<status status="PASS" start="2024-07-17T09:36:47.373305" elapsed="22.311502"/>
+<status status="PASS" start="2024-07-17T09:58:49.121880" elapsed="17.498346"/>
 </suite>
-<status status="PASS" start="2024-07-17T09:36:47.370524" elapsed="22.315972"/>
+<status status="PASS" start="2024-07-17T09:58:49.116531" elapsed="17.505584"/>
 </suite>
-<status status="PASS" start="2024-07-17T09:36:47.354503" elapsed="22.332635"/>
+<status status="PASS" start="2024-07-17T09:58:49.087986" elapsed="17.534842"/>
 </suite>
 <statistics>
 <total>

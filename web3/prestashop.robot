@@ -40,6 +40,9 @@ Test alerte
 
 Combien de fenêtres
   Afficher la liste des Handles
+
+Test de la librairie
+   Ma Fonction
   
 
 *** Keywords ***

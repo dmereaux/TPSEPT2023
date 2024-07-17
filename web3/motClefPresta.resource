@@ -1,6 +1,6 @@
 *** Settings ***
-#Library   ma_lib_selenium.py
-Library   SeleniumLibrary
+Library   ma_lib_selenium.py
+#Library   SeleniumLibrary
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
