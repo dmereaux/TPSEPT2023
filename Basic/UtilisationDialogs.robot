@@ -4,6 +4,8 @@ Library	Screenshot	 screenshot_module=PIL
 Library  String
 Library   OperatingSystem
 Suite Setup   creation repertoire
+*** Variables ***
+${PWD}   ${EMPTY}
 
 
 *** Test Cases ***
@@ -42,10 +44,16 @@ TP4_optionnel
   FOR  ${elt}  IN  @{mots} 
      Log to console  ${\n} mot:${elt}
   END
-
+TEST1
+  Saisie Mot de passe
 *** Keywords ***
 #TP3
 creation repertoire
    Create Directory   ${EXECDIR}/screenshots
    Set Screenshot Directory   ${EXECDIR}/screenshots
+
+Saisie Mot de passe
+   IF  "${PWD}"==""
+       ${PWD}  Get Value From User   saisie du mot de passe
+   END
    

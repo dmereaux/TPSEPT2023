@@ -1,111 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-15T17:10:23.586583" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-17T09:36:47.351747" rpa="false" schemaversion="5">
 <suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
-<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
-<suite id="s1-s1-s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
-<kw name="debut de suite" type="SETUP">
+<suite id="s1-s1" name="Web3" source="/Users/dominiquemereaux/code/TPSEPT2023/web3">
+<kw name="init web" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${\n}debut de la suite</arg>
+<arg>INIT_ROBOT</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.608677" elapsed="0.000239"/>
+<status status="PASS" start="2024-07-17T09:36:47.372820" elapsed="0.000310"/>
 </kw>
-<status status="PASS" start="2024-07-15T17:10:23.608324" elapsed="0.000681"/>
+<status status="PASS" start="2024-07-17T09:36:47.372380" elapsed="0.000867"/>
 </kw>
-<test id="s1-s1-s1-t1" name="TP7 boucle sur la liste" line="92">
-<kw name="debut de test" type="SETUP">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${\n}debut du test: ${TEST_NAME}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.609540" elapsed="0.000436"/>
+<suite id="s1-s1-s1" name="Prestashop" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/prestashop.robot">
+<test id="s1-s1-s1-t1" name="Recherche vide" line="21">
+<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-17T09:36:47.470906" level="INFO">Opening browser 'gc' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
+<arg>${URL}</arg>
+<arg>${NAVIGATEUR}</arg>
+<arg>executable_path=${PATH_GC}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-17T09:36:47.470631" elapsed="16.917736"/>
 </kw>
-<status status="PASS" start="2024-07-15T17:10:23.609373" elapsed="0.001296"/>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-17T09:37:04.508312" level="INFO">Page title is 'monPrestashop'.</msg>
+<arg>monPrestashop</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-07-17T09:37:04.388916" elapsed="0.119687"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${elt}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.611154" elapsed="0.000164"/>
+<status status="PASS" start="2024-07-17T09:36:47.470154" elapsed="17.038597"/>
 </kw>
-<var name="${elt}">1</var>
-<status status="PASS" start="2024-07-15T17:10:23.611077" elapsed="0.000329"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${elt}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.611553" elapsed="0.000282"/>
+<kw name="Faire une recherche" owner="motClefPresta">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-17T09:37:04.510427" level="INFO">Typing text '' into text field '//*[@id="search_widget"]/form/input[2]'.</msg>
+<arg>${LOC_CHAMP_RECHERCHE}</arg>
+<arg>${item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-17T09:37:04.509921" elapsed="0.706919"/>
 </kw>
-<var name="${elt}">2</var>
-<status status="PASS" start="2024-07-15T17:10:23.611489" elapsed="0.000447"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${elt}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.612196" elapsed="0.000116"/>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-07-17T09:37:05.217607" level="INFO">Sending key(s) ('RETURN',) to //*[@id="search_widget"]/form/input[2] element.</msg>
+<msg time="2024-07-17T09:37:05.872050" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2024-07-17T09:37:05.872249" level="INFO">Releasing special key RETURN.</msg>
+<arg>${LOC_CHAMP_RECHERCHE}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-07-17T09:37:05.217096" elapsed="4.232693"/>
 </kw>
-<var name="${elt}">3</var>
-<status status="PASS" start="2024-07-15T17:10:23.612116" elapsed="0.000264"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${elt}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.612468" elapsed="0.000148"/>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return document.title == "Rechercher"</arg>
+<arg>timeout=5</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2024-07-17T09:37:09.450099" elapsed="0.020144"/>
 </kw>
-<var name="${elt}">4</var>
-<status status="PASS" start="2024-07-15T17:10:23.612420" elapsed="0.000263"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${elt}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.612838" elapsed="0.000135"/>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-07-17T09:37:04.509197" elapsed="4.961216"/>
 </kw>
-<var name="${elt}">2</var>
-<status status="PASS" start="2024-07-15T17:10:23.612756" elapsed="0.000263"/>
-</iter>
-<var>${elt}</var>
-<value>@{maListe}</value>
-<status status="PASS" start="2024-07-15T17:10:23.610916" elapsed="0.002134"/>
-</for>
-<kw name="fin de test" type="TEARDOWN">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${\n}status du test:${TEST_STATUS}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.613704" elapsed="0.000173"/>
+<kw name="Vérifier message recherche vide" owner="motClefPresta">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-17T09:37:09.471199" level="INFO">Verifying element '//*[@id="product-search-no-matches"]' contains exact text 'Aucun produit ne correspond à votre recherche'.</msg>
+<arg>${LOC_MESSAGE_ERREUR}</arg>
+<arg>${MESSAGE ERREUR}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-17T09:37:09.470958" elapsed="0.121644"/>
 </kw>
-<status status="PASS" start="2024-07-15T17:10:23.613493" elapsed="0.000469"/>
+<status status="PASS" start="2024-07-17T09:37:09.470636" elapsed="0.122123"/>
 </kw>
-<tag>toto</tag>
-<status status="PASS" start="2024-07-15T17:10:23.609054" elapsed="0.004979"/>
+<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-07-17T09:37:09.593379" elapsed="0.090195"/>
+</kw>
+<status status="PASS" start="2024-07-17T09:37:09.593065" elapsed="0.090680"/>
+</kw>
+<status status="PASS" start="2024-07-17T09:36:47.469695" elapsed="22.214191"/>
 </test>
-<kw name="fin de suite" type="TEARDOWN">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${\n}fin de la suite</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-15T17:10:23.614735" elapsed="0.000207"/>
-</kw>
-<status status="PASS" start="2024-07-15T17:10:23.614579" elapsed="0.000450"/>
-</kw>
-<status status="PASS" start="2024-07-15T17:10:23.603215" elapsed="0.011855"/>
+<status status="PASS" start="2024-07-17T09:36:47.373305" elapsed="22.311502"/>
 </suite>
-<status status="PASS" start="2024-07-15T17:10:23.601836" elapsed="0.014027"/>
+<status status="PASS" start="2024-07-17T09:36:47.370524" elapsed="22.315972"/>
 </suite>
-<status status="PASS" start="2024-07-15T17:10:23.588685" elapsed="0.027597"/>
+<status status="PASS" start="2024-07-17T09:36:47.354503" elapsed="22.332635"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">toto</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="premierPas">TPSEPT2023.Basic.premierPas</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Web3">TPSEPT2023.Web3</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Prestashop">TPSEPT2023.Web3.Prestashop</stat>
 </suite>
 </statistics>
 <errors>
