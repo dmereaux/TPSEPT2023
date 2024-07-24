@@ -44,6 +44,7 @@ Helloworld
   [Tags]   regression   toto titi  world
   [Documentation]   doc de test
   Log To Console  Bonjour
+  mon premier mot cle
 hello
   ${toto}  mot clef  hello   world
   Log To Console   ${toto}
@@ -68,5 +69,9 @@ modele
 test valeur inf à 10
    ${x}   valeur inferieure à 10
    Should Be True    ${x} < 11
+
+*** Keywords ***
+mon premier mot cle
+  Log to console  j'ai créé un mot clé
 
 

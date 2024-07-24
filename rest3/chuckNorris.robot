@@ -22,3 +22,11 @@ Tester une blague de chaque catégorie
      Should Be Equal   ${cat}[0]   ${elt}
      should contain  ${blague}   Chuck   ignore_case=True  
    END
+
+afficher la liste des catégories
+   @{categories}   recupérer la liste des catégories
+   FOR  ${elt}  IN  @{categories} 
+     Log To Console  ${elt}
+     ${blague}   ${cat}   Blague de catégorie   ${elt}
+     Log To Console  categorie:${cat}[0] Blague:${blague}
+   END

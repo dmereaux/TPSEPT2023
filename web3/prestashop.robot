@@ -43,7 +43,11 @@ Combien de fenêtres
 
 Test de la librairie
    Ma Fonction
+
+test checkbox
+  Selectionner le premier element populaire
   
+  verifier noir non selectionné
 
 *** Keywords ***
 Modele Recherche
@@ -52,3 +56,5 @@ Modele Recherche
    Faire une recherche  ${item}
    Contrôler le résultat de recherche égal à     ${msg}
    Contrôler pertinence de la recherche   ${item}
+
+

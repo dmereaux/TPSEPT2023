@@ -1,6 +1,6 @@
 *** Settings ***
 Library   ma_lib_selenium.py
-#Library   SeleniumLibrary
+#Library   SeleniumLibrary   implicit_wait=5
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
@@ -35,9 +35,9 @@ Accepter RGPD
     Click Element  id=accept-choices
 
 Ouvrir Prestashop
-   Open Browser  ${URL}  ${NAVIGATEUR}  executable_path=${PATH_GC}
-   Title Should Be  monPrestashop
-#   ma_lib_selenium.Ma Fonction
+   Open Browser  ${URL}  ${NAVIGATEUR}  #executable_path=${PATH_GC}
+#   Title Should Be  monPrestashop
+   ma_lib_selenium.Ma Fonction
 Fermer Prestashop
   Close Browser
   
@@ -86,3 +86,11 @@ Afficher la liste des Handles
     FOR  ${elt}  IN  @{listHandles}
        Log To Console  ${elt}
     END
+
+Selectionner le premier element populaire
+   click element   //*[@id="content"]/section[1]/div/div[1]/article/div/div[1]/a/picture/img
+
+verifier noir non selectionné
+  Wait Until Element Is Visible  //*[@id="group_2"]/li[2]/label  timeout=5
+  Element Should Be Enabled   //*[@id="group_2"]/li[2]/label/input
+  Element Should Be Disabled   //*[@id="group_2"]/li[1]/label/input

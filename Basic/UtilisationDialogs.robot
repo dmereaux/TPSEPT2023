@@ -14,11 +14,10 @@ au hasard
   ${x}  Generate Random String  1  [NUMBERS]
   Log To Console  ${x}
 TP2: essai 
-  [Timeout]   4
   Execute Manual Step   verifier   message error
 
 TP3: essai 
-  [Timeout]   4
+
   Execute Manual Step   verifier   message error
   Take Screenshot  tto
 essai Timeout
@@ -26,8 +25,10 @@ essai Timeout
   sleep   5s
 
 TP2: recuperer
-   ${x}   Get Value From User   nom
-   Log To Console    ${x} 
+   Set Log Level  WARN
+   ${x}   Get Value From User   mot de passe   hidden=True
+   Reset Log Level
+
 TP2-Optionnel essai 2
   @{users} =	Get Selections From User	Select users	user1	user2	admin
   FOR  ${elt}  IN  @{users}

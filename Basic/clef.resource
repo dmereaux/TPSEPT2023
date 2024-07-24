@@ -1,3 +1,4 @@
+
 *** Keywords ***
 Comparer un entier avec une chaine 2
   [Arguments]   ${arg1}  ${arg2}

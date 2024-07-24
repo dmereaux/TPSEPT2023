@@ -1,51 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-17T09:58:49.082185" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.6 on darwin)" generated="2024-07-24T15:49:21.684891" rpa="false" schemaversion="5">
 <suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
-<suite id="s1-s1" name="Web3" source="/Users/dominiquemereaux/code/TPSEPT2023/web3">
-<kw name="init web" type="SETUP">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>INIT_ROBOT</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-17T09:58:49.120296" elapsed="0.000415"/>
+<suite id="s1-s1" name="Bibli" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli">
+<suite id="s1-s1-s1" name="Tarif" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli/tarif.robot">
+<test id="s1-s1-s1-t1" name="arguments" line="18">
+<kw name="Any Arguments" owner="tarif_ratp">
+<msg time="2024-07-24T15:49:21.699910" level="INFO">1
+2
+3
+4
+bonjour</msg>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>bonjour</arg>
+<status status="PASS" start="2024-07-24T15:49:21.699764" elapsed="0.000216"/>
 </kw>
-<status status="PASS" start="2024-07-17T09:58:49.119730" elapsed="0.001516"/>
-</kw>
-<suite id="s1-s1-s1" name="Prestashop" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/prestashop.robot">
-<test id="s1-s1-s1-t1" name="Test de la librairie" line="44">
-<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
-<kw name="Open Browser" owner="ma_lib_selenium">
-<msg time="2024-07-17T09:58:49.242459" level="INFO">Opening browser 'gc' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
-<arg>${URL}</arg>
-<arg>${NAVIGATEUR}</arg>
-<arg>executable_path=${PATH_GC}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-07-17T09:58:49.242120" elapsed="16.355146"/>
-</kw>
-<kw name="Title Should Be" owner="ma_lib_selenium">
-<msg time="2024-07-17T09:59:06.004539" level="INFO">Page title is 'monPrestashop'.</msg>
-<arg>monPrestashop</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-07-17T09:59:05.597781" elapsed="0.407169"/>
-</kw>
-<status status="PASS" start="2024-07-17T09:58:49.241535" elapsed="16.763605"/>
-</kw>
-<kw name="Ma Fonction" owner="ma_lib_selenium">
-<status status="PASS" start="2024-07-17T09:59:06.005584" elapsed="0.510627"/>
-</kw>
-<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
-<kw name="Close Browser" owner="ma_lib_selenium">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-07-17T09:59:06.517804" elapsed="0.101127"/>
-</kw>
-<status status="PASS" start="2024-07-17T09:59:06.517364" elapsed="0.101860"/>
-</kw>
-<status status="PASS" start="2024-07-17T09:58:49.240890" elapsed="17.378519"/>
+<status status="PASS" start="2024-07-24T15:49:21.699391" elapsed="0.000746"/>
 </test>
-<status status="PASS" start="2024-07-17T09:58:49.121880" elapsed="17.498346"/>
+<status status="PASS" start="2024-07-24T15:49:21.697605" elapsed="0.002962"/>
 </suite>
-<status status="PASS" start="2024-07-17T09:58:49.116531" elapsed="17.505584"/>
+<status status="PASS" start="2024-07-24T15:49:21.696166" elapsed="0.004961"/>
 </suite>
-<status status="PASS" start="2024-07-17T09:58:49.087986" elapsed="17.534842"/>
+<status status="PASS" start="2024-07-24T15:49:21.687037" elapsed="0.014433"/>
 </suite>
 <statistics>
 <total>
@@ -55,8 +33,8 @@
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Web3">TPSEPT2023.Web3</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Prestashop">TPSEPT2023.Web3.Prestashop</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Bibli">TPSEPT2023.Bibli</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Tarif">TPSEPT2023.Bibli.Tarif</stat>
 </suite>
 </statistics>
 <errors>
