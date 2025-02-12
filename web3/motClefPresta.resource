@@ -4,7 +4,7 @@ Library   ma_lib_selenium.py
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
-${NAVIGATEUR}     gc
+${NAVIGATEUR}     GC
 ${PATH_GC}   /Users/dominiquemereaux/code/driver/chromedriver
 ${LOC_CHAMP_RECHERCHE}   //*[@id="search_widget"]/form/input[2]
 ${LOC_NOMBRE_RESULTATS}   //*[@id="js-product-list-top"]/div[1]/p

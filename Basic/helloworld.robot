@@ -12,6 +12,8 @@ ${toto}   %{PATH}
 @{liste1}   1  2  3
 &{dictionnaire}   animal=chien   nom=médor    
 *** Test Cases ***
+afficher liste
+  Log To Console   ${liste1[1]}
 afficher Variables 
   [Teardown]  
   log  toto level=WARN  html=True

@@ -9,7 +9,7 @@ Recherche MUG
    Contrôler le résultat de recherche égal à     Il y a 5 produits.
    Contrôler pertinence de la recherche   MUG
 Recherche T-Shirt
-  Faire une recherche   T-Shirt
+  Faire une recherche   T-Shirt 
   Contrôler le résultat de recherche égal à     Il y a 1 produit.
 Recherches diverses
   [Template]   Modele Recherche
