@@ -12,6 +12,13 @@ ${CATEGORIES}   jokes/categories
 *** Keywords ***
 Session Chuck
     Create Session  ${SESSION_NAME}    ${ENDPOINT}   disable_warnings=True
+Afficher contenu
+  ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   expected_status=200
+  log to console  ${resp.json()}[value] 
+  ${value}  Get From Dictionary   ${resp.json()}   value
+  log to console  ${value}
+  ${value}  Get Value from json   ${resp.json()}   value
+  log to console  ${value}
 Blague au hasard 
   ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   expected_status=200
   ${toto}  Get From Dictionary   ${resp.json()}   value

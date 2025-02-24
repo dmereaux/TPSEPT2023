@@ -1,12 +1,12 @@
 *** Settings ***
-Library   SeleniumLibrary
+
 Library   DataDriver  file=donnees.csv
 Resource   motClefPresta.resource
 Test Setup   ouvrir prestashop
 Test Teardown   fermer prestashop
 Test Template   modele de recherche
 *** Test Cases ***
-${test}
+${nomdutest}
 
 *** Keywords ***
 modele de recherche

@@ -4,6 +4,10 @@ Suite Setup    Session Chuck
 Suite Teardown   Fermer session chuck                
                                                                                                        
 *** Test Cases ***     
+
+afficher
+    Afficher contenu
+
 Test Blague au hasard
   ${blague}   Blague au hasard
   should contain  ${blague}   Chuck   ignore_case=True

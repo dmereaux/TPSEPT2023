@@ -178,6 +178,7 @@ nombres au hasard
 
 
 nombre entre 1 et 10
+  [Tags]  robot:skip
   ${toto}   nombre au hasard
   # expression python
   IF  ${toto} > 5 
