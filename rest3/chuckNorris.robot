@@ -17,6 +17,11 @@ test Blague animal
   Should Be Equal   ${cat}[0]   animal
   should contain  ${blague}   Chuck   ignore_case=True
 
+test Blague work
+  ${blague}   ${cat}   Blague de catégorie   work
+  Should Be Equal   ${cat}[0]   work
+  should contain  ${blague}   toto   ignore_case=True
+
 Tester une blague de chaque catégorie
    @{liste_cat}   recupérer la liste des catégories
    FOR   ${elt}   IN  @{liste_cat}  

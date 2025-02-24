@@ -2,11 +2,7 @@ from robot.api.deco  import keyword, library
 from robot.api import SkipExecution
 class LibCalcul:
 #class MaLibrairie:
-    """Library for demo purposes.
-
-    This library is only used in an example and it doesn't do anything useful.
-    """
-
+ 
     limit=12
     def __init__(self, ageLimit=12):
         self.limit = int(ageLimit)
