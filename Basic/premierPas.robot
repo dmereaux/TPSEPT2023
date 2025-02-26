@@ -12,7 +12,7 @@ Test Teardown   Run Keyword If Test Failed   Log to console   Ca a planté
 Library  String
 # fichier de resource pour externaliser les mots-clefs
 resource  clef.resource
-Library  calcul.MaLibrairie  
+Library  tarif 
 #Test Tags   toto
 Library  Collections
 
@@ -28,91 +28,85 @@ ${mdp}  titi
 
 
 *** Test Cases ***
-ajout
-  [Tags]  var
-  Append To List  ${maliste}   1   1   1 
-  Set Global Variable  ${URL}   "ygfazy"
-verif
-  [Tags]  var
-  FOR  ${elt}  IN  @{maliste}
-    Log To Console  ${elt}
-  END
-  Log To Console   ${URL}
-
 
 TP1
-  [Setup] 
+
   Log to console   Bonjour les amis
-  log   mode   DEBUG
-  log  il y a potentiellement un probleme   ERROR
+
 
 TP1 Optionnel
     Log  Bonjour les Amis  WARN
     log  Une erreur   ERROR
 
-TP2 test variable globale
+
+TP2: test des mot cles
+  [Documentation]    cas de test 1
+  mot clef simple
+  mot clef avec Argument  un mot clef simple
+  
+TP2-1 : mot clef avec plusieurs arguments et 1 sortie
+  ${sortie}   Mot clef complexe  toto  titi
+  Log To Console   sortie :${sortie}
+
+
+TP2-3 valeur optionnelles
+   ${sortie}  mot clef avec Arguments   machin
+   Log To Console  ${sortie}
+   ${sortie}  mot clef avec Arguments   machin  tutu
+   Log To Console  ${sortie}
+
+TP2-4 liste de valeurs en sortie
+  ${S1}  ${S2}  mot clef qui retourne plusieurs valeurs
+  log to console  sortie1:${S1} sortie2:${S2}
+  # sera vu plus tard
+  @{listeLocale}  mot clef qui retourne plusieurs valeurs
+  FOR  ${elt}  IN  @{listeLocale}
+     Log To Console  ${elt}
+  END
+
+
+TP3 test variable globale
   Log To Console  site à tester: ${URL}
   Log To Console   ${maListe}[1]
   Log To Console  ma liste @{maliste}
   Log To Console  Mon ${Mon Dict}[animal] s'appele ${Mon Dict}[nom]
 
 
-TP2-bis test variable globale
+TP3-bis test variable globale
   [Tags]  Regression
   Set Test Variable  ${URL}  http://toto.com
   Log To Console  site à tester: ${URL}
 
-TP2-ter
+TP3-ter
     [Tags]  Regression
   Log To Console  site à tester: ${URL}
 
-TP2-Bis Optionnel déclaration variable locale au test
-   set test variable  ${locale}   truc muche
+TP3-Bis Optionnel déclaration variable locale au test
+#   set test variable  ${locale}   truc muche
+   VAR    ${locale}    truc muche
    Set Global Variable   ${locale}
 
-TP2-Bis Optionnel utilisation variable
+TP3-Bis Optionnel utilisation variable
    Log To Console   ${locale}
 
-TP2-1: Affichage repertoire
+TP3-1: Affichage repertoire
   Log To Console  ${\n}${EXECDIR}
   Log To Console  ${\n}${CURDIR}
   Log To Console  ${\n}${TEMPDIR}
 
-TP2-2 variable predefinies
-  [Tags]  robot:continue-on-failure
+TP3-2 variable predefinies
+  [Tags]  robot:continue-on-failure   #sera vu plus tard
   log to console   bonjour${SPACE}${SPACE}toto
   should be Equal   80  ${80}  msg=echec 
   Should Be Equal  ${80}   80
   log to console   mon test n'a pas marché
-TP2-2 optionnel
+TP3-2 optionnel
 # expression python d'ou la presence de guillemets
   skip if  "${PREV_TEST_STATUS}" == "FAIL"
-TP2-2 affichage du statut du test précédent
+TP3-2 affichage du statut du test précédent
   log to console   statut du test précédent:${PREV_TEST_STATUS}
 
 
-
-TP3: test des mot cles
-  [Documentation]    cas de test 1
-  mot clef simple
-TP3-1
-  ${sortie}   Mot clef complexe  toto  arg2=titi
-  Log To Console   sortie :${sortie}
-
-
-TP3-3  
-   ${sortie}  mot clef avec Arguments   machin
-   Log To Console  ${sortie}
-   ${sortie}  mot clef avec Arguments   machin  tutu
-   Log To Console  ${sortie}
-
-TP3-2
-  ${S1}  ${S2}  mot clef qui retourne plusieurs valeurs
-  log to console  sortie1:${S1} sortie2:${S2}
-  @{listeLocale}  mot clef qui retourne plusieurs valeurs
-  FOR  ${elt}  IN  @{listeLocale}
-     Log To Console  ${elt}
-  END
 
 TP6 BDD
   Given log to Console  ${\n}un individu
@@ -137,11 +131,9 @@ TP7 Optionnel
   END 
 
 TP8
-    ${prix}   Calcul Tarif   13
+    ${prix}   tarif.tarif ratp   13
      # vérifie l'attendu par rapport à l'obtenu
      Should Be Equal   plein tarif   ${prix}    test avec 13 en échec
-
-
 
 TP9 verification tarif RATP
   [Template]    verification
@@ -194,17 +186,21 @@ modele concatenation
    [Arguments]  ${ent1}   ${ent2}   ${sortie}
    ${ret}  Catenate  ${ent1}   ${ent2}
    Should Be Equal  ${ret}  ${sortie}
-# TP3
+# TP2
 mot clef simple
   [Documentation]   CECI EST UN MOT CLEF
   Log To Console  toto
   Log To Console  titi
-# TP3-1
+mot clef avec Argument
+  [Documentation]    CECI EST UN MOT CLEF
+  [Arguments]  ${toto} 
+  Log To Console  ${toto} 
+# TP2
 mot clef avec Arguments
   [Documentation]    CECI EST UN MOT CLEF
   [Arguments]  ${toto}  ${opt}=titi
   RETURN   j'affiche ${toto} ${opt}   
-# TP3-2
+# TP2
 mot clef qui retourne plusieurs valeurs
    RETURN  val1   val2
 Mot clef complexe
@@ -230,7 +226,7 @@ fin de suite
 verification 
   [Arguments]   ${age}   ${tarif}
      # appel de la fonction
-     ${prix}   Calcul Tarif   ${age}
+     ${prix}   tarif ratp   ${age}
      # vérifie l'attendu par rapport à l'obtenu
      Should Be Equal   ${tarif}   ${prix}    test avec ${age} en échec
 nombre au hasard    

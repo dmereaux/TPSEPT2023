@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.10.7 on darwin)" generated="2025-02-26T19:02:54.966956" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>SUITE SETUP FOR BASIC</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T19:02:54.989805" elapsed="0.000394"/>
+</kw>
+<suite id="s1-s1-s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
+<kw name="debut de suite" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.004642" elapsed="0.000321"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-26T19:02:55.005461" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
+<var>&amp;{proxy}</var>
+<arg>nom=${nom}</arg>
+<arg>motdepasse=${mdp}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.005134" elapsed="0.000412"/>
+</kw>
+<status status="PASS" start="2025-02-26T19:02:55.004301" elapsed="0.001357"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TP9 verification tarif RATP" line="140">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.006435" elapsed="0.000439"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.007028" elapsed="0.000217"/>
+</kw>
+<status status="PASS" start="2025-02-26T19:02:55.006188" elapsed="0.001169"/>
+</kw>
+<kw name="verification">
+<kw name="tarif ratp" owner="tarif">
+<msg time="2025-02-26T19:02:55.008155" level="INFO">appel de la fonction calcul tarif</msg>
+<msg time="2025-02-26T19:02:55.008384" level="INFO">${prix} = demi tarif</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="PASS" start="2025-02-26T19:02:55.007870" elapsed="0.000574"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.008589" elapsed="0.000313"/>
+</kw>
+<arg>12</arg>
+<arg>demi tarif</arg>
+<status status="PASS" start="2025-02-26T19:02:55.007584" elapsed="0.001495"/>
+</kw>
+<kw name="verification">
+<kw name="tarif ratp" owner="tarif">
+<msg time="2025-02-26T19:02:55.010051" level="INFO">appel de la fonction calcul tarif</msg>
+<msg time="2025-02-26T19:02:55.010154" level="INFO">${prix} = demi tarif</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="PASS" start="2025-02-26T19:02:55.009882" elapsed="0.000327"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.010334" elapsed="0.000243"/>
+</kw>
+<arg>11</arg>
+<arg>demi tarif</arg>
+<status status="PASS" start="2025-02-26T19:02:55.009460" elapsed="0.001212"/>
+</kw>
+<kw name="verification">
+<kw name="tarif ratp" owner="tarif">
+<msg time="2025-02-26T19:02:55.011309" level="INFO">appel de la fonction calcul tarif</msg>
+<msg time="2025-02-26T19:02:55.011421" level="INFO">${prix} = demi tarif</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="PASS" start="2025-02-26T19:02:55.011142" elapsed="0.000336"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.011604" elapsed="0.000246"/>
+</kw>
+<arg>4</arg>
+<arg>demi tarif</arg>
+<status status="PASS" start="2025-02-26T19:02:55.010864" elapsed="0.001080"/>
+</kw>
+<kw name="verification">
+<kw name="tarif ratp" owner="tarif">
+<msg time="2025-02-26T19:02:55.012565" level="INFO">appel de la fonction calcul tarif</msg>
+<msg time="2025-02-26T19:02:55.012675" level="INFO">${prix} = demi tarif</msg>
+<var>${prix}</var>
+<arg>${age}</arg>
+<status status="PASS" start="2025-02-26T19:02:55.012397" elapsed="0.000333"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${tarif}</arg>
+<arg>${prix}</arg>
+<arg>test avec ${age} en échec</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.012857" elapsed="0.000245"/>
+</kw>
+<arg>2</arg>
+<arg>demi tarif</arg>
+<status status="PASS" start="2025-02-26T19:02:55.012128" elapsed="0.001067"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Log to console</arg>
+<arg>Ca a planté</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.013596" elapsed="0.000153"/>
+</kw>
+<status status="PASS" start="2025-02-26T19:02:55.005734" elapsed="0.008168"/>
+</test>
+<kw name="Run Keyword If Any Tests Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de suite</arg>
+<doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
+<status status="PASS" start="2025-02-26T19:02:55.014817" elapsed="0.000167"/>
+</kw>
+<doc>Ma suite qui fait pas grand chose
+suite de la doc
+suite 2</doc>
+<status status="PASS" start="2025-02-26T19:02:54.990314" elapsed="0.024748"/>
+</suite>
+<status status="PASS" start="2025-02-26T19:02:54.988166" elapsed="0.027637"/>
+</suite>
+<status status="PASS" start="2025-02-26T19:02:54.971885" elapsed="0.044880"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="premierPas">TPSEPT2023.Basic.premierPas</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
