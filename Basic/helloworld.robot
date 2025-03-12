@@ -1,10 +1,11 @@
 *** Settings ***
 Documentation  de la doc de suite
 ...  suite de la doc
+...  [image.jpg|thumb.jpg]
 Library  String
 Resource   ${CURDIR}/clef.resource
 Suite Setup   gestion suite de test
-Test Teardown  Run Keyword If Test Failed   gestion en cas d'erreur
+Test Teardown  Run Keyword If Test Failed   gestion en cas d'e
 *** Variables ***
 ${IP}   127.0.0.1
 ${FIRMWARE}   12.0.8
@@ -12,6 +13,8 @@ ${toto}   %{PATH}
 @{liste1}   1  2  3
 &{dictionnaire}   animal=chien   nom=médor    
 *** Test Cases ***
+afficher IP
+    Log to Console  ${IP}
 afficher liste
   Log To Console   ${liste1[1]}
 afficher Variables 
@@ -48,12 +51,13 @@ Helloworld
   Log To Console  Bonjour
   mon premier mot cle
 hello
+
   ${toto}  mot clef  hello   world
   Log To Console   ${toto}
   ${toto}  mot clef  hello   
   Log To Console   ${toto}
-  Set Tags  ${toto}
-  [Tags]  ${toto}
+
+
 
 afficher variables prédéfinies
    Log To Console  ${\n}${CURDIR},${\n}${TEMPDIR},${\n}${EXECDIR}

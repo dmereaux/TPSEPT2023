@@ -1,4 +1,5 @@
 *** Settings ***
+Test Tags  toto
 Documentation   Ma suite qui fait pas grand chose
 ...  suite de la doc
 ...  suite 2
@@ -7,6 +8,7 @@ Test Setup    debut de test  # pre condition  pré-requis
 Suite Setup   debut de suite  #pre condition pour un ensemble de test
 Suite Teardown  Run Keyword If Any Tests Failed   fin de suite
 Test Teardown   Run Keyword If Test Failed   Log to console   Ca a planté
+
 #Suite Setup   Log To Console  debut de suite
 #Suite Teardown  Log To Console   fin de suite
 Library  String
@@ -22,19 +24,26 @@ ${URL}   http://monsite.com
 ${BROWSER}     google Chrome
 ${IPMachine1}  128.01.02.65
 @{maliste}   1  2  3   4  2
-&{Mon Dict}   animal=canari   nom=titi   type=oiseau  nom=tata
+&{Mon Dict}   animal=canari   nom=titi   type=oiseau
 ${nom}  toto
 ${mdp}  titi
+${OS}  mac
+
 
 
 *** Test Cases ***
-
+evaluation
+    ${toto}  Evaluate  "${CURDIR}"==""
+    Log To Console   ${toto}
 TP1
-
+  [Tags]  regression  critique
   Log to console   Bonjour les amis
 
 
+
 TP1 Optionnel
+  
+   [Tags]  robot:skip
     Log  Bonjour les Amis  WARN
     log  Une erreur   ERROR
 
@@ -70,6 +79,7 @@ TP3 test variable globale
   Log To Console   ${maListe}[1]
   Log To Console  ma liste @{maliste}
   Log To Console  Mon ${Mon Dict}[animal] s'appele ${Mon Dict}[nom]
+  Log To Console  ${Mon Dict.animal}
 
 
 TP3-bis test variable globale
@@ -90,23 +100,24 @@ TP3-Bis Optionnel utilisation variable
    Log To Console   ${locale}
 
 TP3-1: Affichage repertoire
-  Log To Console  ${\n}${EXECDIR}
-  Log To Console  ${\n}${CURDIR}
+  Log To Console  repertoire exec:${\n}${EXECDIR}
+  Log To Console  repertoire courant:${\n}${CURDIR}
   Log To Console  ${\n}${TEMPDIR}
 
 TP3-2 variable predefinies
-  [Tags]  robot:continue-on-failure   #sera vu plus tard
+  #[Tags]  robot:continue-on-failure   #sera vu plus tard
   log to console   bonjour${SPACE}${SPACE}toto
+  Should Be Equal As Integers  80  ${80}
   should be Equal   80  ${80}  msg=echec 
   Should Be Equal  ${80}   80
   log to console   mon test n'a pas marché
 TP3-2 optionnel
 # expression python d'ou la presence de guillemets
+  log to console  ${PREV_TEST_STATUS}
   skip if  "${PREV_TEST_STATUS}" == "FAIL"
 TP3-2 affichage du statut du test précédent
+
   log to console   statut du test précédent:${PREV_TEST_STATUS}
-
-
 
 TP6 BDD
   Given log to Console  ${\n}un individu
@@ -118,6 +129,7 @@ TP7 boucle sur la liste
   FOR  ${elt}   IN  @{maListe}
     Log To Console   ${elt}
   END
+  
 
 
 TP7 Optionnel
@@ -142,7 +154,8 @@ TP9 verification tarif RATP
   4       demi tarif
   2       demi tarif
 
-
+TP11
+  log   os:${OS}  INFO
 Creation de list
   @{liste}  Split String  il-fait-beau  separator=-
   
@@ -156,14 +169,14 @@ test concatenation 2
    ${ret}  concatenation  Bonjour   Madame
    Should Be Equal  ${ret}  Bonjour-Madame
 
-test concatenation 3
+TP8: test concatenation 3
    ${ret}  concatenation  Salut   Madame
    Should Be Equal  ${ret}  Salut-Madame
 
-Test concatenation multiples
+TP9: Test concatenation multiples
   [Template]  modele concatenation
-  Bonjour  Monsieur  Bonjour Monsieur
-  Bonjour  madame   Bonjour madame
+  Bonjour  Monsieur  BonjourMonsieur
+  Bonjour  madame   Bonjourmadame
 
 nombres au hasard
    Repeat Keyword    5 times   nombre au hasard
@@ -240,6 +253,6 @@ concatenation
 
 Modele
    [Arguments]  ${var1}  ${var2}  ${var3}
-   ${ret}  concatenation  ${var1}   ${var2}
+   ${ret}  catenate  ${var1}   ${var2}
    Should Be Equal  ${ret}  ${var3}
 

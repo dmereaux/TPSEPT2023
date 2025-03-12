@@ -1,7 +1,8 @@
 *** Settings ***                                                                                       
 Resource  chuckNorris.resource
 Suite Setup    Session Chuck 
-Suite Teardown   Fermer session chuck                
+Suite Teardown   Fermer session chuck  
+Documentation   type de terminal %{TERM}           
                                                                                                        
 *** Test Cases ***     
 
@@ -9,10 +10,12 @@ afficher
     Afficher contenu
 
 Test Blague au hasard
+  [Tags]  tag1
   ${blague}   Blague au hasard
   should contain  ${blague}   Chuck   ignore_case=True
 
 test Blague animal
+  [Tags]  tag2
   ${blague}   ${cat}   Blague de catégorie   animal
   Should Be Equal   ${cat}[0]   animal
   should contain  ${blague}   Chuck   ignore_case=True

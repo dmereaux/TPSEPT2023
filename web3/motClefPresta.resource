@@ -1,12 +1,12 @@
 *** Settings ***
-Library   ma_lib_selenium.py
-#Library   SeleniumLibrary   implicit_wait=5
+#Library   ma_lib_selenium.py
+Library   SeleniumLibrary   implicit_wait=5
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
 ${NAVIGATEUR}     GC
 ${PATH_GC}   /Users/dominiquemereaux/code/driver/chromedriver
-${LOC_CHAMP_RECHERCHE}   //*[@id="search_widget"]/form/input[2]
+${LOC_CHAMP_RECHERCHE}   xpath=//*[@id="search_widget"]/form/input[2]
 ${LOC_NOMBRE_RESULTATS}   //*[@id="js-product-list-top"]/div[1]/p
 ${LOC_LIEN_RECHERCHE}   //*[@id="js-product-list"]//article/div/div[2]/h2/a
 ${LOC_ICONE}   //*[@id="_desktop_logo"]//a/img
@@ -35,9 +35,9 @@ Accepter RGPD
     Click Element  id=accept-choices
 
 Ouvrir Prestashop
-   Open Browser  ${URL}  ${NAVIGATEUR}  #executable_path=${PATH_GC}
-#   Title Should Be  monPrestashop
-   ma_lib_selenium.Ma Fonction
+   Open Browser  ${URL}  ${NAVIGATEUR}  
+   Title Should Be  monPrestashop
+#   ma_lib_selenium.Ma Fonction
 Fermer Prestashop
   Close Browser
   

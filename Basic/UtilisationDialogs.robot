@@ -17,8 +17,8 @@ TP2: essai
   Execute Manual Step   verifier   message error
 
 TP3: essai 
-
   Execute Manual Step   verifier   message error
+  Set Screenshot Directory  ${CURDIR}
   Take Screenshot  tto
 essai Timeout
   [Timeout]   4

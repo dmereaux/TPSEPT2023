@@ -3,7 +3,7 @@ from robot.api.deco import keyword,library
 
 class tarif6:
 
-    ROBOT_LIBRARY_SCOPE = 'TEST'
+    ROBOT_LIBRARY_SCOPE = 'SUITE'
     limit = 12
     def __init__(self,age:int=12):
         self.limit=age

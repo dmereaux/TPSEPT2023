@@ -1,7 +1,7 @@
 
 from robot.api.deco import keyword,library
 class tarif2:
-    ROBOT_AUTO_KEYWORDS=False
+
     limit = 12
     def __init__(self,age=12):
         self.limit=age

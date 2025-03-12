@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.10.7 on darwin)" generated="2025-03-07T18:03:45.535903" rpa="false" schemaversion="5">
+<suite id="s1" name="RechercheMultiple" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/RechercheMultiple.robot">
+<test id="s1-t1" name="recherche MUG" line="9">
+<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T18:03:45.692284" level="INFO">Opening browser 'GC' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
+<arg>${URL}</arg>
+<arg>${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T18:03:45.692083" elapsed="6.937525"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-07T18:03:52.632636" level="INFO">Page title is 'monPrestashop'.</msg>
+<arg>monPrestashop</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-03-07T18:03:52.629958" elapsed="0.002748"/>
+</kw>
+<status status="PASS" start="2025-03-07T18:03:45.691239" elapsed="6.941566"/>
+</kw>
+<kw name="modele de recherche">
+<kw name="Faire une recherche" owner="motClefPresta">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-07T18:03:52.634005" level="INFO">Typing text 'item' into text field '//*[@id="search_widget"]/form/input[2]'.</msg>
+<arg>${LOC_CHAMP_RECHERCHE}</arg>
+<arg>${item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T18:03:52.633667" elapsed="0.123584"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-03-07T18:03:52.757881" level="INFO">Sending key(s) ('RETURN',) to //*[@id="search_widget"]/form/input[2] element.</msg>
+<msg time="2025-03-07T18:03:53.038305" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-03-07T18:03:53.038662" level="INFO">Releasing special key RETURN.</msg>
+<arg>${LOC_CHAMP_RECHERCHE}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-03-07T18:03:52.757500" elapsed="6.412690"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return document.title == "Rechercher"</arg>
+<arg>timeout=5</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2025-03-07T18:03:59.170381" elapsed="0.004290"/>
+</kw>
+<arg>${item}</arg>
+<status status="PASS" start="2025-03-07T18:03:52.633429" elapsed="6.541369"/>
+</kw>
+<kw name="Contrôler le résultat de recherche égal à" owner="motClefPresta">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-07T18:03:59.175972" level="INFO">Verifying element '//*[@id="js-product-list-top"]/div[1]/p' contains exact text 'msg'.</msg>
+<msg time="2025-03-07T18:03:59.471968" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-07T18:03:59.472206" level="FAIL">The text of element '//*[@id="js-product-list-top"]/div[1]/p' should have been 'msg' but it was 'Il y a 19 produits.'.</msg>
+<arg>${LOC_NOMBRE_RESULTATS}</arg>
+<arg>${texte-a-vérifier}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2025-03-07T18:03:59.175351" elapsed="0.301950">The text of element '//*[@id="js-product-list-top"]/div[1]/p' should have been 'msg' but it was 'Il y a 19 produits.'.</status>
+</kw>
+<arg>${msg}</arg>
+<status status="FAIL" start="2025-03-07T18:03:59.174970" elapsed="0.302550">The text of element '//*[@id="js-product-list-top"]/div[1]/p' should have been 'msg' but it was 'Il y a 19 produits.'.</status>
+</kw>
+<kw name="Contrôler pertinence de la recherche" owner="motClefPresta">
+<arg>${item}</arg>
+<status status="NOT RUN" start="2025-03-07T18:03:59.477773" elapsed="0.000039"/>
+</kw>
+<arg>item</arg>
+<arg>msg</arg>
+<status status="FAIL" start="2025-03-07T18:03:52.633094" elapsed="6.844795">The text of element '//*[@id="js-product-list-top"]/div[1]/p' should have been 'msg' but it was 'Il y a 19 produits.'.</status>
+</kw>
+<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-07T18:03:59.478403" elapsed="0.119011"/>
+</kw>
+<status status="PASS" start="2025-03-07T18:03:59.478153" elapsed="0.119385"/>
+</kw>
+<status status="FAIL" start="2025-03-07T18:03:45.689716" elapsed="13.907929">The text of element '//*[@id="js-product-list-top"]/div[1]/p' should have been 'msg' but it was 'Il y a 19 produits.'.</status>
+</test>
+<status status="FAIL" start="2025-03-07T18:03:45.537338" elapsed="14.061007"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RechercheMultiple">RechercheMultiple</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

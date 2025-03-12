@@ -1,5 +1,5 @@
 *** Settings ***
-Library   tarif1   ${11}  
+Library   tarif1   age=${11}  
 
 *** Test Cases ***
 age

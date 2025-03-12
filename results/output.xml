@@ -1,65 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.10.7 on darwin)" generated="2025-03-07T16:04:34.168274" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.10.7 on darwin)" generated="2025-03-12T14:18:32.558437" rpa="false" schemaversion="5">
 <suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
-<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
-<kw name="Log To Console" owner="BuiltIn" type="SETUP">
-<arg>SUITE SETUP FOR BASIC</arg>
+<suite id="s1-s1" name="Bibli" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli">
+<suite id="s1-s1-s1" name="Tarif6" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli/tarif6.robot">
+<test id="s1-s1-s1-t1" name="age" line="5">
+<kw name="tarif ratp" owner="tarif6">
+<msg time="2025-03-12T14:18:32.586706" level="INFO">${s} = plein tarif</msg>
+<var>${s}</var>
+<arg>12</arg>
+<status status="PASS" start="2025-03-12T14:18:32.585853" elapsed="0.001025"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${s}</arg>
+<arg>plein tarif</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-03-12T14:18:32.587319" elapsed="0.000307"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:18:32.583952" elapsed="0.003873"/>
+</test>
+<test id="s1-s1-s1-t2" name="arguments" line="8">
+<kw name="Any Arguments" owner="tarif6">
+<msg time="2025-03-12T14:18:32.589475" level="INFO">&lt;tarif6.tarif6 object at 0x103014400&gt;
+1
+2
+3
+4
+bonjour</msg>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>bonjour</arg>
+<status status="PASS" start="2025-03-12T14:18:32.589153" elapsed="0.000421"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:18:32.588684" elapsed="0.001084"/>
+</test>
+<test id="s1-s1-s1-t3" name="modification de la limite" line="10">
+<kw name="modifier age" owner="tarif6">
+<arg>2</arg>
+<status status="PASS" start="2025-03-12T14:18:32.591136" elapsed="0.000171"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:18:32.590593" elapsed="0.000880"/>
+</test>
+<test id="s1-s1-s1-t4" name="lecture de la limite" line="12">
+<kw name="quel age" owner="tarif6">
+<msg time="2025-03-12T14:18:32.592726" level="INFO">${age} = 2</msg>
+<var>${age}</var>
+<status status="PASS" start="2025-03-12T14:18:32.592070" elapsed="0.000875"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${age}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-03-07T16:04:34.191863" elapsed="0.000510"/>
+<status status="PASS" start="2025-03-12T14:18:32.593463" elapsed="0.001007"/>
 </kw>
-<suite id="s1-s1-s1" name="Testvar" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/testvar.robot">
-<test id="s1-s1-s1-t1" name="test1" line="5">
-<kw name="Comparer un entier avec une chaine 2">
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-03-07T16:04:34.194901" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${arg1}</arg>
-<arg>${arg2}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-03-07T16:04:34.194652" elapsed="0.000664"/>
-</kw>
-<arg>80</arg>
-<arg>${80}</arg>
-<status status="PASS" start="2025-03-07T16:04:34.194098" elapsed="0.001331"/>
-</kw>
-<doc>jeux1</doc>
-<status status="PASS" start="2025-03-07T16:04:34.193492" elapsed="0.002216"/>
+<status status="PASS" start="2025-03-12T14:18:32.591697" elapsed="0.003144"/>
 </test>
-<test id="s1-s1-s1-t2" name="test2" line="7">
-<kw name="Comparer un entier avec une chaine 2">
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-03-07T16:04:34.197646" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<arg>${arg1}</arg>
-<arg>${arg2}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-03-07T16:04:34.197353" elapsed="0.000425"/>
-</kw>
-<arg>90</arg>
-<arg>${90}</arg>
-<status status="PASS" start="2025-03-07T16:04:34.196758" elapsed="0.001134"/>
-</kw>
-<doc>jeux2</doc>
-<status status="PASS" start="2025-03-07T16:04:34.196189" elapsed="0.001969"/>
-</test>
-<status status="PASS" start="2025-03-07T16:04:34.192497" elapsed="0.006263"/>
+<status status="PASS" start="2025-03-12T14:18:32.581005" elapsed="0.014708"/>
 </suite>
-<status status="PASS" start="2025-03-07T16:04:34.190079" elapsed="0.009995"/>
+<status status="PASS" start="2025-03-12T14:18:32.579421" elapsed="0.017302"/>
 </suite>
-<status status="PASS" start="2025-03-07T16:04:34.172609" elapsed="0.028541"/>
+<status status="PASS" start="2025-03-12T14:18:32.562634" elapsed="0.035296"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1" name="Basic">TPSEPT2023.Basic</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Testvar">TPSEPT2023.Basic.Testvar</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="TPSEPT2023">TPSEPT2023</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Bibli">TPSEPT2023.Bibli</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="Tarif6">TPSEPT2023.Bibli.Tarif6</stat>
 </suite>
 </statistics>
 <errors>
