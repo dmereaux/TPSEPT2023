@@ -30,7 +30,7 @@ Blague de catégorie
   [Arguments]  ${cat}
   &{dict}  Create Dictionary  category=${cat}
   ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}  params=&{dict}  #expected_status=200
-  RETURN   ${resp.json()}[value]   ${resp.json()}[categories]  ${resp.status_code}
+  RETURN   ${resp.json()}[value]   ${resp.json()}[categories]
 recupérer la liste des catégories
     ${resp}   GET On Session   ${SESSION_NAME}   ${CATEGORIES}
     RETURN  ${resp.json()} 

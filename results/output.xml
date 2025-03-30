@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-03-30T22:48:58.291072" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Rest3" source="/Users/dominiquemereaux/code/TPSEPT2023/rest3">
+<suite id="s1-s1-s1" name="chuckNorris" source="/Users/dominiquemereaux/code/TPSEPT2023/rest3/chuckNorris.robot">
+<kw name="Session Chuck" owner="chuckNorris" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:58.424019" level="INFO">Creating Session using : alias=Chuck, url=https://api.chucknorris.io/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>${SESSION_NAME}</arg>
+<arg>${ENDPOINT}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-30T22:48:58.423671" elapsed="0.000606"/>
+</kw>
+<status status="PASS" start="2025-03-30T22:48:58.423111" elapsed="0.001297"/>
+</kw>
+<test id="s1-s1-s1-t1" name="afficher la liste des catégories" line="40">
+<kw name="recupérer la liste des catégories" owner="chuckNorris">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:58.826140" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/categories 
+ path_url=/jokes/categories 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:58.826498" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/categories 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '928a788fd9578a1c-MRS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=["animal","career","celebrity","dev","explicit","fashion","food","history","money","movie","music","political","religion","science","sport","travel"] 
+ </msg>
+<msg time="2025-03-30T22:48:58.826720" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${CATEGORIES}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:58.425214" elapsed="0.401569"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2025-03-30T22:48:58.826965" elapsed="0.000255"/>
+</return>
+<msg time="2025-03-30T22:48:58.827849" level="INFO">@{categories} = [ animal | career | celebrity | dev | explicit | fashion | food | history | money | movie | music | political | religion | science | sport | travel ]</msg>
+<var>@{categories}</var>
+<status status="PASS" start="2025-03-30T22:48:58.424975" elapsed="0.402955"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:58.829072" elapsed="0.000460"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:58.830523" level="INFO">&amp;{dict} = { category=animal }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:58.830059" elapsed="0.000542"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.044096" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=animal 
+ path_url=/jokes/random?category=animal 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.044790" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=animal 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a78916da38a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4581&amp;min_rtt=4498&amp;rtt_var=339&amp;sent=10&amp;recv=13&amp;lost=0&amp;retrans=0&amp;sent_bytes=4413&amp;recv_bytes=983&amp;delivery_rate=1144069&amp;cwnd=257&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=472&amp;x=0"'} 
+ body={"categories":["animal"],"created_at":"2020-01-05 13:42:19.104863","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"o-vfxwx6rgecuo_f5cecpq","updated_at":"2020-01-05 13:42:19.104863","url":"https://api.chucknorris.io/jokes/o-vfxwx6rgecuo_f5cecpq","value":"They say curiosity killed the cat. This is false. Chuck Norris killed the cat. Every single one of them."} 
+ </msg>
+<msg time="2025-03-30T22:48:59.045387" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:58.830758" elapsed="0.215173"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.046223" elapsed="0.000398"/>
+</return>
+<msg time="2025-03-30T22:48:59.048118" level="INFO">${blague} = They say curiosity killed the cat. This is false. Chuck Norris killed the cat. Every single one of them.</msg>
+<msg time="2025-03-30T22:48:59.048301" level="INFO">${cat} = ['animal']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:58.829713" elapsed="0.218698"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.048798" elapsed="0.000727"/>
+</kw>
+<var name="${elt}">animal</var>
+<status status="PASS" start="2025-03-30T22:48:58.828693" elapsed="0.220982"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.050182" elapsed="0.000642"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.052298" level="INFO">&amp;{dict} = { category=career }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.051791" elapsed="0.000793"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.161872" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=career 
+ path_url=/jokes/random?category=career 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.162628" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=career 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a7892c9178a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4559&amp;min_rtt=4468&amp;rtt_var=180&amp;sent=14&amp;recv=17&amp;lost=0&amp;retrans=0&amp;sent_bytes=5812&amp;recv_bytes=1182&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=589&amp;x=0"'} 
+ body={"categories":["career"],"created_at":"2020-01-05 13:42:19.104863","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"3y7vnqsvtvuvvmhtuqjuma","updated_at":"2020-01-05 13:42:19.104863","url":"https://api.chucknorris.io/jokes/3y7vnqsvtvuvvmhtuqjuma","value":"Chuck Norris' first job was as a paperboy. There were no survivors."} 
+ </msg>
+<msg time="2025-03-30T22:48:59.163208" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.053063" elapsed="0.110359"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.163930" elapsed="0.000531"/>
+</return>
+<msg time="2025-03-30T22:48:59.165992" level="INFO">${blague} = Chuck Norris' first job was as a paperboy. There were no survivors.</msg>
+<msg time="2025-03-30T22:48:59.166138" level="INFO">${cat} = ['career']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.051143" elapsed="0.115087"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.166585" elapsed="0.000751"/>
+</kw>
+<var name="${elt}">career</var>
+<status status="PASS" start="2025-03-30T22:48:59.049945" elapsed="0.117504"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.167964" elapsed="0.000456"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.170149" level="INFO">&amp;{dict} = { category=celebrity }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.169467" elapsed="0.000801"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.303925" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=celebrity 
+ path_url=/jokes/random?category=celebrity 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.304616" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=celebrity 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a7893bb988a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4649&amp;min_rtt=4468&amp;rtt_var=209&amp;sent=18&amp;recv=21&amp;lost=0&amp;retrans=0&amp;sent_bytes=7231&amp;recv_bytes=1384&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=734&amp;x=0"'} 
+ body={"categories":["celebrity"],"created_at":"2020-01-05 13:42:19.324003","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"xbae5jywto6wjcwalfwlmq","updated_at":"2020-01-05 13:42:19.324003","url":"https://api.chucknorris.io/jokes/xbae5jywto6wjcwalfwlmq","value":"Chuck Norris is the reason why Waldo is hiding."} 
+ </msg>
+<msg time="2025-03-30T22:48:59.305410" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.170483" elapsed="0.135309"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.306107" elapsed="0.000341"/>
+</return>
+<msg time="2025-03-30T22:48:59.308025" level="INFO">${blague} = Chuck Norris is the reason why Waldo is hiding.</msg>
+<msg time="2025-03-30T22:48:59.308204" level="INFO">${cat} = ['celebrity']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.168749" elapsed="0.139551"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.308710" elapsed="0.000782"/>
+</kw>
+<var name="${elt}">celebrity</var>
+<status status="PASS" start="2025-03-30T22:48:59.167677" elapsed="0.141950"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.310161" elapsed="0.000505"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.312342" level="INFO">&amp;{dict} = { category=dev }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.311809" elapsed="0.000839"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.445902" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=dev 
+ path_url=/jokes/random?category=dev 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.446942" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=dev 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a78946db18a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4622&amp;min_rtt=4468&amp;rtt_var=164&amp;sent=21&amp;recv=24&amp;lost=0&amp;retrans=0&amp;sent_bytes=8606&amp;recv_bytes=1580&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=861&amp;x=0"'} 
+ body={"categories":["dev"],"created_at":"2020-01-05 13:42:19.324003","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"o6dsz6earzip2ivqoipamg","updated_at":"2020-01-05 13:42:19.324003","url":"https://api.chucknorris.io/jokes/o6dsz6earzip2ivqoipamg","value":"All browsers support the hex definitions #chuck and #norris for the colors black and blue."} 
+ </msg>
+<msg time="2025-03-30T22:48:59.447852" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.312853" elapsed="0.135218"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.448386" elapsed="0.000417"/>
+</return>
+<msg time="2025-03-30T22:48:59.450206" level="INFO">${blague} = All browsers support the hex definitions #chuck and #norris for the colors black and blue.</msg>
+<msg time="2025-03-30T22:48:59.450458" level="INFO">${cat} = ['dev']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.311052" elapsed="0.139524"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.450982" elapsed="0.000785"/>
+</kw>
+<var name="${elt}">dev</var>
+<status status="PASS" start="2025-03-30T22:48:59.309895" elapsed="0.142030"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.452557" elapsed="0.000557"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.454612" level="INFO">&amp;{dict} = { category=explicit }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.454103" elapsed="0.000844"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.573562" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=explicit 
+ path_url=/jokes/random?category=explicit 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.573738" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=explicit 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '928a789568938a1c-MRS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"categories":["explicit"],"created_at":"2020-01-05 13:42:29.855523","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"49-k8-aBR2m3Nf-3oHBf7g","updated_at":"2020-01-05 13:42:29.855523","url":"https://api.chucknorris.io/jokes/49-k8-aBR2m3Nf-3oHBf7g","value":"Chuck Norris penis can get as hard as granite!"} 
+ </msg>
+<msg time="2025-03-30T22:48:59.573881" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.455165" elapsed="0.118774"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.574066" elapsed="0.000178"/>
+</return>
+<msg time="2025-03-30T22:48:59.574916" level="INFO">${blague} = Chuck Norris penis can get as hard as granite!</msg>
+<msg time="2025-03-30T22:48:59.575007" level="INFO">${cat} = ['explicit']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.453507" elapsed="0.121554"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.575199" elapsed="0.000373"/>
+</kw>
+<var name="${elt}">explicit</var>
+<status status="PASS" start="2025-03-30T22:48:59.452165" elapsed="0.123476"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.575876" elapsed="0.000264"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.576749" level="INFO">&amp;{dict} = { category=fashion }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.576549" elapsed="0.000268"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.681032" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=fashion 
+ path_url=/jokes/random?category=fashion 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.681267" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=fashion 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:48:59 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367739&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=G7PBdNW1bunaNJPCnmUKg%2B2%2FuKcTEQ5RAwYu1mi2WUg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a78960a848a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4683&amp;min_rtt=4468&amp;rtt_var=82&amp;sent=29&amp;recv=32&amp;lost=0&amp;retrans=0&amp;sent_bytes=11178&amp;recv_bytes=1981&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=1112&amp;x=0"'} 
+ body={"categories":["fashion"],"created_at":"2020-01-05 13:42:18.823766","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"0wdewlp2tz-mt_upesvrjw","updated_at":"2020-01-05 13:42:18.823766","url":"https://api.chucknorris.io/jokes/0wdewlp2tz-mt_upesvrjw","value":"Chuck Norris does not follow fashion trends, they follow him. But then he turns around and kicks their ass. Nobody follows Chuck Norris."} 
+ </msg>
+<msg time="2025-03-30T22:48:59.681614" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.576918" elapsed="0.104794"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.681873" elapsed="0.000247"/>
+</return>
+<msg time="2025-03-30T22:48:59.683126" level="INFO">${blague} = Chuck Norris does not follow fashion trends, they follow him. But then he turns around and kicks their ass. Nobody follows Chuck Norris.</msg>
+<msg time="2025-03-30T22:48:59.683245" level="INFO">${cat} = ['fashion']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.576292" elapsed="0.107029"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.683531" elapsed="0.000445"/>
+</kw>
+<var name="${elt}">fashion</var>
+<status status="PASS" start="2025-03-30T22:48:59.575746" elapsed="0.108327"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.684540" elapsed="0.000509"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.685954" level="INFO">&amp;{dict} = { category=food }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.685616" elapsed="0.000435"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:48:59.911012" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=food 
+ path_url=/jokes/random?category=food 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:48:59.911794" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=food 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '928a7896bca88a1c-MRS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"categories":["food"],"created_at":"2020-01-05 13:42:18.823766","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"tnsit4iqsk2fe7ohwk1qgq","updated_at":"2020-01-05 13:42:18.823766","url":"https://api.chucknorris.io/jokes/tnsit4iqsk2fe7ohwk1qgq","value":"Chuck Norris owns a chain of fast-food restaurants throughout the southwest. They serve nothing but barbecue-flavored ice cream and Hot Pockets."} 
+ </msg>
+<msg time="2025-03-30T22:48:59.912710" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.686189" elapsed="0.226944"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:48:59.913508" elapsed="0.000350"/>
+</return>
+<msg time="2025-03-30T22:48:59.915294" level="INFO">${blague} = Chuck Norris owns a chain of fast-food restaurants throughout the southwest. They serve nothing but barbecue-flavored ice cream and Hot Pockets.</msg>
+<msg time="2025-03-30T22:48:59.915474" level="INFO">${cat} = ['food']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.685293" elapsed="0.230281"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.915962" elapsed="0.000771"/>
+</kw>
+<var name="${elt}">food</var>
+<status status="PASS" start="2025-03-30T22:48:59.684260" elapsed="0.232606"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.917358" elapsed="0.000544"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:48:59.919371" level="INFO">&amp;{dict} = { category=history }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.918836" elapsed="0.000696"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.033753" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=history 
+ path_url=/jokes/random?category=history 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.034332" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=history 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a7898388e8a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=6568&amp;min_rtt=4468&amp;rtt_var=2862&amp;sent=37&amp;recv=40&amp;lost=0&amp;retrans=0&amp;sent_bytes=13827&amp;recv_bytes=2378&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=1460&amp;x=0"'} 
+ body={"categories":["history"],"created_at":"2020-01-05 13:42:19.576875","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"t_wyddbstys8ubos8oni4q","updated_at":"2020-01-05 13:42:19.576875","url":"https://api.chucknorris.io/jokes/t_wyddbstys8ubos8oni4q","value":"Chuck Norris originally wrote the first dictionary. The definition for each word is as follows - A swift roundhouse kick to the face."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.034922" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:48:59.919735" elapsed="0.115306"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.035743" elapsed="0.000383"/>
+</return>
+<msg time="2025-03-30T22:49:00.038435" level="INFO">${blague} = Chuck Norris originally wrote the first dictionary. The definition for each word is as follows - A swift roundhouse kick to the face.</msg>
+<msg time="2025-03-30T22:49:00.038903" level="INFO">${cat} = ['history']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:48:59.918204" elapsed="0.120829"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.039520" elapsed="0.000644"/>
+</kw>
+<var name="${elt}">history</var>
+<status status="PASS" start="2025-03-30T22:48:59.917106" elapsed="0.123195"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.040772" elapsed="0.001289"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.043496" level="INFO">&amp;{dict} = { category=money }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.043069" elapsed="0.000562"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.164820" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=money 
+ path_url=/jokes/random?category=money 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.164998" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=money 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a7898fa918a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=5907&amp;min_rtt=4468&amp;rtt_var=2205&amp;sent=41&amp;recv=44&amp;lost=0&amp;retrans=0&amp;sent_bytes=15270&amp;recv_bytes=2576&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=1597&amp;x=0"'} 
+ body={"categories":["money"],"created_at":"2020-01-05 13:42:26.766831","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"l7U9EO5rTlyvCc9WIJALtw","updated_at":"2020-05-22 06:16:41.133769","url":"https://api.chucknorris.io/jokes/l7U9EO5rTlyvCc9WIJALtw","value":"Chuck Norris is so money he's accepted at all highstreet retailers."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.165137" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.043799" elapsed="0.121389"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.165304" elapsed="0.000160"/>
+</return>
+<msg time="2025-03-30T22:49:00.166108" level="INFO">${blague} = Chuck Norris is so money he's accepted at all highstreet retailers.</msg>
+<msg time="2025-03-30T22:49:00.166197" level="INFO">${cat} = ['money']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.042432" elapsed="0.123818"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.166388" elapsed="0.000298"/>
+</kw>
+<var name="${elt}">money</var>
+<status status="PASS" start="2025-03-30T22:49:00.040531" elapsed="0.126239"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.166991" elapsed="0.000313"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.167991" level="INFO">&amp;{dict} = { category=movie }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.167747" elapsed="0.000316"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.284861" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=movie 
+ path_url=/jokes/random?category=movie 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.285049" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=movie 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a7899bc828a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=5471&amp;min_rtt=4468&amp;rtt_var=1589&amp;sent=45&amp;recv=48&amp;lost=0&amp;retrans=0&amp;sent_bytes=16673&amp;recv_bytes=2774&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=1700&amp;x=0"'} 
+ body={"categories":["movie"],"created_at":"2020-01-05 13:42:19.324003","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"te2c64-ls3owmuy5amehtg","updated_at":"2020-01-05 13:42:19.324003","url":"https://api.chucknorris.io/jokes/te2c64-ls3owmuy5amehtg","value":"The original title for Alien vs. Predator was Alien and Predator vs Chuck Norris. The film was cancelled shortly after going into preproduction. No one would pay nine dollars to see a movie fourteen seconds long."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.285234" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.168177" elapsed="0.117126"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.285447" elapsed="0.000185"/>
+</return>
+<msg time="2025-03-30T22:49:00.286636" level="INFO">${blague} = The original title for Alien vs. Predator was Alien and Predator vs Chuck Norris. The film was cancelled shortly after going into preproduction. No one would pay nine dollars to see a movie fourteen s...</msg>
+<msg time="2025-03-30T22:49:00.286737" level="INFO">${cat} = ['movie']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.167450" elapsed="0.119346"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.286972" elapsed="0.000375"/>
+</kw>
+<var name="${elt}">movie</var>
+<status status="PASS" start="2025-03-30T22:49:00.166879" elapsed="0.120570"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.287807" elapsed="0.000467"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.289104" level="INFO">&amp;{dict} = { category=music }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.288848" elapsed="0.000330"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.401774" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=music 
+ path_url=/jokes/random?category=music 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.402406" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=music 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a789a7e7f8a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=5131&amp;min_rtt=4468&amp;rtt_var=935&amp;sent=50&amp;recv=53&amp;lost=0&amp;retrans=0&amp;sent_bytes=18155&amp;recv_bytes=2972&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=1824&amp;x=0"'} 
+ body={"categories":["music"],"created_at":"2020-01-05 13:42:19.576875","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"7tb4dwgvrwkaqg-a-wzhlq","updated_at":"2020-01-05 13:42:19.576875","url":"https://api.chucknorris.io/jokes/7tb4dwgvrwkaqg-a-wzhlq","value":"Chuck Norris shot the sheriff, but he round house kicked the deputy."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.402975" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.289301" elapsed="0.113880"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.403626" elapsed="0.000537"/>
+</return>
+<msg time="2025-03-30T22:49:00.406037" level="INFO">${blague} = Chuck Norris shot the sheriff, but he round house kicked the deputy.</msg>
+<msg time="2025-03-30T22:49:00.406375" level="INFO">${cat} = ['music']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.288516" elapsed="0.117966"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.406777" elapsed="0.000733"/>
+</kw>
+<var name="${elt}">music</var>
+<status status="PASS" start="2025-03-30T22:49:00.287581" elapsed="0.120055"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.408194" elapsed="0.000422"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.410308" level="INFO">&amp;{dict} = { category=political }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.409819" elapsed="0.000646"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.520803" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=political 
+ path_url=/jokes/random?category=political 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.521377" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=political 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a789b387b8a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4945&amp;min_rtt=4468&amp;rtt_var=676&amp;sent=54&amp;recv=57&amp;lost=0&amp;retrans=0&amp;sent_bytes=19532&amp;recv_bytes=3174&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=1948&amp;x=0"'} 
+ body={"categories":["political"],"created_at":"2020-01-05 13:42:29.855523","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"qwwve4bkrygyuhf6whvt4a","updated_at":"2020-01-05 13:42:29.855523","url":"https://api.chucknorris.io/jokes/qwwve4bkrygyuhf6whvt4a","value":"The 11th commandment is ?Thou shalt not piss off Chuck Norris? This commandment is rarely enforced, as it is impossible to accomplish."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.521836" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.410692" elapsed="0.111387"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.522424" elapsed="0.000325"/>
+</return>
+<msg time="2025-03-30T22:49:00.524173" level="INFO">${blague} = The 11th commandment is ?Thou shalt not piss off Chuck Norris? This commandment is rarely enforced, as it is impossible to accomplish.</msg>
+<msg time="2025-03-30T22:49:00.524595" level="INFO">${cat} = ['political']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.409063" elapsed="0.115644"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.524999" elapsed="0.000727"/>
+</kw>
+<var name="${elt}">political</var>
+<status status="PASS" start="2025-03-30T22:49:00.407858" elapsed="0.117989"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.526451" elapsed="0.000761"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.529125" level="INFO">&amp;{dict} = { category=religion }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.528656" elapsed="0.000748"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.648893" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=religion 
+ path_url=/jokes/random?category=religion 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.649642" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=religion 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:00 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367740&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=HhcBmDpJnsoCBY79t82LPOlqHBEJfsdf8OxRYdcXEPg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a789c0ab98a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4766&amp;min_rtt=4382&amp;rtt_var=555&amp;sent=58&amp;recv=61&amp;lost=0&amp;retrans=0&amp;sent_bytes=20951&amp;recv_bytes=3375&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=2070&amp;x=0"'} 
+ body={"categories":["religion"],"created_at":"2020-01-05 13:42:19.324003","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"bxj_mvi2re-nlis970ejga","updated_at":"2020-01-05 13:42:19.324003","url":"https://api.chucknorris.io/jokes/bxj_mvi2re-nlis970ejga","value":"When God said, \"let there be light\", Chuck Norris said, \"say 'please'.\""} 
+ </msg>
+<msg time="2025-03-30T22:49:00.650246" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.529603" elapsed="0.120872"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.650948" elapsed="0.000564"/>
+</return>
+<msg time="2025-03-30T22:49:00.653318" level="INFO">${blague} = When God said, "let there be light", Chuck Norris said, "say 'please'."</msg>
+<msg time="2025-03-30T22:49:00.653453" level="INFO">${cat} = ['religion']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.528012" elapsed="0.125527"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.653850" elapsed="0.000892"/>
+</kw>
+<var name="${elt}">religion</var>
+<status status="PASS" start="2025-03-30T22:49:00.526196" elapsed="0.128710"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.655505" elapsed="0.000597"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.658032" level="INFO">&amp;{dict} = { category=science }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.657355" elapsed="0.000841"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.879075" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=science 
+ path_url=/jokes/random?category=science 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.879663" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=science 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:01 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367741&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=pDYekqtixEE4TvmD01fR7MOH55r2lY07WMvWhiJvUiM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367741&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=pDYekqtixEE4TvmD01fR7MOH55r2lY07WMvWhiJvUiM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a789d8e998a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4728&amp;min_rtt=4382&amp;rtt_var=293&amp;sent=62&amp;recv=65&amp;lost=0&amp;retrans=0&amp;sent_bytes=22336&amp;recv_bytes=3575&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=2310&amp;x=0"'} 
+ body={"categories":["science"],"created_at":"2020-01-05 13:42:19.324003","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"zfgekm2usfyfra7m5x0wta","updated_at":"2020-01-05 13:42:19.324003","url":"https://api.chucknorris.io/jokes/zfgekm2usfyfra7m5x0wta","value":"If tapped, a Chuck Norris roundhouse kick could power the country of Australia for 44 minutes."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.880205" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.658440" elapsed="0.221981"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.880888" elapsed="0.000547"/>
+</return>
+<msg time="2025-03-30T22:49:00.882924" level="INFO">${blague} = If tapped, a Chuck Norris roundhouse kick could power the country of Australia for 44 minutes.</msg>
+<msg time="2025-03-30T22:49:00.883068" level="INFO">${cat} = ['science']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.656532" elapsed="0.226635"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.883511" elapsed="0.001130"/>
+</kw>
+<var name="${elt}">science</var>
+<status status="PASS" start="2025-03-30T22:49:00.655133" elapsed="0.229647"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.885447" elapsed="0.000503"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.887410" level="INFO">&amp;{dict} = { category=sport }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.886976" elapsed="0.000574"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:00.988251" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=sport 
+ path_url=/jokes/random?category=sport 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:00.989025" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=sport 
+ status=200, reason= 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:01 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367741&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=pDYekqtixEE4TvmD01fR7MOH55r2lY07WMvWhiJvUiM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367741&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=pDYekqtixEE4TvmD01fR7MOH55r2lY07WMvWhiJvUiM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '928a789e38998a1c-MRS', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4688&amp;min_rtt=4382&amp;rtt_var=187&amp;sent=66&amp;recv=69&amp;lost=0&amp;retrans=0&amp;sent_bytes=23733&amp;recv_bytes=3773&amp;delivery_rate=1144069&amp;cwnd=258&amp;unsent_bytes=0&amp;cid=aeef3fbdd0ffa71a&amp;ts=2419&amp;x=0"'} 
+ body={"categories":["sport"],"created_at":"2020-01-05 13:42:19.576875","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"t05rcwc4q6mjhx9zuin2qq","updated_at":"2020-01-05 13:42:19.576875","url":"https://api.chucknorris.io/jokes/t05rcwc4q6mjhx9zuin2qq","value":"The US did not boycott the 1980 Summer Olympics in Moscow due to political reasons: Chuck Norris killed the entire US team with a single round-house kick during TaeKwonDo practice."} 
+ </msg>
+<msg time="2025-03-30T22:49:00.989993" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.887744" elapsed="0.102468"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:00.990695" elapsed="0.000484"/>
+</return>
+<msg time="2025-03-30T22:49:00.992440" level="INFO">${blague} = The US did not boycott the 1980 Summer Olympics in Moscow due to political reasons: Chuck Norris killed the entire US team with a single round-house kick during TaeKwonDo practice.</msg>
+<msg time="2025-03-30T22:49:00.992579" level="INFO">${cat} = ['sport']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.886380" elapsed="0.106287"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.993012" elapsed="0.000818"/>
+</kw>
+<var name="${elt}">sport</var>
+<status status="PASS" start="2025-03-30T22:49:00.885001" elapsed="0.108958"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.994565" elapsed="0.000719"/>
+</kw>
+<kw name="Blague de catégorie" owner="chuckNorris">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-30T22:49:00.997219" level="INFO">&amp;{dict} = { category=travel }</msg>
+<var>&amp;{dict}</var>
+<arg>category=${cat}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.996689" elapsed="0.000673"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:01.178965" level="INFO">GET Request : url=https://api.chucknorris.io/jokes/random?category=travel 
+ path_url=/jokes/random?category=travel 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-30T22:49:01.179603" level="INFO">GET Response : url=https://api.chucknorris.io/jokes/random?category=travel 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 30 Mar 2025 20:49:01 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1743367741&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=pDYekqtixEE4TvmD01fR7MOH55r2lY07WMvWhiJvUiM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1743367741&amp;sid=812dcc77-0bd0-43b1-a5f1-b25750382959&amp;s=pDYekqtixEE4TvmD01fR7MOH55r2lY07WMvWhiJvUiM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '928a789eeaa68a1c-MRS', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"categories":["travel"],"created_at":"2020-01-05 13:42:18.823766","icon_url":"https://api.chucknorris.io/img/avatar/chuck-norris.png","id":"uv5jvundsfuyiuiwswy3ba","updated_at":"2020-01-05 13:42:18.823766","url":"https://api.chucknorris.io/jokes/uv5jvundsfuyiuiwswy3ba","value":"Chuck Norris did in fact, build Rome in a day."} 
+ </msg>
+<msg time="2025-03-30T22:49:01.180400" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_NAME}</arg>
+<arg>${BLAGUE_AU_HASARD}</arg>
+<arg>params=&amp;{dict}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-30T22:49:00.997570" elapsed="0.183092"/>
+</kw>
+<return>
+<value>${resp.json()}[value]</value>
+<value>${resp.json()}[categories]</value>
+<status status="PASS" start="2025-03-30T22:49:01.181080" elapsed="0.000387"/>
+</return>
+<msg time="2025-03-30T22:49:01.182795" level="INFO">${blague} = Chuck Norris did in fact, build Rome in a day.</msg>
+<msg time="2025-03-30T22:49:01.182952" level="INFO">${cat} = ['travel']</msg>
+<var>${blague}</var>
+<var>${cat}</var>
+<arg>${elt}</arg>
+<status status="PASS" start="2025-03-30T22:49:00.995971" elapsed="0.187077"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>categorie:${cat}[0] Blague:${blague}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-30T22:49:01.183404" elapsed="0.000844"/>
+</kw>
+<var name="${elt}">travel</var>
+<status status="PASS" start="2025-03-30T22:49:00.994286" elapsed="0.190124"/>
+</iter>
+<var>${elt}</var>
+<value>@{categories}</value>
+<status status="PASS" start="2025-03-30T22:48:58.828241" elapsed="2.356284"/>
+</for>
+<status status="PASS" start="2025-03-30T22:48:58.424499" elapsed="2.760611"/>
+</test>
+<kw name="Fermer session chuck" owner="chuckNorris" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2025-03-30T22:49:01.188115" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2025-03-30T22:49:01.187893" elapsed="0.000482"/>
+</kw>
+<status status="PASS" start="2025-03-30T22:49:01.187344" elapsed="0.001165"/>
+</kw>
+<doc>type de terminal xterm-256color</doc>
+<status status="PASS" start="2025-03-30T22:48:58.308748" elapsed="2.879888"/>
+</suite>
+<status status="PASS" start="2025-03-30T22:48:58.307196" elapsed="2.883147"/>
+</suite>
+<status status="PASS" start="2025-03-30T22:48:58.294607" elapsed="2.897005"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TPSEPT2023" id="s1" pass="1" fail="0" skip="0">TPSEPT2023</stat>
+<stat name="Rest3" id="s1-s1" pass="1" fail="0" skip="0">TPSEPT2023.Rest3</stat>
+<stat name="chuckNorris" id="s1-s1-s1" pass="1" fail="0" skip="0">TPSEPT2023.Rest3.chuckNorris</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
