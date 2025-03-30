@@ -2,7 +2,7 @@
 Test Tags  toto
 Documentation   Ma suite qui fait pas grand chose
 ...  suite de la doc
-...  suite 2
+...  suite 2 [image.jpg][tto_1.jpg]
 Test Setup    debut de test  # pre condition  pré-requis
 #Test Teardown   fin de test  # post condition 
 Suite Setup   debut de suite  #pre condition pour un ensemble de test
@@ -192,8 +192,8 @@ nombre entre 1 et 10
 
 test du modele
   [Template]  Modele
-  Bonjour  Monsieur   Bonjour-Monsieur
-   Bonjour  Madame   Bonjour-Madame 
+  Bonjour  Monsieur   Bonjour Monsieur
+   Bonjour  Madame   Bonjour Madame 
 *** Keywords ***
 modele concatenation 
    [Arguments]  ${ent1}   ${ent2}   ${sortie}

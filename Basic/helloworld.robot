@@ -1,11 +1,11 @@
 *** Settings ***
 Documentation  de la doc de suite
 ...  suite de la doc
-...  [image.jpg|thumb.jpg]
+...  [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/thumb.jpg]
 Library  String
 Resource   ${CURDIR}/clef.resource
 Suite Setup   gestion suite de test
-Test Teardown  Run Keyword If Test Failed   gestion en cas d'e
+Test Teardown  Run Keyword If Test Failed   gestion en cas d'erreur
 *** Variables ***
 ${IP}   127.0.0.1
 ${FIRMWARE}   12.0.8

@@ -1,9 +1,12 @@
 *** Settings ***
 Resource  motClefPresta.resource
-#Test Setup    Ouvrir Prestashop
-#Test Teardown   Fermer Prestashop
+Test Setup    Ouvrir Prestashop
+Test Teardown   Fermer Prestashop
+
 
 *** Test Cases ***
+test
+  Title Should Be  monPrestashop
 test navigateur
   Ouvrir Prestashop
   Fermer Prestashop
@@ -45,7 +48,13 @@ Combien de fenêtres
   Afficher la liste des Handles
 
 Test de la librairie
-   Ma Fonction
+      ${statut}  Run Keyword And Return Status   Keyword Should Exist  Ma fonction
+   IF  '${statut}' == 'False'
+       Skip  msg=problème de librairie
+   ELSE
+      Ma fonction
+   END
+     
 
 test checkbox
   Selectionner le premier element populaire

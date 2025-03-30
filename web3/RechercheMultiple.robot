@@ -1,6 +1,6 @@
 *** Settings ***
 
-Library   DataDriver  file=donnees.csv
+Library   DataDriver  file=${CURDIR}/donnees.csv
 Resource   motClefPresta.resource
 Test Setup   ouvrir prestashop
 Test Teardown   fermer prestashop
