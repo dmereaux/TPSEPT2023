@@ -16,7 +16,7 @@ Test Blague au hasard
 
 test Blague animal
   [Tags]  tag2
-  ${blague}   ${cat}  ${statut}  Blague de catégorie   animal
+  ${blague}   ${cat}   Blague de catégorie   animal
   Should Be Equal   ${cat}[0]   animal
   should contain  ${blague}   Chuck   ignore_case=True
 
