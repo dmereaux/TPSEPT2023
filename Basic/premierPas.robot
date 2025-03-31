@@ -2,7 +2,8 @@
 Test Tags  toto
 Documentation   Ma suite qui fait pas grand chose
 ...  suite de la doc
-...  suite 2 [image.jpg][tto_1.jpg]
+...  suite 2 [image.jpg|${CURDIR}/tto_1.jpg]
+
 Test Setup    debut de test  # pre condition  pré-requis
 #Test Teardown   fin de test  # post condition 
 Suite Setup   debut de suite  #pre condition pour un ensemble de test

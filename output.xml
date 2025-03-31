@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-03-31T15:18:16.676777" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Basic" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>SUITE SETUP FOR BASIC</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.698277" elapsed="0.000119"/>
+</kw>
+<suite id="s1-s1-s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
+<kw name="debut de suite" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.712514" elapsed="0.000154"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-31T15:18:16.712974" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
+<var>&amp;{proxy}</var>
+<arg>nom=${nom}</arg>
+<arg>motdepasse=${mdp}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.712768" elapsed="0.000229"/>
+</kw>
+<status status="PASS" start="2025-03-31T15:18:16.712264" elapsed="0.000780"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TP1" line="38">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.713637" elapsed="0.000286"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.714055" elapsed="0.000094"/>
+</kw>
+<status status="PASS" start="2025-03-31T15:18:16.713321" elapsed="0.000902"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bonjour les amis</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.714308" elapsed="0.000069"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Log to console</arg>
+<arg>Ca a planté</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.714493" elapsed="0.000046"/>
+</kw>
+<tag>critique</tag>
+<tag>regression</tag>
+<tag>toto</tag>
+<status status="PASS" start="2025-03-31T15:18:16.713084" elapsed="0.001496"/>
+</test>
+<kw name="Run Keyword If Any Tests Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de suite</arg>
+<doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
+<status status="PASS" start="2025-03-31T15:18:16.714813" elapsed="0.000059"/>
+</kw>
+<doc>Ma suite qui fait pas grand chose
+suite de la doc
+suite 2 [image.jpg][tto_1.jpg]</doc>
+<status status="PASS" start="2025-03-31T15:18:16.698451" elapsed="0.016443"/>
+</suite>
+<status status="PASS" start="2025-03-31T15:18:16.697404" elapsed="0.017859"/>
+</suite>
+<status status="PASS" start="2025-03-31T15:18:16.677966" elapsed="0.037590"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">critique</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">toto</stat>
+</tag>
+<suite>
+<stat name="TPSEPT2023" id="s1" pass="1" fail="0" skip="0">TPSEPT2023</stat>
+<stat name="Basic" id="s1-s1" pass="1" fail="0" skip="0">TPSEPT2023.Basic</stat>
+<stat name="premierPas" id="s1-s1-s1" pass="1" fail="0" skip="0">TPSEPT2023.Basic.premierPas</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-31T15:18:16.703765" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot' on line 17: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Users/dominiquemereaux/code/TPSEPT2023/.venv/bin
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python313.zip
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload
+  /Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages</msg>
+</errors>
+</robot>
