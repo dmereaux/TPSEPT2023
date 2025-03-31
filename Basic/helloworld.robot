@@ -10,13 +10,13 @@ Test Teardown  Run Keyword If Test Failed   gestion en cas d'erreur
 ${IP}   127.0.0.1
 ${FIRMWARE}   12.0.8
 ${toto}   %{PATH}
-@{liste1}   1  2  3
+#@{liste1}   1  2  3
 &{dictionnaire}   animal=chien   nom=médor    
 *** Test Cases ***
 afficher IP
     Log to Console  ${IP}
 afficher liste
-  Log To Console   ${liste1[1]}
+  Log To Console   ma nouvelle liste:${liste1}[1]
 afficher Variables 
   [Teardown]  
   log  toto level=WARN  html=True
