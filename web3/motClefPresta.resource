@@ -1,11 +1,11 @@
 *** Settings ***
 #Library   ma_lib_selenium.py
-Library   SeleniumLibrary   implicit_wait=5
+Library   SeleniumLibrary   #implicit_wait=5
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
 ${NAVIGATEUR}     GC
-${PATH_GC}   /Users/dominiquemereaux/code/driver/chromedriver
+#${PATH_GC}   /Users/dominiquemereaux/code/driver/chromedriver
 ${LOC_CHAMP_RECHERCHE}   xpath=//*[@id="search_widget"]/form/input[2]
 ${LOC_NOMBRE_RESULTATS}   //*[@id="js-product-list-top"]/div[1]/p
 ${LOC_LIEN_RECHERCHE}   //*[@id="js-product-list"]//article/div/div[2]/h2/a
@@ -43,12 +43,14 @@ Fermer Prestashop
   
 Faire une recherche
   [Arguments]   ${item}
+  Wait Until Element Is Visible   ${LOC_CHAMP_RECHERCHE}
   Input Text   ${LOC_CHAMP_RECHERCHE}   ${item}
   Press Keys	${LOC_CHAMP_RECHERCHE}	RETURN
   Wait For Condition	return document.title == "Rechercher"  timeout=5
 
 Contrôler le résultat de recherche égal à
   [Arguments]    ${texte-a-vérifier}
+  Wait Until Element Is Visible   ${LOC_NOMBRE_RESULTATS}  5
   Element Text Should Be     ${LOC_NOMBRE_RESULTATS}   ${texte-a-vérifier}
 
 Contrôler pertinence de la recherche

@@ -5,10 +5,10 @@ Documentation   Ma suite qui fait pas grand chose
 ...  suite 2 [image.jpg|${CURDIR}/tto_1.jpg]
 
 Test Setup    debut de test  # pre condition  pré-requis
-#Test Teardown   fin de test  # post condition 
+Test Teardown   fin de test  # post condition 
 Suite Setup   debut de suite  #pre condition pour un ensemble de test
 Suite Teardown  Run Keyword If Any Tests Failed   fin de suite
-Test Teardown   Run Keyword If Test Failed   Log to console   Ca a planté
+#Test Teardown   Run Keyword If Test Failed   Log to console   Ca a planté
 
 #Suite Setup   Log To Console  debut de suite
 #Suite Teardown  Log To Console   fin de suite
@@ -176,8 +176,8 @@ TP8: test concatenation 3
 
 TP9: Test concatenation multiples
   [Template]  modele concatenation
-  Bonjour  Monsieur  BonjourMonsieur
-  Bonjour  madame   Bonjourmadame
+  Bonjour  Monsieur  Bonjour Monsieur
+  Bonjour  madame   Bonjour madame
 
 nombres au hasard
    Repeat Keyword    5 times   nombre au hasard
@@ -228,6 +228,7 @@ Mot clef complexe
 fin de test
    log to console   ${\n}status du test:${TEST_STATUS}
    Log To Console  fermeture de la lisaon serie
+   Run Keyword If Test Passed  log to console   ${\n}le test est passé HOURRA!
 debut de test
     Log To Console  ${\n}debut du test: ${TEST_NAME}
     Log To Console  initialisation de la liaison serie

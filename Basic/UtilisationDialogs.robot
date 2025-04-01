@@ -1,6 +1,6 @@
 *** Settings ***
 Library  Dialogs
-Library	Screenshot	 screenshot_module=PIL
+Library	Screenshot	 screenshot_module=wxpython
 Library  String
 Library   OperatingSystem
 Suite Setup   creation repertoire
@@ -47,6 +47,10 @@ TP4_optionnel
   END
 TEST1
   Saisie Mot de passe
+
+TEST DU MOT
+  ${toto}  mot de 4 lettres
+  Should Be String  ${toto}
 *** Keywords ***
 #TP3
 creation repertoire
@@ -57,4 +61,7 @@ Saisie Mot de passe
    IF  "${PWD}"==""
        ${PWD}  Get Value From User   saisie du mot de passe
    END
+mot de 4 lettres
+   ${mot}  Generate Random String  4  [LETTERS]
+   RETURN   ${mot}
    
