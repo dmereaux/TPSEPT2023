@@ -1,168 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-01T16:27:52.733132" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-02T12:42:46.285824" rpa="false" schemaversion="5">
 <suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
-<suite id="s1-s1" name="Web3" source="/Users/dominiquemereaux/code/TPSEPT2023/web3">
-<kw name="init web" type="SETUP">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>INIT_ROBOT</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-01T16:27:52.756407" elapsed="0.000345"/>
+<suite id="s1-s1" name="Bibli" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli">
+<suite id="s1-s1-s1" name="Tarif7" source="/Users/dominiquemereaux/code/TPSEPT2023/bibli/tarif7.robot">
+<test id="s1-s1-s1-t1" name="test en error" line="17">
+<kw name="Comparer 2 Valeurs" owner="tarif7">
+<msg time="2025-04-02T12:42:46.300417" level="FAIL">la comparaison a echoueé</msg>
+<status status="FAIL" start="2025-04-02T12:42:46.300262" elapsed="0.000561">la comparaison a echoueé</status>
 </kw>
-<status status="PASS" start="2025-04-01T16:27:52.755769" elapsed="0.001296"/>
-</kw>
-<suite id="s1-s1-s1" name="RechercheMultiple" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/RechercheMultiple.robot">
-<test id="s1-s1-s1-t1" name="recherche MUG" line="9">
-<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:27:52.902004" level="INFO">Opening browser 'GC' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
-<arg>${URL}</arg>
-<arg>${NAVIGATEUR}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-01T16:27:52.901693" elapsed="3.560350"/>
-</kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:27:57.128853" level="INFO">Page title is 'monPrestashop'.</msg>
-<arg>monPrestashop</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-04-01T16:27:56.466036" elapsed="0.663279"/>
-</kw>
-<status status="PASS" start="2025-04-01T16:27:52.901130" elapsed="4.228474"/>
-</kw>
-<kw name="modele de recherche">
-<kw name="Faire une recherche" owner="motClefPresta">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:27:57.132026" level="INFO">Typing text 'MUG' into text field 'xpath=//*[@id="search_widget"]/form/input[2]'.</msg>
-<arg>${LOC_CHAMP_RECHERCHE}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-01T16:27:57.131319" elapsed="0.146973"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:27:57.279432" level="INFO">Sending key(s) ('RETURN',) to xpath=//*[@id="search_widget"]/form/input[2] element.</msg>
-<msg time="2025-04-01T16:27:57.553116" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-04-01T16:27:57.553414" level="INFO">Releasing special key RETURN.</msg>
-<arg>${LOC_CHAMP_RECHERCHE}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-04-01T16:27:57.278776" elapsed="0.281506"/>
-</kw>
-<kw name="Wait For Condition" owner="SeleniumLibrary">
-<arg>return document.title == "Rechercher"</arg>
-<arg>timeout=5</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-04-01T16:27:57.560579" elapsed="1.660287"/>
-</kw>
-<arg>${item}</arg>
-<status status="PASS" start="2025-04-01T16:27:57.130942" elapsed="2.090112"/>
-</kw>
-<kw name="Contrôler le résultat de recherche égal à" owner="motClefPresta">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:27:59.221986" level="INFO">Verifying element '//*[@id="js-product-list-top"]/div[1]/p' contains exact text 'Il y a 5 produits.'.</msg>
-<arg>${LOC_NOMBRE_RESULTATS}</arg>
-<arg>${texte-a-vérifier}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-04-01T16:27:59.221712" elapsed="0.021135"/>
-</kw>
-<arg>${msg}</arg>
-<status status="PASS" start="2025-04-01T16:27:59.221242" elapsed="0.021783"/>
-</kw>
-<arg>item=MUG</arg>
-<arg>msg=Il y a 5 produits.</arg>
-<status status="PASS" start="2025-04-01T16:27:57.130361" elapsed="2.112768"/>
-</kw>
-<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-01T16:27:59.243765" elapsed="0.134287"/>
-</kw>
-<status status="PASS" start="2025-04-01T16:27:59.243431" elapsed="0.134988"/>
-</kw>
-<status status="PASS" start="2025-04-01T16:27:52.900067" elapsed="6.478640"/>
+<status status="FAIL" start="2025-04-02T12:42:46.299722" elapsed="0.001503">la comparaison a echoueé</status>
 </test>
-<test id="s1-s1-s1-t2" name="recherche T-shirt" line="9">
-<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:27:59.382316" level="INFO">Opening browser 'GC' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
-<arg>${URL}</arg>
-<arg>${NAVIGATEUR}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-01T16:27:59.381981" elapsed="3.957893"/>
-</kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:28:03.345921" level="INFO">Page title is 'monPrestashop'.</msg>
-<arg>monPrestashop</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-04-01T16:28:03.340469" elapsed="0.005766"/>
-</kw>
-<status status="PASS" start="2025-04-01T16:27:59.381540" elapsed="3.964868"/>
-</kw>
-<kw name="modele de recherche">
-<kw name="Faire une recherche" owner="motClefPresta">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:28:03.348885" level="INFO">Typing text 'T-shirt' into text field 'xpath=//*[@id="search_widget"]/form/input[2]'.</msg>
-<arg>${LOC_CHAMP_RECHERCHE}</arg>
-<arg>${item}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-01T16:28:03.348391" elapsed="0.169365"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:28:03.518647" level="INFO">Sending key(s) ('RETURN',) to xpath=//*[@id="search_widget"]/form/input[2] element.</msg>
-<msg time="2025-04-01T16:28:03.800186" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-04-01T16:28:03.800472" level="INFO">Releasing special key RETURN.</msg>
-<arg>${LOC_CHAMP_RECHERCHE}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-04-01T16:28:03.518030" elapsed="0.289413"/>
-</kw>
-<kw name="Wait For Condition" owner="SeleniumLibrary">
-<arg>return document.title == "Rechercher"</arg>
-<arg>timeout=5</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-04-01T16:28:03.807728" elapsed="1.990114"/>
-</kw>
-<arg>${item}</arg>
-<status status="PASS" start="2025-04-01T16:28:03.347603" elapsed="2.450516"/>
-</kw>
-<kw name="Contrôler le résultat de recherche égal à" owner="motClefPresta">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-04-01T16:28:05.799225" level="INFO">Verifying element '//*[@id="js-product-list-top"]/div[1]/p' contains exact text 'Il y a 1 produit.'.</msg>
-<arg>${LOC_NOMBRE_RESULTATS}</arg>
-<arg>${texte-a-vérifier}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-04-01T16:28:05.798923" elapsed="0.020665"/>
-</kw>
-<arg>${msg}</arg>
-<status status="PASS" start="2025-04-01T16:28:05.798410" elapsed="0.021343"/>
-</kw>
-<arg>item=T-shirt</arg>
-<arg>msg=Il y a 1 produit.</arg>
-<status status="PASS" start="2025-04-01T16:28:03.346956" elapsed="2.472899"/>
-</kw>
-<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-01T16:28:05.820593" elapsed="0.117606"/>
-</kw>
-<status status="PASS" start="2025-04-01T16:28:05.820144" elapsed="0.118240"/>
-</kw>
-<status status="PASS" start="2025-04-01T16:27:59.379426" elapsed="6.559296"/>
-</test>
-<status status="PASS" start="2025-04-01T16:27:52.757160" elapsed="13.183384"/>
+<status status="FAIL" start="2025-04-02T12:42:46.296966" elapsed="0.004615"/>
 </suite>
-<status status="PASS" start="2025-04-01T16:27:52.753389" elapsed="13.189040"/>
+<status status="FAIL" start="2025-04-02T12:42:46.296240" elapsed="0.006146"/>
 </suite>
-<status status="PASS" start="2025-04-01T16:27:52.737380" elapsed="13.205908"/>
+<status status="FAIL" start="2025-04-02T12:42:46.288322" elapsed="0.015210"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TPSEPT2023" id="s1" pass="2" fail="0" skip="0">TPSEPT2023</stat>
-<stat name="Web3" id="s1-s1" pass="2" fail="0" skip="0">TPSEPT2023.Web3</stat>
-<stat name="RechercheMultiple" id="s1-s1-s1" pass="2" fail="0" skip="0">TPSEPT2023.Web3.RechercheMultiple</stat>
+<stat name="TPSEPT2023" id="s1" pass="0" fail="1" skip="0">TPSEPT2023</stat>
+<stat name="Bibli" id="s1-s1" pass="0" fail="1" skip="0">TPSEPT2023.Bibli</stat>
+<stat name="Tarif7" id="s1-s1-s1" pass="0" fail="1" skip="0">TPSEPT2023.Bibli.Tarif7</stat>
 </suite>
 </statistics>
 <errors>

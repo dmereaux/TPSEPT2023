@@ -13,6 +13,8 @@ lecture de la limite
     ${age}  quel age
     Log To Console  ${age}
 exception
-    tarif7.Fin Skip  
+    Fin Skip  
+test en error
+    comparer2valeurs
 
  

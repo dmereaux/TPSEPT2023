@@ -18,7 +18,7 @@ test Blague animal
   [Tags]  tag2
   ${blague}   ${cat}   Blague de catégorie   animal
   Should Be Equal   ${cat}[0]   animal
-  should contain  ${blague}   Chuck   ignore_case=True
+  should contain  ${blague}   Chock   ignore_case=True
 
 test Blague food
   [Tags]  tag2

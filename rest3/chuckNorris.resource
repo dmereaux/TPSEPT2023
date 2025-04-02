@@ -14,13 +14,16 @@ Session Chuck
     Create Session  ${SESSION_NAME}    ${ENDPOINT}   disable_warnings=True
 Afficher contenu
   ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   expected_status=200
-  log to console  ${resp.json()}[value] 
+  log to console  ${resp.json()}[value]
+  # bibliothèque collection 
   ${value}  Get From Dictionary   ${resp.json()}   value
   log to console  ${value}
+  #bibliothèque Json
   ${value}  Get Value from json   ${resp.json()}   value
   log to console  ${value}
 Blague au hasard 
   ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   #expected_status=200
+  #
   ${toto}  Get From Dictionary   ${resp.json()}   value
   Should Be Equal  ${toto}  ${resp.json()}[value]
   ${titi}  Get Value From Json   ${resp.json()}  $.value
@@ -36,3 +39,7 @@ recupérer la liste des catégories
     RETURN  ${resp.json()} 
 Fermer session chuck
     Delete All Sessions 
+Blague au hasard avec categorie
+  [Arguments]  ${cat}
+  ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   params=category=${cat}  expected_status=200
+  RETURN   ${resp.json()}[value]

@@ -1,7 +1,7 @@
 
 from robot.api.deco import keyword,library
 class tarif4:
-    ROBOT_AUTO_KEYWORDS=False
+#    ROBOT_AUTO_KEYWORDS=False
     limit = 12
     def __init__(self,age=12):
         self.limit=age
@@ -12,7 +12,7 @@ class tarif4:
         else :
             return "demi tarif"
     calcul_tarif.robot_name = "tarif ratp"
-    @keyword()
+#    @keyword()
     def any_arguments(*args):
         for arg in args:
             print(arg)
