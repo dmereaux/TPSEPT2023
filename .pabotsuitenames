@@ -1,0 +1,29 @@
+datasources:0ebebbe6e23d49ed3c34b654a580cf6fa0d2a41c
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:d5770469cb8526bd4429ea135f8e241a8456b3a4
+--suite TPSEPT2023.Basic.Bibli1
+--suite TPSEPT2023.Basic.Bonjour
+--suite TPSEPT2023.Basic.Chuck
+--suite TPSEPT2023.Basic.Concatenation
+--suite TPSEPT2023.Basic.Helloworld
+--suite TPSEPT2023.Basic.Testvar
+--suite TPSEPT2023.Basic.UtilisationBibli
+--suite TPSEPT2023.Basic.UtilisationDialogs
+--suite TPSEPT2023.Basic.premierPas
+--suite TPSEPT2023.Basic.testTemplate
+--suite TPSEPT2023.Basic.testVariabilise
+--suite TPSEPT2023.Bibli.Tarif
+--suite TPSEPT2023.Bibli.Tarif0
+--suite TPSEPT2023.Bibli.Tarif1
+--suite TPSEPT2023.Bibli.Tarif2
+--suite TPSEPT2023.Bibli.Tarif3
+--suite TPSEPT2023.Bibli.Tarif4
+--suite TPSEPT2023.Bibli.Tarif5
+--suite TPSEPT2023.Bibli.Tarif6
+--suite TPSEPT2023.Bibli.Tarif7
+--suite TPSEPT2023.Rest3.Google
+--suite TPSEPT2023.Rest3.chuckNorris
+--suite TPSEPT2023.SOAP.Test Addition
+--suite TPSEPT2023.Web3.Prestashop
+--suite TPSEPT2023.Web3.RechercheMultiple

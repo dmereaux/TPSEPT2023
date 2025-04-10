@@ -10,9 +10,7 @@ ${PWD}   ${EMPTY}
 
 *** Test Cases ***
 
-au hasard
-  ${x}  Generate Random String  1  [NUMBERS]
-  Log To Console  ${x}
+
 TP2: essai 
   Execute Manual Step   verifier   message error
 
@@ -20,9 +18,7 @@ TP3: essai
   Execute Manual Step   verifier   message error
   Set Screenshot Directory  ${CURDIR}
   Take Screenshot  tto
-essai Timeout
-  [Timeout]   4
-  sleep   5s
+
 
 TP2: recuperer
    Set Log Level  WARN
@@ -47,10 +43,13 @@ TP4_optionnel
   END
 TEST1
   Saisie Mot de passe
-
+#TP4 optionnel
 TEST DU MOT
   ${toto}  mot de 4 lettres
   Should Be String  ${toto}
+essai Timeout
+  [Timeout]   4
+  sleep   5s
 *** Keywords ***
 #TP3
 creation repertoire
@@ -61,6 +60,7 @@ Saisie Mot de passe
    IF  "${PWD}"==""
        ${PWD}  Get Value From User   saisie du mot de passe
    END
+#TP4 optionnel
 mot de 4 lettres
    ${mot}  Generate Random String  4  [LETTERS]
    RETURN   ${mot}

@@ -11,6 +11,7 @@ afficher
 
 Test Blague au hasard
   [Tags]  tag1
+  Log  message eoifhyzoughrozf  level=TRACE  console=${True}
   ${blague}   Blague au hasard
   should contain  ${blague}   Chuck   ignore_case=True
 
@@ -18,7 +19,7 @@ test Blague animal
   [Tags]  tag2
   ${blague}   ${cat}   Blague de catégorie   animal
   Should Be Equal   ${cat}[0]   animal
-  should contain  ${blague}   Chock   ignore_case=True
+  should contain  ${blague}   Chuck   ignore_case=True
 
 test Blague food
   [Tags]  tag2

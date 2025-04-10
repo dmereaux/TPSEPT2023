@@ -143,17 +143,7 @@ TP7 Optionnel
     Log To Console   c'est bon
   END 
 
-TP8
-    ${prix}   tarif.tarif ratp   13
-     # vérifie l'attendu par rapport à l'obtenu
-     Should Be Equal   plein tarif   ${prix}    test avec 13 en échec
 
-TP9 verification tarif RATP
-  [Template]    verification
-  12      demi tarif
-  11      demi tarif
-  4       demi tarif
-  2       demi tarif
 
 TP11
   log   os:${OS}  INFO
@@ -237,13 +227,6 @@ debut de suite
    &{proxy}    Create Dictionary   nom=${nom}  motdepasse=${mdp}
 fin de suite
   Log To Console   ${\n}fin de la suite
-#TP9
-verification 
-  [Arguments]   ${age}   ${tarif}
-     # appel de la fonction
-     ${prix}   tarif ratp   ${age}
-     # vérifie l'attendu par rapport à l'obtenu
-     Should Be Equal   ${tarif}   ${prix}    test avec ${age} en échec
 nombre au hasard    
     ${random} =	Evaluate	random.randint(0, 10)
     log to console  ${random}
