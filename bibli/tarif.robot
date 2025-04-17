@@ -20,3 +20,10 @@ arguments
 
 test2
   Skippy
+changement de la limite
+   modif age avec 2 pour changer la limite
+   ${s}  Calcul Tarif   3
+   Should Be Equal As Integers  ${s}  4
+   Log To Console  ${s}
+   ${age}  recup age 
+   Should Be Equal As Integers  ${age}  2

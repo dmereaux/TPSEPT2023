@@ -43,3 +43,12 @@ Blague au hasard avec categorie
   [Arguments]  ${cat}
   ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   params=category=${cat}  expected_status=200
   RETURN   ${resp.json()}[value]
+Récuperer une blague de catégorie ${cat1} puis de catégorie ${cat2}
+  ${resp1}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   params=category=${cat1}  expected_status=200
+  ${resp2}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   params=category=${cat2}  expected_status=200
+  RETURN   ${resp1.json()}[value]  ${resp2.json()}[value]
+Afficher des blagues avec les catégories ${list} :
+    FOR  ${elt}  IN  @{list}
+        ${resp1}  GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   params=category=${elt}  expected_status=200
+        Log To Console  ${resp1.json()}[value]
+    END

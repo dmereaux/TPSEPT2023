@@ -1,0 +1,16 @@
+1744880131780	geckodriver	INFO	Listening on 127.0.0.1:57299
+1744880131853	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/Applications/Firefox. ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/3b/z_3bn4n12j59v3g7l9pm1x8r0000gn/T/rust_mozprofile1sGWLV"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1744880132206	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1744880132580	Marionette	INFO	Listening on port 57310
+Read port: 57310
+WebDriver BiDi listening on ws://127.0.0.1:57300
+1744880132765	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+2025-04-17 10:55:32.953 firefox[75273:1352365] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-17 10:55:32.953 firefox[75273:1352365] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+DevTools listening on ws://127.0.0.1:57300/devtools/browser/376b2acc-540c-48fc-be8b-dc1a140dca3a
+JavaScript error: http://www.qualifiez.fr/monPrestashop2/prestashop/js/jquery/ui/jquery-ui.min.js, line 8: TypeError: b is undefined
+1744880137651	Marionette	INFO	Stopped listening on port 57310

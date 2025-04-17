@@ -2,20 +2,30 @@
 from robot.api.deco import keyword,library
 from robot.api import SkipExecution
 from robot.api import Failure
+from robot.api import ContinuableFailure
+
+@library(scope='SUITE',auto_keywords=True)
 class tarif7:
     __version__ = '0.1'
-    ROBOT_LIBRARY_SCOPE = 'TEST'
+
     limit = 12
     def __init__(self,age:int=12):
         self.limit=age
 
     def calcul_tarif(self,age:int):
+        """**Nothing** to see here. Not even in the table below.
+
+    =======  =====  =====
+    Table    here   has
+    nothing  to     see.
+    =======  =====  =====
+    """
         if age > self.limit :
             return  "plein tarif"
         else :
             return "demi tarif"
     calcul_tarif.robot_name = "tarif ratp"
-    @keyword()
+#    @keyword()
     def any_arguments(*args):
         for arg in args:
             print(arg)

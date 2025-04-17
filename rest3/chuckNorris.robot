@@ -51,3 +51,11 @@ afficher la liste des catégories
      ${blague}   ${cat}   Blague de catégorie   ${elt}
      Log To Console  categorie:${cat}[0] Blague:${blague}
    END
+
+test embedded
+  ${blague1}  ${blague2}  Récuperer une blague de catégorie animal puis de catégorie science
+  log to console  ${blague1}
+  log to console  ${blague2}   
+test embedded 2
+  VAR    @{list}    science  animal
+  Afficher des blagues avec les catégories @{list} :

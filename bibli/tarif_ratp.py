@@ -7,9 +7,9 @@ class tarif_ratp():
    limit=12
    tarif_base=4
 
-   def __init__(self, ageLimit=12):
+   def __init__(self, ageLimit:int=12):
         print(ageLimit)
-        self.limit = int(ageLimit)
+        self.limit = ageLimit
    @keyword('calcul tarif',types={'age':int})
    def calcul_tarif(self,age):
       if (age < self.limit):
@@ -18,7 +18,7 @@ class tarif_ratp():
    @keyword('recup age')
    def get_limit(self):
       return self.limit
-   @keyword('modif age')
+   @keyword('modif age avec ${age} pour changer la limite',types={'age':int})
    def set_limit(self,age):
       self.limit=age
    @keyword()

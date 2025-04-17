@@ -11,7 +11,7 @@ class tarif:
     def __init__(self,age:int =12):
         self.limit=age
         print("appel de la fonction init")
-    @keyword(name="tarif ratp",types={'age': int} )
+    @keyword(name="Avec un age de ${age} le tarif est",types={'age': int} )
     def calcul_tarif(self,age):
         self.toto = self.toto + 1
         logger.info("appel de la fonction calcul tarif")
