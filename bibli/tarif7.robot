@@ -8,7 +8,10 @@ age
 arguments
   Any Arguments  1  2  3  4  bonjour
 modification de la limite
-    modifier age  2 
+    utiliser 2 pour modifier l age limit
+    ${lim}  quel age
+    Log To Console  ${lim}
+
 lecture de la limite
     ${age}  quel age
     Log To Console  ${age}

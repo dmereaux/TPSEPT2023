@@ -12,6 +12,7 @@ class toto(threading.Thread):
         robot.run("./Basic/helloworld.robot")
 
 
+
         while self.running:
             time.sleep(1)
 

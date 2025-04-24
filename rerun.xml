@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-23T21:20:00.745966" rpa="false" schemaversion="5">
+<suite id="s1" name="PremierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/PremierPas.robot">
+<kw name="debut de suite" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.763497" elapsed="0.000086"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-23T21:20:00.763779" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
+<var>&amp;{proxy}</var>
+<arg>nom=${nom}</arg>
+<arg>motdepasse=${mdp}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.763660" elapsed="0.000131"/>
+</kw>
+<status status="PASS" start="2025-04-23T21:20:00.763289" elapsed="0.000530"/>
+</kw>
+<test id="s1-t1" name="TP9: Test concatenation multiples" line="182">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.764074" elapsed="0.000068"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.764191" elapsed="0.000044"/>
+</kw>
+<status status="PASS" start="2025-04-23T21:20:00.764001" elapsed="0.000263"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-04-23T21:20:00.764476" level="INFO">${ret} = Bonjour_Monsieur</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.764419" elapsed="0.000067"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.764522" elapsed="0.000061"/>
+</kw>
+<arg>Bonjour</arg>
+<arg>Monsieur</arg>
+<arg>Bonjour_Monsieur</arg>
+<status status="PASS" start="2025-04-23T21:20:00.764331" elapsed="0.000270"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-04-23T21:20:00.764802" level="INFO">${ret} = aurevoir_Machin</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.764748" elapsed="0.000063"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.764843" elapsed="0.000050"/>
+</kw>
+<arg>aurevoir</arg>
+<arg>Machin</arg>
+<arg>aurevoir_Machin</arg>
+<status status="PASS" start="2025-04-23T21:20:00.764663" elapsed="0.000247"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-04-23T21:20:00.765106" level="INFO">${ret} = Bonjour_madame</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.765055" elapsed="0.000059"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.765146" elapsed="0.000052"/>
+</kw>
+<arg>Bonjour</arg>
+<arg>madame</arg>
+<arg>Bonjour_madame</arg>
+<status status="PASS" start="2025-04-23T21:20:00.764968" elapsed="0.000247"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-04-23T21:20:00.765407" level="INFO">${ret} = aurevoir_toto</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.765356" elapsed="0.000059"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.765447" elapsed="0.000048"/>
+</kw>
+<arg>aurevoir</arg>
+<arg>toto</arg>
+<arg>aurevoir_toto</arg>
+<status status="PASS" start="2025-04-23T21:20:00.765272" elapsed="0.000240"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.765581" elapsed="0.000028"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-04-23T21:20:00.763843" elapsed="0.001793"/>
+</test>
+<kw name="Run Keyword If Any Tests Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>fin de suite</arg>
+<doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
+<status status="PASS" start="2025-04-23T21:20:00.765929" elapsed="0.000052"/>
+</kw>
+<doc>Ma suite qui fait pas grand chose
+suite de la doc
+suite 2 [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/Basic/tto_1.jpg]</doc>
+<status status="PASS" start="2025-04-23T21:20:00.746939" elapsed="0.019060"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">toto</stat>
+</tag>
+<suite>
+<stat name="PremierPas" id="s1" pass="1" fail="0" skip="0">PremierPas</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-04-23T21:20:00.760859" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/PremierPas.robot' on line 19: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Users/dominiquemereaux/code/TPSEPT2023/.venv/bin
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python313.zip
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload
+  /Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages
+  /opt/homebrew/opt/python-tk@3.13/libexec</msg>
+</errors>
+</robot>

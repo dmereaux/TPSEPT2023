@@ -4,7 +4,7 @@ from robot.api import SkipExecution
 from robot.api import Failure
 from robot.api import ContinuableFailure
 
-@library(scope='SUITE',auto_keywords=True)
+@library(scope='SUITE',auto_keywords=False)
 class tarif7:
     __version__ = '0.1'
 
@@ -32,8 +32,8 @@ class tarif7:
     @keyword('quel age')        
     def get_limit(self):
         return self.limit
-    @keyword('modifier age')  
-    def set_limit(self,value):
+    @keyword('utiliser ${value} pour modifier l age limit')  
+    def set_limit(self,value:int):
         self.limit=value
 
     def fin_skip(self):

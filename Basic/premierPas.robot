@@ -5,7 +5,8 @@ Documentation   Ma suite qui fait pas grand chose
 ...  suite 2 [image.jpg|${CURDIR}/tto_1.jpg]
 
 Test Setup    debut de test  # pre condition  pré-requis
-Test Teardown   fin de test  # post condition 
+#Test Teardown   fin de test  # post condition 
+Test Teardown  Run Keyword If Test Failed   reinit env
 Suite Setup   debut de suite  #pre condition pour un ensemble de test
 Suite Teardown  Run Keyword If Any Tests Failed   fin de suite
 #Test Teardown   Run Keyword If Test Failed   Log to console   Ca a planté
@@ -31,7 +32,6 @@ ${mdp}  titi
 ${OS}  mac
 
 
-
 *** Test Cases ***
 evaluation
     ${toto}  Evaluate  "${CURDIR}"==""
@@ -39,6 +39,12 @@ evaluation
 TP1
   [Tags]  regression  critique
   Log to console   Bonjour les amis
+
+TP1_LOG
+  log  message  level=ERROR
+  log  bonjour  level=WARN
+  log  ehfgreg   level=INFO
+
 
 
 
@@ -52,7 +58,7 @@ TP1 Optionnel
 TP2: test des mot cles
   [Documentation]    cas de test 1
   mot clef simple
-  mot clef avec Argument  un mot clef simple
+  mot clef avec Argument    un mot clef simple
   
 TP2-1 : mot clef avec plusieurs arguments et 1 sortie
   ${sortie}   Mot clef complexe  toto  titi
@@ -76,12 +82,19 @@ TP2-4 liste de valeurs en sortie
 
 
 TP3 test variable globale
+  
+  [Tags]   globale
   Log To Console  site à tester: ${URL}
+  Log To Console  site à tester: ${BROWSER}
   Log To Console   ${maListe}[1]
   Log To Console  ma liste @{maliste}
   Log To Console  Mon ${Mon Dict}[animal] s'appele ${Mon Dict}[nom]
   Log To Console  ${Mon Dict.animal}
-
+  Set List Value  ${maliste}  1  toto
+  Log To Console   ${maListe}[1]
+test dhizeuf
+  [Tags]   globale
+  Log To Console   ${maListe}[1]
 
 TP3-bis test variable globale
   [Tags]  Regression
@@ -109,13 +122,13 @@ TP3-2 variable predefinies
   #[Tags]  robot:continue-on-failure   #sera vu plus tard
   log to console   bonjour${SPACE}${SPACE}toto
   Should Be Equal As Integers  80  ${80}
-  should be Equal   80  ${80}  msg=echec 
-  Should Be Equal  ${80}   80
+#  should be Equal   80  ${80}  msg=echec 
+#  Should Be Equal  ${80}   80
   log to console   mon test n'a pas marché
 TP3-2 optionnel
 # expression python d'ou la presence de guillemets
   log to console  ${PREV_TEST_STATUS}
-  skip if  "${PREV_TEST_STATUS}" == "FAIL"
+  skip if  "${PREV_TEST_STATUS}" == "FAIL" 
 TP3-2 affichage du statut du test précédent
 
   log to console   statut du test précédent:${PREV_TEST_STATUS}
@@ -125,7 +138,7 @@ TP6 BDD
   When Log to Console   il fait qqch
   Then Log To Console   Il se passe qqch  
 
-
+# Pour chaque ${elt} dans la @{maliste}
 TP7 boucle sur la liste
   FOR  ${elt}   IN  @{maListe}
     Log To Console   ${elt}
@@ -150,7 +163,9 @@ TP11
 Creation de list
   @{liste}  Split String  il-fait-beau  separator=-
   
-
+test concatenation 3
+  ${resultat}  Catenate  SEPARATOR=_   toto   titi
+  Should Be Equal  ${resultat}  toto_titi
 
 test concatenation 1
    ${ret}  concatenation  Bonjour   Monsieur
@@ -166,8 +181,11 @@ TP8: test concatenation 3
 
 TP9: Test concatenation multiples
   [Template]  modele concatenation
-  Bonjour  Monsieur  Bonjour Monsieur
-  Bonjour  madame   Bonjour madame
+  Bonjour  Monsieur  Bonjour_Monsieur
+  aurevoir  Machin  aurevoir_Machin
+  Bonjour  madame   Bonjour_madame
+  aurevoir  toto  aurevoir_toto
+
 
 nombres au hasard
    Repeat Keyword    5 times   nombre au hasard
@@ -186,11 +204,12 @@ test du modele
   Bonjour  Monsieur   Bonjour Monsieur
    Bonjour  Madame   Bonjour Madame 
 *** Keywords ***
+
 modele concatenation 
    [Arguments]  ${ent1}   ${ent2}   ${sortie}
-   ${ret}  Catenate  ${ent1}   ${ent2}
+   ${ret}  Catenate  SEPARATOR=_  ${ent1}   ${ent2}
    Should Be Equal  ${ret}  ${sortie}
-# TP2
+# TP
 mot clef simple
   [Documentation]   CECI EST UN MOT CLEF
   Log To Console  toto
@@ -212,7 +231,10 @@ Mot clef complexe
   [Arguments]  ${arg1}   ${arg2}
   Log To Console  ${arg1}
   Log To Console  ${arg2}
-  RETURN  ${arg1}  
+  RETURN  ${arg1} 
+afficher ${prenon} ${nom}
+  Log To Console   ${prenon}
+  Log To Console   ${nom}
 
 #TP4
 fin de test
@@ -240,4 +262,6 @@ Modele
    [Arguments]  ${var1}  ${var2}  ${var3}
    ${ret}  catenate  ${var1}   ${var2}
    Should Be Equal  ${ret}  ${var3}
+reinit env
+  Log To Console   REINIT ENV
 

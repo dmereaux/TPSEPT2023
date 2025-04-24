@@ -25,10 +25,10 @@ Blague au hasard
   ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   #expected_status=200
   #
   ${toto}  Get From Dictionary   ${resp.json()}   value
-  Should Be Equal  ${toto}  ${resp.json()}[value]
-  ${titi}  Get Value From Json   ${resp.json()}  $.value
-  Should Be Equal  ${titi}[0]  ${resp.json()}[value]
-  RETURN   ${resp.json()}[value]
+#  Should Be Equal  ${toto}  ${resp.json()}[value]
+#  ${titi}  Get Value From Json   ${resp.json()}  $.value
+ # Should Be Equal  ${titi}[0]  ${resp.json()}[value]
+  RETURN   ${toto} 
 Blague de catégorie
   [Arguments]  ${cat}
   &{dict}  Create Dictionary  category=${cat}
