@@ -11,7 +11,6 @@ afficher
 
 Test Blague au hasard
   [Tags]  tag1
-  Log  message eoifhyzoughrozf  level=TRACE  console=${True}
   ${blague}   Blague au hasard
   should contain  ${blague}   Chuck   ignore_case=True
 

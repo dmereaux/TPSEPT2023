@@ -22,13 +22,13 @@ Afficher contenu
   ${value}  Get Value from json   ${resp.json()}   value
   log to console  ${value}
 Blague au hasard 
-  ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   #expected_status=200
+  ${resp}   GET On Session   ${SESSION_NAME}   ${BLAGUE_AU_HASARD}   expected_status=200
   #
-  ${toto}  Get From Dictionary   ${resp.json()}   value
+ # ${toto}  Get From Dictionary   ${resp.json()}   value
 #  Should Be Equal  ${toto}  ${resp.json()}[value]
 #  ${titi}  Get Value From Json   ${resp.json()}  $.value
  # Should Be Equal  ${titi}[0]  ${resp.json()}[value]
-  RETURN   ${toto} 
+  RETURN   ${resp.json()}[value]
 Blague de catégorie
   [Arguments]  ${cat}
   &{dict}  Create Dictionary  category=${cat}

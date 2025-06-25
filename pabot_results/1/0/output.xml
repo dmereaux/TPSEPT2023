@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-24T17:09:06.837027" rpa="false" schemaversion="5">
+<suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
+<suite id="s1-s1" name="Web3" source="/Users/dominiquemereaux/code/TPSEPT2023/web3">
+<kw name="init web" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>INIT_ROBOT</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-24T17:09:06.851827" elapsed="0.000087"/>
+</kw>
+<status status="PASS" start="2025-04-24T17:09:06.851647" elapsed="0.000319"/>
+</kw>
+<suite id="s1-s1-s1" name="Prestashop" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/prestashop.robot">
+<test id="s1-s1-s1-t1" name="Recherche MUG" line="13">
+<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-24T17:09:06.920225" level="INFO">Opening browser 'firefox' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
+<msg time="2025-04-24T17:09:59.725207" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-04-24T17:09:59.726109" level="FAIL">NoSuchDriverException: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</msg>
+<arg>${URL}</arg>
+<arg>${NAVIGATEUR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-04-24T17:09:06.920097" elapsed="52.814999">NoSuchDriverException: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>monPrestashop</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2025-04-24T17:09:59.735798" elapsed="0.000094"/>
+</kw>
+<status status="FAIL" start="2025-04-24T17:09:06.919825" elapsed="52.816368">NoSuchDriverException: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</kw>
+<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-24T17:09:59.737273" elapsed="0.000204"/>
+</kw>
+<status status="PASS" start="2025-04-24T17:09:59.736871" elapsed="0.000690"/>
+</kw>
+<status status="FAIL" start="2025-04-24T17:09:06.919560" elapsed="52.818073">Setup failed:
+NoSuchDriverException: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</test>
+<status status="FAIL" start="2025-04-24T17:09:06.851994" elapsed="52.886238"/>
+</suite>
+<status status="FAIL" start="2025-04-24T17:09:06.849341" elapsed="52.889547"/>
+</suite>
+<status status="FAIL" start="2025-04-24T17:09:06.844330" elapsed="52.895043"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TPSEPT2023" id="s1" pass="0" fail="1" skip="0">TPSEPT2023</stat>
+<stat name="Web3" id="s1-s1" pass="0" fail="1" skip="0">TPSEPT2023.Web3</stat>
+<stat name="Prestashop" id="s1-s1-s1" pass="0" fail="1" skip="0">TPSEPT2023.Web3.Prestashop</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

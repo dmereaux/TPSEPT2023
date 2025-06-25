@@ -6,7 +6,7 @@ Test Template  modele de recherche
 Library  DataDriver  file=data.csv
 
 *** Variables ***
-${RESSOURCE}  prestashop.resource
+${RESSOURCE}  prestaSelenium.resource
 
 *** Test Cases ***
 recherche

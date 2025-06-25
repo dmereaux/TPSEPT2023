@@ -1,6 +1,5 @@
 *** Settings ***
-Library   tarif5  11  
-
+Library   tarif5  11
 *** Test Cases ***
 age
    ${s}  tarif ratp   12

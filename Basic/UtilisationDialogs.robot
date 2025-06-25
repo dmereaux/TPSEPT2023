@@ -13,6 +13,7 @@ ${PWD}   ${EMPTY}
 
 TP2: essai 
   Execute Manual Step   verifier   message error
+  Take Screenshot   ${EXECDIR}/toto
 
 TP3: essai 
   Execute Manual Step   verifier   message error

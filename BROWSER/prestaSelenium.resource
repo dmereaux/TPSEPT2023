@@ -33,6 +33,7 @@ vérifier résultat de recherche
   [Arguments]    ${texte-a-vérifier}
   Wait Until Element Is Visible   ${LOC_NOMBRE_RESULTATS}  5
   Element Text Should Be     ${LOC_NOMBRE_RESULTATS}   ${texte-a-vérifier}
+    Wait For Condition  condition=return document.title=="Rechercher"   timeout=10
 
 Contrôler pertinence de la recherche
   [Arguments]   ${mot}

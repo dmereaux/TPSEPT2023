@@ -10,7 +10,7 @@ Test Teardown  Run Keyword If Test Failed   gestion en cas d'erreur
 ${IP}   127.0.0.1
 ${FIRMWARE}   12.0.8
 ${toto}   %{PATH}
-#@{liste1}   1  2  3
+@{liste1}   1  2  3
 &{dictionnaire}   animal=chien   nom=médor    
 *** Test Cases ***
 afficher IP
@@ -27,6 +27,8 @@ afficher Variables
   @{maliste}   Create List   @{l}
   Log To Console  ${\n}liste:${maliste}[0]
   Set Global Variable  @{maliste}
+test suivant
+  log to console  @{maliste}
 afficher liste1
   FOR  ${elt}   IN  @{liste1}
     Log To Console  ${\n}valeur: ${elt}
@@ -48,6 +50,7 @@ afficher les constantes
 Helloworld
   [Tags]   regression   toto titi  world
   [Documentation]   doc de test
+  [Teardown] 
   Log To Console  Bonjour
   mon premier mot cle
 hello
@@ -62,10 +65,14 @@ hello
 afficher variables prédéfinies
    Log To Console  ${\n}${CURDIR},${\n}${TEMPDIR},${\n}${EXECDIR}
 Comparer un entier avec une chaine
-   Should Be Equal As Integers  80  ${80}
+   Should Be Equal   80  ${80}
+
+
+
 #   Should be equal  80  ${80}
    Log To Console   le ttest ne s'est pas arreté
    Log To Console   ${\n}staut:${PREV_TEST_STATUS}
+
 test skippé
   SKIP IF  "${PREV_TEST_STATUS}" == "FAIL"
 modele 

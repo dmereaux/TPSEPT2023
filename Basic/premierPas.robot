@@ -92,6 +92,7 @@ TP3 test variable globale
   Log To Console  ${Mon Dict.animal}
   Set List Value  ${maliste}  1  toto
   Log To Console   ${maListe}[1]
+
 test dhizeuf
   [Tags]   globale
   Log To Console   ${maListe}[1]
@@ -137,6 +138,7 @@ TP6 BDD
   Given log to Console  ${\n}un individu
   When Log to Console   il fait qqch
   Then Log To Console   Il se passe qqch  
+
 
 # Pour chaque ${elt} dans la @{maliste}
 TP7 boucle sur la liste
@@ -203,6 +205,18 @@ test du modele
   [Template]  Modele
   Bonjour  Monsieur   Bonjour Monsieur
    Bonjour  Madame   Bonjour Madame 
+
+test du modele 2
+  [Template]  modele concatenation
+  titi  toto   titi_tot
+  tata  tutu   tata_TU
+
+test nombre au hasard
+  ${res}  nombre au hasard
+  ${bool}   Evaluate  0<= ${res} <= 10
+
+  Should Be True   ${bool}
+  Repeat Keyword  100 times  nombre au hasard
 *** Keywords ***
 
 modele concatenation 

@@ -1,0 +1,36 @@
+==============================================================================
+TPSEPT2023                                                                    
+==============================================================================
+TPSEPT2023.Web3                                                               
+==============================================================================
+INIT_ROBOT
+TPSEPT2023.Web3.Prestashop                                                    
+==============================================================================
+Recherche MUG                                                           
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/web3/prestashop.robot:13
+    T:  Recherche MUG    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/web3/prestashop.robot:3
+      Ouvrir Prestashop    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/dominiquemereaux/code/TPSEPT2023/web3/motClefPresta.resource:38
+      Open Browser    ${URL}    ${NAVIGATEUR}
+      |  ${URL} = http://www.qualifiez.fr/monPrestashop2/prestashop/index.php (str)
+      |  ${NAVIGATEUR} = firefox (str)
+______________________________________________________________________________
+| FAIL |
+Setup failed:
+NoSuchDriverException: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+------------------------------------------------------------------------------
+TPSEPT2023.Web3.Prestashop                                            | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+TPSEPT2023.Web3                                                       | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+TPSEPT2023                                                            | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  /Users/dominiquemereaux/code/TPSEPT2023/pabot_results/1/0/output.xml

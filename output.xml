@@ -1,68 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-24T12:24:01.927044" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-06-24T10:17:53.920358" rpa="false" schemaversion="5">
 <suite id="s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
 <kw name="debut de suite" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}debut de la suite</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.943917" elapsed="0.000085"/>
+<status status="PASS" start="2025-06-24T10:17:53.940664" elapsed="0.000093"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-24T12:24:01.944195" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
+<msg time="2025-06-24T10:17:53.940955" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
 <var>&amp;{proxy}</var>
 <arg>nom=${nom}</arg>
 <arg>motdepasse=${mdp}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944071" elapsed="0.000138"/>
+<status status="PASS" start="2025-06-24T10:17:53.940828" elapsed="0.000141"/>
 </kw>
-<status status="PASS" start="2025-04-24T12:24:01.943696" elapsed="0.000546"/>
+<status status="PASS" start="2025-06-24T10:17:53.940429" elapsed="0.000572"/>
 </kw>
-<test id="s1-t1" name="TP6 BDD" line="136">
+<test id="s1-t1" name="TP11" line="163">
 <kw name="debut de test" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}debut du test: ${TEST_NAME}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944497" elapsed="0.000068"/>
+<status status="PASS" start="2025-06-24T10:17:53.941246" elapsed="0.000248"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>initialisation de la liaison serie</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944612" elapsed="0.000047"/>
+<status status="PASS" start="2025-06-24T10:17:53.941533" elapsed="0.000042"/>
 </kw>
-<status status="PASS" start="2025-04-24T12:24:01.944413" elapsed="0.000273"/>
+<status status="PASS" start="2025-06-24T10:17:53.941165" elapsed="0.000432"/>
 </kw>
-<kw name="Given log to Console" owner="BuiltIn">
-<arg>${\n}un individu</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944754" elapsed="0.000056"/>
-</kw>
-<kw name="When Log to Console" owner="BuiltIn">
-<arg>il fait qqch</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944864" elapsed="0.000040"/>
-</kw>
-<kw name="Then Log To Console" owner="BuiltIn">
-<arg>Il se passe qqch</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944957" elapsed="0.000041"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-24T10:17:53.941702" level="INFO">os:posix</msg>
+<arg>os:${OS}</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-24T10:17:53.941646" elapsed="0.000073"/>
 </kw>
 <kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
 <arg>reinit env</arg>
 <doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.945077" elapsed="0.000028"/>
+<status status="PASS" start="2025-06-24T10:17:53.941791" elapsed="0.000030"/>
 </kw>
 <tag>toto</tag>
-<status status="PASS" start="2025-04-24T12:24:01.944267" elapsed="0.000865"/>
+<status status="PASS" start="2025-06-24T10:17:53.941026" elapsed="0.000819"/>
 </test>
 <kw name="Run Keyword If Any Tests Failed" owner="BuiltIn" type="TEARDOWN">
 <arg>fin de suite</arg>
 <doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.945312" elapsed="0.000034"/>
+<status status="PASS" start="2025-06-24T10:17:53.942049" elapsed="0.000052"/>
 </kw>
 <doc>Ma suite qui fait pas grand chose
 suite de la doc
 suite 2 [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/Basic/tto_1.jpg]</doc>
-<status status="PASS" start="2025-04-24T12:24:01.928018" elapsed="0.017340"/>
+<status status="PASS" start="2025-06-24T10:17:53.925431" elapsed="0.016689"/>
 </suite>
 <statistics>
 <total>
@@ -76,7 +68,7 @@ suite 2 [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/Basic/tto_1.jpg]</doc
 </suite>
 </statistics>
 <errors>
-<msg time="2025-04-24T12:24:01.941276" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot' on line 19: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
+<msg time="2025-06-24T10:17:53.937387" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot' on line 19: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
 Traceback (most recent call last):
   None
 PYTHONPATH:

@@ -10,6 +10,7 @@ ouvrir prestashop
   New Browser  ${BROWSER}  False
   New Page
   Go To   ${URL}  10
+  Get Title  ==  monPrestashop 
   
 fermer prestashop
   Close Browser

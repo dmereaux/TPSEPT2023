@@ -1,0 +1,94 @@
+{"level":30,"time":"2025-06-24T14:04:45.060Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Listening on 56289"}
+(node:44576) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-06-24T14:04:46.168Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-06-24T14:04:46.610Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Adding browser to stack: chromium, version: 134.0.6998.35"}
+{"level":30,"time":"2025-06-24T14:04:46.611Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-06-24T14:04:46.611Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-06-24T14:04:46.615Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-06-24T14:04:46.615Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-06-24T14:04:46.622Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Changed active context"}
+{"level":30,"time":"2025-06-24T14:04:46.974Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-06-24T14:04:46.974Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Changed active page"}
+{"level":30,"time":"2025-06-24T14:04:47.087Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-06-24T14:04:47.091Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-06-24T14:04:52.402Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method goTo"}
+{"level":30,"time":"2025-06-24T14:04:52.413Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-06-24T14:04:52.413Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"search_widget\"]/form/input[2] in page."}
+{"level":30,"time":"2025-06-24T14:04:52.427Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-06-24T14:04:52.429Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method press"}
+{"level":30,"time":"2025-06-24T14:04:52.429Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"search_widget\"]/form/input[2] in page."}
+{"level":30,"time":"2025-06-24T14:04:54.379Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method press"}
+{"level":30,"time":"2025-06-24T14:04:54.386Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-06-24T14:04:54.401Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Removed page=8291d9db-e3c1-489a-9429-ad3d13c7a27a from context=81dfc14f-cd1b-461e-ab19-19017d7885a6 page stack"}
+{"level":30,"time":"2025-06-24T14:04:54.534Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-06-24T14:04:54.538Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:04:54.538Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:04:54.542Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:04:54.542Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:04:54.544Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-06-24T14:04:54.859Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Adding browser to stack: chromium, version: 134.0.6998.35"}
+{"level":30,"time":"2025-06-24T14:04:54.859Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-06-24T14:04:54.859Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-06-24T14:04:54.864Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-06-24T14:04:54.864Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-06-24T14:04:54.872Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Changed active context"}
+{"level":30,"time":"2025-06-24T14:04:55.219Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-06-24T14:04:55.219Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Changed active page"}
+{"level":30,"time":"2025-06-24T14:04:55.328Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-06-24T14:04:55.332Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-06-24T14:05:01.446Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method goTo"}
+{"level":30,"time":"2025-06-24T14:05:01.456Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-06-24T14:05:01.456Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"search_widget\"]/form/input[2] in page."}
+{"level":30,"time":"2025-06-24T14:05:01.469Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-06-24T14:05:01.470Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method press"}
+{"level":30,"time":"2025-06-24T14:05:01.470Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"search_widget\"]/form/input[2] in page."}
+{"level":30,"time":"2025-06-24T14:05:04.147Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method press"}
+{"level":30,"time":"2025-06-24T14:05:04.154Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-06-24T14:05:04.163Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Removed page=3f3d3dab-fab7-4470-821e-a5fc787812eb from context=8fe2d49f-64ea-468d-8a38-d2994c7f7d06 page stack"}
+{"level":30,"time":"2025-06-24T14:05:04.296Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-06-24T14:05:04.298Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:05:04.298Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-06-24T14:05:04.301Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:05:04.301Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-06-24T14:05:04.829Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-06-24T14:05:04.830Z","pid":44576,"hostname":"MacBook-Air-de-dominique.local","msg":"End of node method closeAllBrowsers"}
