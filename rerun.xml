@@ -1,68 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-24T12:24:01.927044" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-06-25T11:55:09.910092" rpa="false" schemaversion="5">
 <suite id="s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
 <kw name="debut de suite" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}debut de la suite</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.943917" elapsed="0.000085"/>
+<status status="PASS" start="2025-06-25T11:55:09.926965" elapsed="0.000086"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-24T12:24:01.944195" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
+<msg time="2025-06-25T11:55:09.927240" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
 <var>&amp;{proxy}</var>
 <arg>nom=${nom}</arg>
 <arg>motdepasse=${mdp}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944071" elapsed="0.000138"/>
+<status status="PASS" start="2025-06-25T11:55:09.927125" elapsed="0.000127"/>
 </kw>
-<status status="PASS" start="2025-04-24T12:24:01.943696" elapsed="0.000546"/>
+<status status="PASS" start="2025-06-25T11:55:09.926762" elapsed="0.000519"/>
 </kw>
-<test id="s1-t1" name="TP6 BDD" line="136">
+<test id="s1-t1" name="test du modele 2" line="209">
 <kw name="debut de test" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${\n}debut du test: ${TEST_NAME}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944497" elapsed="0.000068"/>
+<status status="PASS" start="2025-06-25T11:55:09.927528" elapsed="0.000068"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>initialisation de la liaison serie</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944612" elapsed="0.000047"/>
+<status status="PASS" start="2025-06-25T11:55:09.927644" elapsed="0.000044"/>
 </kw>
-<status status="PASS" start="2025-04-24T12:24:01.944413" elapsed="0.000273"/>
+<status status="PASS" start="2025-06-25T11:55:09.927454" elapsed="0.000260"/>
 </kw>
-<kw name="Given log to Console" owner="BuiltIn">
-<arg>${\n}un individu</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944754" elapsed="0.000056"/>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:55:09.927935" level="INFO">${ret} = titi_toto</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:55:09.927879" elapsed="0.000066"/>
 </kw>
-<kw name="When Log to Console" owner="BuiltIn">
-<arg>il fait qqch</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944864" elapsed="0.000040"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:55:09.927980" elapsed="0.000060"/>
 </kw>
-<kw name="Then Log To Console" owner="BuiltIn">
-<arg>Il se passe qqch</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.944957" elapsed="0.000041"/>
+<arg>titi</arg>
+<arg>toto</arg>
+<arg>titi_toto</arg>
+<status status="PASS" start="2025-06-25T11:55:09.927787" elapsed="0.000272"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:55:09.928257" level="INFO">${ret} = tata_tutu</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:55:09.928205" elapsed="0.000060"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:55:09.928297" elapsed="0.000054"/>
+</kw>
+<arg>tata</arg>
+<arg>tutu</arg>
+<arg>tata_tutu</arg>
+<status status="PASS" start="2025-06-25T11:55:09.928121" elapsed="0.000248"/>
 </kw>
 <kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
 <arg>reinit env</arg>
 <doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.945077" elapsed="0.000028"/>
+<status status="PASS" start="2025-06-25T11:55:09.928449" elapsed="0.000029"/>
 </kw>
 <tag>toto</tag>
-<status status="PASS" start="2025-04-24T12:24:01.944267" elapsed="0.000865"/>
+<status status="PASS" start="2025-06-25T11:55:09.927304" elapsed="0.001200"/>
 </test>
 <kw name="Run Keyword If Any Tests Failed" owner="BuiltIn" type="TEARDOWN">
 <arg>fin de suite</arg>
 <doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
-<status status="PASS" start="2025-04-24T12:24:01.945312" elapsed="0.000034"/>
+<status status="PASS" start="2025-06-25T11:55:09.928688" elapsed="0.000033"/>
 </kw>
 <doc>Ma suite qui fait pas grand chose
 suite de la doc
 suite 2 [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/Basic/tto_1.jpg]</doc>
-<status status="PASS" start="2025-04-24T12:24:01.928018" elapsed="0.017340"/>
+<status status="PASS" start="2025-06-25T11:55:09.911034" elapsed="0.017700"/>
 </suite>
 <statistics>
 <total>
@@ -76,7 +103,7 @@ suite 2 [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/Basic/tto_1.jpg]</doc
 </suite>
 </statistics>
 <errors>
-<msg time="2025-04-24T12:24:01.941276" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot' on line 19: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
+<msg time="2025-06-25T11:55:09.924346" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot' on line 19: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
 Traceback (most recent call last):
   None
 PYTHONPATH:

@@ -1,0 +1,3604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-06-25T11:50:06.092115" rpa="false" schemaversion="5">
+<suite id="s1" name="premierPas" source="/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot">
+<kw name="debut de suite" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.136746" elapsed="0.000127"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.137111" level="INFO">&amp;{proxy} = { nom=toto | motdepasse=titi }</msg>
+<var>&amp;{proxy}</var>
+<arg>nom=${nom}</arg>
+<arg>motdepasse=${mdp}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.136962" elapsed="0.000165"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.136478" elapsed="0.000685"/>
+</kw>
+<test id="s1-t1" name="evaluation" line="36">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.137450" elapsed="0.000080"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.137569" elapsed="0.000093"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.137358" elapsed="0.000336"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.138149" level="INFO">${toto} = False</msg>
+<var>${toto}</var>
+<arg>"/Users/dominiquemereaux/code/TPSEPT2023/Basic"==""</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.137928" elapsed="0.000245"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${toto}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.138304" elapsed="0.000107"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.138526" elapsed="0.000039"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.137196" elapsed="0.001399"/>
+</test>
+<test id="s1-t2" name="TP1" line="39">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.138931" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.139040" elapsed="0.000040"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.138844" elapsed="0.000256"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Bonjour les amis</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.139141" elapsed="0.000036"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.139240" elapsed="0.000028"/>
+</kw>
+<tag>critique</tag>
+<tag>regression</tag>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.138706" elapsed="0.000587"/>
+</test>
+<test id="s1-t3" name="TP1_LOG" line="43">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.139538" elapsed="0.000061"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.139703" elapsed="0.000127"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.139464" elapsed="0.000458"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.140050" level="ERROR">message</msg>
+<arg>message</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.139982" elapsed="0.000115"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.140189" level="WARN">bonjour</msg>
+<arg>bonjour</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.140144" elapsed="0.000081"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.140303" level="INFO">ehfgreg</msg>
+<arg>ehfgreg</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.140266" elapsed="0.000050"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.140383" elapsed="0.000029"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.139365" elapsed="0.001070"/>
+</test>
+<test id="s1-t4" name="TP1 Optionnel" line="51">
+<tag>robot:skip</tag>
+<tag>toto</tag>
+<status status="SKIP" start="2025-06-25T11:50:06.140510" elapsed="0.000150">Test skipped using 'robot:skip' tag.</status>
+</test>
+<test id="s1-t5" name="TP2: test des mot cles" line="58">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.140958" elapsed="0.000073"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141071" elapsed="0.000043"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.140866" elapsed="0.000268"/>
+</kw>
+<kw name="mot clef simple">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>toto</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141264" elapsed="0.000041"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>titi</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141337" elapsed="0.000038"/>
+</kw>
+<doc>CECI EST UN MOT CLEF</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141189" elapsed="0.000205"/>
+</kw>
+<kw name="mot clef avec Argument">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${toto}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141515" elapsed="0.000045"/>
+</kw>
+<arg>un mot clef simple</arg>
+<doc>CECI EST UN MOT CLEF</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141441" elapsed="0.000138"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.141638" elapsed="0.000025"/>
+</kw>
+<doc>cas de test 1</doc>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.140739" elapsed="0.000944"/>
+</test>
+<test id="s1-t6" name="TP2-1 : mot clef avec plusieurs arguments et 1 sortie" line="63">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142079" elapsed="0.000083"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142205" elapsed="0.000041"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.141978" elapsed="0.000358"/>
+</kw>
+<kw name="Mot clef complexe">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142513" elapsed="0.000048"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${arg2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142594" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${arg1}</value>
+<status status="PASS" start="2025-06-25T11:50:06.142656" elapsed="0.000029"/>
+</return>
+<msg time="2025-06-25T11:50:06.142732" level="INFO">${sortie} = toto</msg>
+<var>${sortie}</var>
+<arg>toto</arg>
+<arg>titi</arg>
+<doc>ceci est un mot cle propriétaire</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142425" elapsed="0.000316"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>sortie :${sortie}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142786" elapsed="0.000048"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.142894" elapsed="0.000027"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.141748" elapsed="0.001195"/>
+</test>
+<test id="s1-t7" name="TP2-3 valeur optionnelles" line="68">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.143194" elapsed="0.000061"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.143287" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.143124" elapsed="0.000217"/>
+</kw>
+<kw name="mot clef avec Arguments">
+<return>
+<value>j'affiche ${toto} ${opt}</value>
+<status status="PASS" start="2025-06-25T11:50:06.143458" elapsed="0.000014"/>
+</return>
+<msg time="2025-06-25T11:50:06.143521" level="INFO">${sortie} = j'affiche machin titi</msg>
+<var>${sortie}</var>
+<arg>machin</arg>
+<doc>CECI EST UN MOT CLEF</doc>
+<status status="PASS" start="2025-06-25T11:50:06.143390" elapsed="0.000140"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${sortie}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.143571" elapsed="0.000069"/>
+</kw>
+<kw name="mot clef avec Arguments">
+<return>
+<value>j'affiche ${toto} ${opt}</value>
+<status status="PASS" start="2025-06-25T11:50:06.143768" elapsed="0.000011"/>
+</return>
+<msg time="2025-06-25T11:50:06.143829" level="INFO">${sortie} = j'affiche machin tutu</msg>
+<var>${sortie}</var>
+<arg>machin</arg>
+<arg>tutu</arg>
+<doc>CECI EST UN MOT CLEF</doc>
+<status status="PASS" start="2025-06-25T11:50:06.143701" elapsed="0.000138"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${sortie}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.143887" elapsed="0.000048"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.144017" elapsed="0.000028"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.143009" elapsed="0.001070"/>
+</test>
+<test id="s1-t8" name="TP2-4 liste de valeurs en sortie" line="74">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.144355" elapsed="0.000061"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.144448" elapsed="0.000034"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.144280" elapsed="0.000220"/>
+</kw>
+<kw name="mot clef qui retourne plusieurs valeurs">
+<return>
+<value>val1</value>
+<value>val2</value>
+<status status="PASS" start="2025-06-25T11:50:06.144599" elapsed="0.000012"/>
+</return>
+<msg time="2025-06-25T11:50:06.144651" level="INFO">${S1} = val1</msg>
+<msg time="2025-06-25T11:50:06.144664" level="INFO">${S2} = val2</msg>
+<var>${S1}</var>
+<var>${S2}</var>
+<status status="PASS" start="2025-06-25T11:50:06.144549" elapsed="0.000122"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>sortie1:${S1} sortie2:${S2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.144712" elapsed="0.000055"/>
+</kw>
+<kw name="mot clef qui retourne plusieurs valeurs">
+<return>
+<value>val1</value>
+<value>val2</value>
+<status status="PASS" start="2025-06-25T11:50:06.144879" elapsed="0.000013"/>
+</return>
+<msg time="2025-06-25T11:50:06.144967" level="INFO">@{listeLocale} = [ val1 | val2 ]</msg>
+<var>@{listeLocale}</var>
+<status status="PASS" start="2025-06-25T11:50:06.144813" elapsed="0.000165"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.145195" elapsed="0.000051"/>
+</kw>
+<var name="${elt}">val1</var>
+<status status="PASS" start="2025-06-25T11:50:06.145165" elapsed="0.000099"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.145340" elapsed="0.000056"/>
+</kw>
+<var name="${elt}">val2</var>
+<status status="PASS" start="2025-06-25T11:50:06.145307" elapsed="0.000101"/>
+</iter>
+<var>${elt}</var>
+<value>@{listeLocale}</value>
+<status status="PASS" start="2025-06-25T11:50:06.145086" elapsed="0.000335"/>
+</for>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.145494" elapsed="0.000029"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.144151" elapsed="0.001401"/>
+</test>
+<test id="s1-t9" name="TP3 test variable globale" line="84">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.145912" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146017" elapsed="0.000041"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.145835" elapsed="0.000245"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>site à tester: ${URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146118" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>site à tester: ${BROWSER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146211" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${maListe}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146301" elapsed="0.000061"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>ma liste @{maliste}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146401" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Mon ${Mon Dict}[animal] s'appele ${Mon Dict}[nom]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146489" elapsed="0.000069"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Mon Dict.animal}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.146640" elapsed="0.000747"/>
+</kw>
+<kw name="Set List Value" owner="Collections">
+<arg>${maliste}</arg>
+<arg>1</arg>
+<arg>toto</arg>
+<doc>Sets the value of ``list`` specified by ``index`` to the given ``value``.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.147578" elapsed="0.000076"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${maListe}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.147777" elapsed="0.000118"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.147992" elapsed="0.000030"/>
+</kw>
+<tag>globale</tag>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.145621" elapsed="0.002429"/>
+</test>
+<test id="s1-t10" name="test dhizeuf" line="96">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.150037" elapsed="0.000070"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.150153" elapsed="0.000040"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.149944" elapsed="0.000275"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${maListe}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.150272" elapsed="0.000052"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.150396" elapsed="0.000033"/>
+</kw>
+<tag>globale</tag>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.148135" elapsed="0.002318"/>
+</test>
+<test id="s1-t11" name="TP3-bis test variable globale" line="100">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.150729" elapsed="0.000095"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.150868" elapsed="0.000062"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.150644" elapsed="0.000306"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.151094" level="INFO">${URL} = http://toto.com</msg>
+<arg>${URL}</arg>
+<arg>http://toto.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.151014" elapsed="0.000101"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>site à tester: ${URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.151341" elapsed="0.000065"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.151551" elapsed="0.000040"/>
+</kw>
+<tag>Regression</tag>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.150524" elapsed="0.001107"/>
+</test>
+<test id="s1-t12" name="TP3-ter" line="105">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.151893" elapsed="0.000068"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.151995" elapsed="0.000037"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.151817" elapsed="0.000234"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>site à tester: ${URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.152091" elapsed="0.000048"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.152196" elapsed="0.000026"/>
+</kw>
+<tag>Regression</tag>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.151709" elapsed="0.000535"/>
+</test>
+<test id="s1-t13" name="TP3-Bis Optionnel déclaration variable locale au test" line="109">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.152521" elapsed="0.000058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.152618" elapsed="0.000042"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.152453" elapsed="0.000230"/>
+</kw>
+<variable name="${locale}">
+<msg time="2025-06-25T11:50:06.152754" level="INFO">${locale} = truc muche</msg>
+<var>truc muche</var>
+<status status="PASS" start="2025-06-25T11:50:06.152719" elapsed="0.000044"/>
+</variable>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.152879" level="INFO">${locale} = truc muche</msg>
+<arg>${locale}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.152815" elapsed="0.000076"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.152960" elapsed="0.000026"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.152313" elapsed="0.000696"/>
+</test>
+<test id="s1-t14" name="TP3-Bis Optionnel utilisation variable" line="114">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.153274" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.153371" elapsed="0.000041"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.153208" elapsed="0.000227"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${locale}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.153481" elapsed="0.000046"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.153587" elapsed="0.000027"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.153086" elapsed="0.000553"/>
+</test>
+<test id="s1-t15" name="TP3-1: Affichage repertoire" line="117">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.153866" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.153959" elapsed="0.000036"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.153801" elapsed="0.000258"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>repertoire exec:${\n}${EXECDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154106" elapsed="0.000066"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>repertoire courant:${\n}/Users/dominiquemereaux/code/TPSEPT2023/Basic</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154218" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}${TEMPDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154317" elapsed="0.000058"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154446" elapsed="0.000031"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.153699" elapsed="0.000802"/>
+</test>
+<test id="s1-t16" name="TP3-2 variable predefinies" line="122">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154769" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154871" elapsed="0.000039"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.154700" elapsed="0.000233"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>bonjour${SPACE}${SPACE}toto</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.154979" elapsed="0.000062"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.155240" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>80</arg>
+<arg>${80}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.155086" elapsed="0.000177"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>mon test n'a pas marché</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.155312" elapsed="0.000045"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.155426" elapsed="0.000028"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.154573" elapsed="0.000903"/>
+</test>
+<test id="s1-t17" name="TP3-2 optionnel" line="129">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.155730" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.155823" elapsed="0.000037"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.155658" elapsed="0.000222"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${PREV_TEST_STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.155993" elapsed="0.000112"/>
+</kw>
+<kw name="Skip If" owner="BuiltIn">
+<arg>"${PREV_TEST_STATUS}" == "FAIL"</arg>
+<doc>Skips the rest of the current test if the ``condition`` is True.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.156158" elapsed="0.000116"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.156337" elapsed="0.000032"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.155552" elapsed="0.000843"/>
+</test>
+<test id="s1-t18" name="TP3-2 affichage du statut du test précédent" line="133">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.156825" elapsed="0.000083"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.156949" elapsed="0.000040"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.156671" elapsed="0.000339"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>statut du test précédent:${PREV_TEST_STATUS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157051" elapsed="0.000052"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157165" elapsed="0.000029"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.156464" elapsed="0.000752"/>
+</test>
+<test id="s1-t19" name="TP6 BDD" line="137">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157462" elapsed="0.000063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157559" elapsed="0.000036"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.157390" elapsed="0.000230"/>
+</kw>
+<kw name="Given log to Console" owner="BuiltIn">
+<arg>${\n}un individu</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157676" elapsed="0.000052"/>
+</kw>
+<kw name="When Log to Console" owner="BuiltIn">
+<arg>il fait qqch</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157774" elapsed="0.000035"/>
+</kw>
+<kw name="Then Log To Console" owner="BuiltIn">
+<arg>Il se passe qqch</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157861" elapsed="0.000038"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.157968" elapsed="0.000026"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.157284" elapsed="0.000734"/>
+</test>
+<test id="s1-t20" name="TP7 boucle sur la liste" line="144">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.158278" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.158368" elapsed="0.000043"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.158209" elapsed="0.000228"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.158551" elapsed="0.000043"/>
+</kw>
+<var name="${elt}">1</var>
+<status status="PASS" start="2025-06-25T11:50:06.158527" elapsed="0.000081"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.158698" elapsed="0.000038"/>
+</kw>
+<var name="${elt}">toto</var>
+<status status="PASS" start="2025-06-25T11:50:06.158676" elapsed="0.000073"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.158811" elapsed="0.000042"/>
+</kw>
+<var name="${elt}">3</var>
+<status status="PASS" start="2025-06-25T11:50:06.158782" elapsed="0.000085"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.158928" elapsed="0.000039"/>
+</kw>
+<var name="${elt}">4</var>
+<status status="PASS" start="2025-06-25T11:50:06.158900" elapsed="0.000080"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${elt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.159040" elapsed="0.000042"/>
+</kw>
+<var name="${elt}">2</var>
+<status status="PASS" start="2025-06-25T11:50:06.159011" elapsed="0.000086"/>
+</iter>
+<var>${elt}</var>
+<value>@{maListe}</value>
+<status status="PASS" start="2025-06-25T11:50:06.158474" elapsed="0.000638"/>
+</for>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.159187" elapsed="0.000030"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.158097" elapsed="0.001143"/>
+</test>
+<test id="s1-t21" name="TP7 Optionnel" line="151">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.159503" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.159599" elapsed="0.000041"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.159428" elapsed="0.000234"/>
+</kw>
+<kw name="Get Count" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.159745" level="INFO">Item found from container 1 time.</msg>
+<msg time="2025-06-25T11:50:06.159770" level="INFO">${nb} = 1</msg>
+<var>${nb}</var>
+<arg>${maliste}</arg>
+<arg>2</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.159703" elapsed="0.000074"/>
+</kw>
+<if>
+<branch type="IF" condition="${nb}==2">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>c'est bon</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-06-25T11:50:06.159922" elapsed="0.000006"/>
+</kw>
+<status status="NOT RUN" start="2025-06-25T11:50:06.159839" elapsed="0.000100"/>
+</branch>
+<status status="PASS" start="2025-06-25T11:50:06.159822" elapsed="0.000126"/>
+</if>
+<kw name="Get Count" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.160041" level="INFO">Item found from container 1 time.</msg>
+<msg time="2025-06-25T11:50:06.160062" level="INFO">${nb} = 1</msg>
+<var>${nb}</var>
+<arg>${maliste}</arg>
+<arg>3</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.159990" elapsed="0.000079"/>
+</kw>
+<if>
+<branch type="IF" condition="${nb}==1">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>c'est bon</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.160173" elapsed="0.000038"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.160111" elapsed="0.000113"/>
+</branch>
+<status status="PASS" start="2025-06-25T11:50:06.160101" elapsed="0.000135"/>
+</if>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.160309" elapsed="0.000027"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.159322" elapsed="0.001055"/>
+</test>
+<test id="s1-t22" name="TP11" line="163">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.160655" elapsed="0.000079"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.160771" elapsed="0.000039"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.160574" elapsed="0.000323"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.160998" level="INFO">os:mac</msg>
+<arg>os:${OS}</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.160948" elapsed="0.000064"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.161078" elapsed="0.000026"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.160463" elapsed="0.000665"/>
+</test>
+<test id="s1-t23" name="Creation de list" line="165">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.161368" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.161457" elapsed="0.000037"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.161294" elapsed="0.000222"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-06-25T11:50:06.161612" level="INFO">@{liste} = [ il | fait | beau ]</msg>
+<var>@{liste}</var>
+<arg>il-fait-beau</arg>
+<arg>separator=-</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.161554" elapsed="0.000067"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.161685" elapsed="0.000038"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.161193" elapsed="0.000550"/>
+</test>
+<test id="s1-t24" name="test concatenation 3" line="168">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.161995" elapsed="0.000088"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.162142" elapsed="0.000040"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.161906" elapsed="0.000293"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.162330" level="INFO">${resultat} = toto_titi</msg>
+<var>${resultat}</var>
+<arg>SEPARATOR=_</arg>
+<arg>toto</arg>
+<arg>titi</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.162276" elapsed="0.000065"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resultat}</arg>
+<arg>toto_titi</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.162409" elapsed="0.000321"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.162801" elapsed="0.000057"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.161804" elapsed="0.001081"/>
+</test>
+<test id="s1-t25" name="test concatenation 1" line="172">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.163128" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.163220" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.163063" elapsed="0.000223"/>
+</kw>
+<kw name="concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.164141" level="INFO">${sortie} = Bonjour-Monsieur</msg>
+<var>${sortie}</var>
+<arg>SEPARATOR=-</arg>
+<arg>${var1}</arg>
+<arg>${var2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.164031" elapsed="0.000126"/>
+</kw>
+<return>
+<value>${sortie}</value>
+<status status="PASS" start="2025-06-25T11:50:06.164188" elapsed="0.000042"/>
+</return>
+<msg time="2025-06-25T11:50:06.164347" level="INFO">${ret} = Bonjour-Monsieur</msg>
+<var>${ret}</var>
+<arg>Bonjour</arg>
+<arg>Monsieur</arg>
+<status status="PASS" start="2025-06-25T11:50:06.163562" elapsed="0.000795"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>Bonjour-Monsieur</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.164457" elapsed="0.000098"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.164655" elapsed="0.000029"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.162954" elapsed="0.001758"/>
+</test>
+<test id="s1-t26" name="test concatenation 2" line="176">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.165020" elapsed="0.000062"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.165126" elapsed="0.000047"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.164934" elapsed="0.000261"/>
+</kw>
+<kw name="concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.165397" level="INFO">${sortie} = Bonjour-Madame</msg>
+<var>${sortie}</var>
+<arg>SEPARATOR=-</arg>
+<arg>${var1}</arg>
+<arg>${var2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.165343" elapsed="0.000062"/>
+</kw>
+<return>
+<value>${sortie}</value>
+<status status="PASS" start="2025-06-25T11:50:06.165422" elapsed="0.000011"/>
+</return>
+<msg time="2025-06-25T11:50:06.165473" level="INFO">${ret} = Bonjour-Madame</msg>
+<var>${ret}</var>
+<arg>Bonjour</arg>
+<arg>Madame</arg>
+<status status="PASS" start="2025-06-25T11:50:06.165262" elapsed="0.000218"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>Bonjour-Madame</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.165531" elapsed="0.000057"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.165653" elapsed="0.000031"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.164802" elapsed="0.000902"/>
+</test>
+<test id="s1-t27" name="TP8: test concatenation 3" line="180">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.165960" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.166050" elapsed="0.000036"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.165892" elapsed="0.000212"/>
+</kw>
+<kw name="concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.166284" level="INFO">${sortie} = Salut-Madame</msg>
+<var>${sortie}</var>
+<arg>SEPARATOR=-</arg>
+<arg>${var1}</arg>
+<arg>${var2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.166229" elapsed="0.000064"/>
+</kw>
+<return>
+<value>${sortie}</value>
+<status status="PASS" start="2025-06-25T11:50:06.166310" elapsed="0.000010"/>
+</return>
+<msg time="2025-06-25T11:50:06.166355" level="INFO">${ret} = Salut-Madame</msg>
+<var>${ret}</var>
+<arg>Salut</arg>
+<arg>Madame</arg>
+<status status="PASS" start="2025-06-25T11:50:06.166152" elapsed="0.000210"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>Salut-Madame</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.166409" elapsed="0.000049"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.166524" elapsed="0.000024"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.165782" elapsed="0.000790"/>
+</test>
+<test id="s1-t28" name="TP9: Test concatenation multiples" line="184">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.166810" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.166898" elapsed="0.000034"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.166745" elapsed="0.000205"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.167129" level="INFO">${ret} = Bonjour_Monsieur</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167073" elapsed="0.000065"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167172" elapsed="0.000051"/>
+</kw>
+<arg>Bonjour</arg>
+<arg>Monsieur</arg>
+<arg>Bonjour_Monsieur</arg>
+<status status="PASS" start="2025-06-25T11:50:06.166994" elapsed="0.000247"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.167418" level="INFO">${ret} = aurevoir_Machin</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167369" elapsed="0.000057"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167456" elapsed="0.000049"/>
+</kw>
+<arg>aurevoir</arg>
+<arg>Machin</arg>
+<arg>aurevoir_Machin</arg>
+<status status="PASS" start="2025-06-25T11:50:06.167292" elapsed="0.000232"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.167754" level="INFO">${ret} = Bonjour_madame</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167702" elapsed="0.000060"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167793" elapsed="0.000048"/>
+</kw>
+<arg>Bonjour</arg>
+<arg>madame</arg>
+<arg>Bonjour_madame</arg>
+<status status="PASS" start="2025-06-25T11:50:06.167616" elapsed="0.000242"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.168045" level="INFO">${ret} = aurevoir_toto</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.167996" elapsed="0.000057"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168085" elapsed="0.000049"/>
+</kw>
+<arg>aurevoir</arg>
+<arg>toto</arg>
+<arg>aurevoir_toto</arg>
+<status status="PASS" start="2025-06-25T11:50:06.167911" elapsed="0.000240"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168224" elapsed="0.000029"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.166644" elapsed="0.001632"/>
+</test>
+<test id="s1-t29" name="nombres au hasard" line="192">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168538" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168632" elapsed="0.000041"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.168469" elapsed="0.000227"/>
+</kw>
+<kw name="Repeat Keyword" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.168780" level="INFO">Repeating keyword, round 1/5.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.168956" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168884" elapsed="0.000080"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168992" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.169051" elapsed="0.000014"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.168824" elapsed="0.000279"/>
+</kw>
+<msg time="2025-06-25T11:50:06.169113" level="INFO">Repeating keyword, round 2/5.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.169262" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.169211" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.169297" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.169355" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.169153" elapsed="0.000247"/>
+</kw>
+<msg time="2025-06-25T11:50:06.169413" level="INFO">Repeating keyword, round 3/5.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.169557" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.169510" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.169592" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.169649" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.169451" elapsed="0.000247"/>
+</kw>
+<msg time="2025-06-25T11:50:06.169709" level="INFO">Repeating keyword, round 4/5.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.169850" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.169803" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.169886" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.169944" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.169746" elapsed="0.000245"/>
+</kw>
+<msg time="2025-06-25T11:50:06.170002" level="INFO">Repeating keyword, round 5/5.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.170142" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.170097" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.170178" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.170236" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.170039" elapsed="0.000240"/>
+</kw>
+<arg>5 times</arg>
+<arg>nombre au hasard</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.168747" elapsed="0.001544"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.170361" elapsed="0.000025"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.168364" elapsed="0.002046"/>
+</test>
+<test id="s1-t30" name="nombre entre 1 et 10" line="196">
+<tag>robot:skip</tag>
+<tag>toto</tag>
+<status status="SKIP" start="2025-06-25T11:50:06.170538" elapsed="0.000114">Test skipped using 'robot:skip' tag.</status>
+</test>
+<test id="s1-t31" name="test du modele" line="204">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.170929" elapsed="0.000060"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.171024" elapsed="0.000038"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.170855" elapsed="0.000237"/>
+</kw>
+<kw name="Modele">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.171388" level="INFO">${ret} = Bonjour Monsieur</msg>
+<var>${ret}</var>
+<arg>${var1}</arg>
+<arg>${var2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.171328" elapsed="0.000070"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${var3}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.171437" elapsed="0.000057"/>
+</kw>
+<arg>Bonjour</arg>
+<arg>Monsieur</arg>
+<arg>Bonjour Monsieur</arg>
+<status status="PASS" start="2025-06-25T11:50:06.171209" elapsed="0.000305"/>
+</kw>
+<kw name="Modele">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.171718" level="INFO">${ret} = Bonjour Madame</msg>
+<var>${ret}</var>
+<arg>${var1}</arg>
+<arg>${var2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.171669" elapsed="0.000057"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ret}</arg>
+<arg>${var3}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.171760" elapsed="0.000052"/>
+</kw>
+<arg>Bonjour</arg>
+<arg>Madame</arg>
+<arg>Bonjour Madame</arg>
+<status status="PASS" start="2025-06-25T11:50:06.171582" elapsed="0.000247"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.171902" elapsed="0.000026"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.170743" elapsed="0.001205"/>
+</test>
+<test id="s1-t32" name="test du modele 2" line="209">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.172225" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.172324" elapsed="0.000042"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.172155" elapsed="0.000234"/>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.172827" level="INFO">${ret} = titi_toto</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.172520" elapsed="0.000329"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.172968" level="FAIL">titi_toto != titi_tot</msg>
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2025-06-25T11:50:06.172884" elapsed="0.000156">titi_toto != titi_tot</status>
+</kw>
+<arg>titi</arg>
+<arg>toto</arg>
+<arg>titi_tot</arg>
+<status status="FAIL" start="2025-06-25T11:50:06.172437" elapsed="0.000650">titi_toto != titi_tot</status>
+</kw>
+<kw name="modele concatenation">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.173292" level="INFO">${ret} = tata_tutu</msg>
+<var>${ret}</var>
+<arg>SEPARATOR=_</arg>
+<arg>${ent1}</arg>
+<arg>${ent2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.173239" elapsed="0.000061"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.173396" level="FAIL">tata_tutu != tata_TU</msg>
+<arg>${ret}</arg>
+<arg>${sortie}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2025-06-25T11:50:06.173333" elapsed="0.000088">tata_tutu != tata_TU</status>
+</kw>
+<arg>tata</arg>
+<arg>tutu</arg>
+<arg>tata_TU</arg>
+<status status="FAIL" start="2025-06-25T11:50:06.173153" elapsed="0.000305">tata_tutu != tata_TU</status>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="reinit env">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>REINIT ENV</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.173680" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.173613" elapsed="0.000126"/>
+</kw>
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.173562" elapsed="0.000191"/>
+</kw>
+<tag>toto</tag>
+<status status="FAIL" start="2025-06-25T11:50:06.172020" elapsed="0.001760">Several failures occurred:
+
+1) titi_toto != titi_tot
+
+2) tata_tutu != tata_TU</status>
+</test>
+<test id="s1-t33" name="test nombre au hasard" line="214">
+<kw name="debut de test" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}debut du test: ${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174039" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>initialisation de la liaison serie</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174135" elapsed="0.000042"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.173977" elapsed="0.000223"/>
+</kw>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.174395" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174333" elapsed="0.000070"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174431" elapsed="0.000046"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.174496" elapsed="0.000014"/>
+</return>
+<msg time="2025-06-25T11:50:06.174548" level="INFO">${res} = 0</msg>
+<var>${res}</var>
+<status status="PASS" start="2025-06-25T11:50:06.174266" elapsed="0.000290"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.174696" level="INFO">${bool} = True</msg>
+<var>${bool}</var>
+<arg>0&lt;= ${res} &lt;= 10</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174602" elapsed="0.000101"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${bool}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174750" elapsed="0.000050"/>
+</kw>
+<kw name="Repeat Keyword" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.174886" level="INFO">Repeating keyword, round 1/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.175039" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174991" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.175074" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.175135" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.174932" elapsed="0.000251"/>
+</kw>
+<msg time="2025-06-25T11:50:06.175194" level="INFO">Repeating keyword, round 2/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.175340" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.175295" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.175400" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.175460" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.175236" elapsed="0.000274"/>
+</kw>
+<msg time="2025-06-25T11:50:06.175522" level="INFO">Repeating keyword, round 3/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.175672" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.175626" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.175707" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.175767" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.175565" elapsed="0.000240"/>
+</kw>
+<msg time="2025-06-25T11:50:06.175818" level="INFO">Repeating keyword, round 4/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.176052" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.175971" elapsed="0.000092"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.176103" elapsed="0.000052"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.176173" elapsed="0.000052"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.175879" elapsed="0.000416"/>
+</kw>
+<msg time="2025-06-25T11:50:06.176307" level="INFO">Repeating keyword, round 5/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.176537" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.176448" elapsed="0.000100"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.176582" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.176648" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.176368" elapsed="0.000323"/>
+</kw>
+<msg time="2025-06-25T11:50:06.176702" level="INFO">Repeating keyword, round 6/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.176974" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.176900" elapsed="0.000083"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.177017" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.177080" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.176754" elapsed="0.000372"/>
+</kw>
+<msg time="2025-06-25T11:50:06.177138" level="INFO">Repeating keyword, round 7/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.177326" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.177271" elapsed="0.000075"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.177395" elapsed="0.000068"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.177480" elapsed="0.000013"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.177190" elapsed="0.000338"/>
+</kw>
+<msg time="2025-06-25T11:50:06.177540" level="INFO">Repeating keyword, round 8/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.177741" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.177674" elapsed="0.000076"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.177783" elapsed="0.000052"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.177853" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.177593" elapsed="0.000300"/>
+</kw>
+<msg time="2025-06-25T11:50:06.177904" level="INFO">Repeating keyword, round 9/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.178075" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178021" elapsed="0.000062"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178114" elapsed="0.000050"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.178183" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.177951" elapsed="0.000271"/>
+</kw>
+<msg time="2025-06-25T11:50:06.178232" level="INFO">Repeating keyword, round 10/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.178395" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178344" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178433" elapsed="0.000046"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.178497" elapsed="0.000009"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.178276" elapsed="0.000259"/>
+</kw>
+<msg time="2025-06-25T11:50:06.178545" level="INFO">Repeating keyword, round 11/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.178699" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178650" elapsed="0.000058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178737" elapsed="0.000049"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.178804" elapsed="0.000009"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.178586" elapsed="0.000255"/>
+</kw>
+<msg time="2025-06-25T11:50:06.178851" level="INFO">Repeating keyword, round 12/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.179010" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.178961" elapsed="0.000087"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.179084" elapsed="0.000057"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.179238" elapsed="0.000062"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.178890" elapsed="0.000569"/>
+</kw>
+<msg time="2025-06-25T11:50:06.179486" level="INFO">Repeating keyword, round 13/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.179724" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.179670" elapsed="0.000063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.179767" elapsed="0.000057"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.179843" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.179565" elapsed="0.000332"/>
+</kw>
+<msg time="2025-06-25T11:50:06.179914" level="INFO">Repeating keyword, round 14/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.180091" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.180037" elapsed="0.000062"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.180133" elapsed="0.000044"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.180195" elapsed="0.000016"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.179971" elapsed="0.000281"/>
+</kw>
+<msg time="2025-06-25T11:50:06.180269" level="INFO">Repeating keyword, round 15/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.180648" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.180373" elapsed="0.000283"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.180687" elapsed="0.000049"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.180754" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.180311" elapsed="0.000481"/>
+</kw>
+<msg time="2025-06-25T11:50:06.180806" level="INFO">Repeating keyword, round 16/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.181042" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.180969" elapsed="0.000084"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.181092" elapsed="0.000057"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.181170" elapsed="0.000014"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.180869" elapsed="0.000347"/>
+</kw>
+<msg time="2025-06-25T11:50:06.181228" level="INFO">Repeating keyword, round 17/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.181403" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.181346" elapsed="0.000065"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.181448" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.181515" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.181276" elapsed="0.000279"/>
+</kw>
+<msg time="2025-06-25T11:50:06.181566" level="INFO">Repeating keyword, round 18/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.181720" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.181671" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.181757" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.181815" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.181609" elapsed="0.000251"/>
+</kw>
+<msg time="2025-06-25T11:50:06.181871" level="INFO">Repeating keyword, round 19/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.182028" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.181977" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182065" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.182127" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.181915" elapsed="0.000249"/>
+</kw>
+<msg time="2025-06-25T11:50:06.182175" level="INFO">Repeating keyword, round 20/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.182324" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182275" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182362" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.182421" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.182215" elapsed="0.000241"/>
+</kw>
+<msg time="2025-06-25T11:50:06.182466" level="INFO">Repeating keyword, round 21/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.182609" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182563" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182645" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.182701" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.182505" elapsed="0.000240"/>
+</kw>
+<msg time="2025-06-25T11:50:06.182782" level="INFO">Repeating keyword, round 22/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.182935" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182890" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.182971" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.183031" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.182831" elapsed="0.000247"/>
+</kw>
+<msg time="2025-06-25T11:50:06.183090" level="INFO">Repeating keyword, round 23/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.183236" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.183193" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.183271" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.183330" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.183134" elapsed="0.000242"/>
+</kw>
+<msg time="2025-06-25T11:50:06.183388" level="INFO">Repeating keyword, round 24/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.183531" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.183483" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.183568" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.183626" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.183425" elapsed="0.000247"/>
+</kw>
+<msg time="2025-06-25T11:50:06.183684" level="INFO">Repeating keyword, round 25/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.183829" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.183779" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.183864" elapsed="0.000046"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.183927" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.183720" elapsed="0.000253"/>
+</kw>
+<msg time="2025-06-25T11:50:06.183986" level="INFO">Repeating keyword, round 26/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.184127" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184083" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184162" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.184222" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.184024" elapsed="0.000243"/>
+</kw>
+<msg time="2025-06-25T11:50:06.184279" level="INFO">Repeating keyword, round 27/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.184416" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184373" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184451" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.184508" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.184315" elapsed="0.000238"/>
+</kw>
+<msg time="2025-06-25T11:50:06.184565" level="INFO">Repeating keyword, round 28/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.184710" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184666" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184745" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.184802" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.184602" elapsed="0.000247"/>
+</kw>
+<msg time="2025-06-25T11:50:06.184861" level="INFO">Repeating keyword, round 29/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.185009" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.184955" elapsed="0.000061"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185043" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.185100" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.184898" elapsed="0.000247"/>
+</kw>
+<msg time="2025-06-25T11:50:06.185157" level="INFO">Repeating keyword, round 30/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.185298" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185254" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185333" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.185390" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.185194" elapsed="0.000241"/>
+</kw>
+<msg time="2025-06-25T11:50:06.185446" level="INFO">Repeating keyword, round 31/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.185583" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185541" elapsed="0.000049"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185617" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.185693" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.185482" elapsed="0.000252"/>
+</kw>
+<msg time="2025-06-25T11:50:06.185752" level="INFO">Repeating keyword, round 32/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.185941" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185884" elapsed="0.000066"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.185981" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.186041" elapsed="0.000050"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.185812" elapsed="0.000334"/>
+</kw>
+<msg time="2025-06-25T11:50:06.186162" level="INFO">Repeating keyword, round 33/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.186446" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.186384" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.186492" elapsed="0.000046"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.186553" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.186222" elapsed="0.000371"/>
+</kw>
+<msg time="2025-06-25T11:50:06.186603" level="INFO">Repeating keyword, round 34/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.186781" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.186722" elapsed="0.000068"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.186821" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.186877" elapsed="0.000009"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.186651" elapsed="0.000263"/>
+</kw>
+<msg time="2025-06-25T11:50:06.186925" level="INFO">Repeating keyword, round 35/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.187091" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.187042" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.187134" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.187197" elapsed="0.000009"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.186979" elapsed="0.000259"/>
+</kw>
+<msg time="2025-06-25T11:50:06.187251" level="INFO">Repeating keyword, round 36/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.187637" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.187589" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.187673" elapsed="0.000047"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.187738" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.187292" elapsed="0.000490"/>
+</kw>
+<msg time="2025-06-25T11:50:06.187794" level="INFO">Repeating keyword, round 37/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.187945" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.187901" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.187981" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.188041" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.187833" elapsed="0.000254"/>
+</kw>
+<msg time="2025-06-25T11:50:06.188099" level="INFO">Repeating keyword, round 38/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.188239" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.188195" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.188273" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.188334" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.188136" elapsed="0.000243"/>
+</kw>
+<msg time="2025-06-25T11:50:06.188390" level="INFO">Repeating keyword, round 39/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.188530" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.188486" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.188565" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.188625" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.188427" elapsed="0.000245"/>
+</kw>
+<msg time="2025-06-25T11:50:06.188684" level="INFO">Repeating keyword, round 40/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.188827" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.188784" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.188861" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.188920" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.188726" elapsed="0.000239"/>
+</kw>
+<msg time="2025-06-25T11:50:06.188977" level="INFO">Repeating keyword, round 41/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.189114" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189071" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189173" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.189234" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.189014" elapsed="0.000266"/>
+</kw>
+<msg time="2025-06-25T11:50:06.189292" level="INFO">Repeating keyword, round 42/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.189429" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189386" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189464" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.189526" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.189328" elapsed="0.000242"/>
+</kw>
+<msg time="2025-06-25T11:50:06.189582" level="INFO">Repeating keyword, round 43/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.189732" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189677" elapsed="0.000063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189768" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.189827" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.189618" elapsed="0.000254"/>
+</kw>
+<msg time="2025-06-25T11:50:06.189884" level="INFO">Repeating keyword, round 44/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.190032" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.189989" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.190067" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.190127" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.189923" elapsed="0.000253"/>
+</kw>
+<msg time="2025-06-25T11:50:06.190188" level="INFO">Repeating keyword, round 45/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.190327" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.190283" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.190362" elapsed="0.000038"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.190418" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.190224" elapsed="0.000239"/>
+</kw>
+<msg time="2025-06-25T11:50:06.190475" level="INFO">Repeating keyword, round 46/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.190612" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.190567" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.190647" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.190704" elapsed="0.000007"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.190511" elapsed="0.000228"/>
+</kw>
+<msg time="2025-06-25T11:50:06.190752" level="INFO">Repeating keyword, round 47/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.190980" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.190914" elapsed="0.000076"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191023" elapsed="0.000051"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.191093" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.190822" elapsed="0.000319"/>
+</kw>
+<msg time="2025-06-25T11:50:06.191155" level="INFO">Repeating keyword, round 48/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.191308" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191262" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191344" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.191406" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.191200" elapsed="0.000260"/>
+</kw>
+<msg time="2025-06-25T11:50:06.191470" level="INFO">Repeating keyword, round 49/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.191612" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191567" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191647" elapsed="0.000046"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.191710" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.191507" elapsed="0.000243"/>
+</kw>
+<msg time="2025-06-25T11:50:06.191763" level="INFO">Repeating keyword, round 50/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.191916" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191866" elapsed="0.000058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.191952" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.192012" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.191807" elapsed="0.000251"/>
+</kw>
+<msg time="2025-06-25T11:50:06.192070" level="INFO">Repeating keyword, round 51/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.192234" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.192189" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.192270" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.192332" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.192128" elapsed="0.000255"/>
+</kw>
+<msg time="2025-06-25T11:50:06.192396" level="INFO">Repeating keyword, round 52/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.192548" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.192497" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.192584" elapsed="0.000046"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.192648" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.192438" elapsed="0.000251"/>
+</kw>
+<msg time="2025-06-25T11:50:06.192699" level="INFO">Repeating keyword, round 53/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.192837" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.192794" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.192872" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.192930" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.192736" elapsed="0.000242"/>
+</kw>
+<msg time="2025-06-25T11:50:06.192990" level="INFO">Repeating keyword, round 54/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.193129" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.193085" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.193164" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.193220" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.193027" elapsed="0.000241"/>
+</kw>
+<msg time="2025-06-25T11:50:06.193280" level="INFO">Repeating keyword, round 55/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.193418" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.193374" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.193453" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.193509" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.193316" elapsed="0.000241"/>
+</kw>
+<msg time="2025-06-25T11:50:06.193569" level="INFO">Repeating keyword, round 56/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.193707" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.193662" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.193742" elapsed="0.000248"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.194010" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.193605" elapsed="0.000445"/>
+</kw>
+<msg time="2025-06-25T11:50:06.194060" level="INFO">Repeating keyword, round 57/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.194237" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.194190" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.194275" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.194337" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.194110" elapsed="0.000262"/>
+</kw>
+<msg time="2025-06-25T11:50:06.194383" level="INFO">Repeating keyword, round 58/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.194532" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.194485" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.194570" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.194634" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.194421" elapsed="0.000248"/>
+</kw>
+<msg time="2025-06-25T11:50:06.194680" level="INFO">Repeating keyword, round 59/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.194832" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.194779" elapsed="0.000065"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.194879" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.194938" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.194718" elapsed="0.000294"/>
+</kw>
+<msg time="2025-06-25T11:50:06.195038" level="INFO">Repeating keyword, round 60/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.195247" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.195177" elapsed="0.000084"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.195301" elapsed="0.000051"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.195371" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.195089" elapsed="0.000352"/>
+</kw>
+<msg time="2025-06-25T11:50:06.195456" level="INFO">Repeating keyword, round 61/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.195642" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.195591" elapsed="0.000059"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.195680" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.195739" elapsed="0.000009"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.195521" elapsed="0.000259"/>
+</kw>
+<msg time="2025-06-25T11:50:06.195800" level="INFO">Repeating keyword, round 62/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.195967" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.195915" elapsed="0.000064"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196011" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.196072" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.195848" elapsed="0.000271"/>
+</kw>
+<msg time="2025-06-25T11:50:06.196131" level="INFO">Repeating keyword, round 63/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.196278" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196232" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196315" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.196376" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.196171" elapsed="0.000253"/>
+</kw>
+<msg time="2025-06-25T11:50:06.196436" level="INFO">Repeating keyword, round 64/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.196581" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196535" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196630" elapsed="0.000045"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.196693" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.196475" elapsed="0.000259"/>
+</kw>
+<msg time="2025-06-25T11:50:06.196747" level="INFO">Repeating keyword, round 65/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.196902" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196858" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.196937" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.196998" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.196799" elapsed="0.000246"/>
+</kw>
+<msg time="2025-06-25T11:50:06.197057" level="INFO">Repeating keyword, round 66/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.197231" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.197182" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.197265" elapsed="0.000044"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.197327" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.197101" elapsed="0.000271"/>
+</kw>
+<msg time="2025-06-25T11:50:06.197384" level="INFO">Repeating keyword, round 67/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.197522" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.197478" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.197557" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.197617" elapsed="0.000027"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.197420" elapsed="0.000258"/>
+</kw>
+<msg time="2025-06-25T11:50:06.197687" level="INFO">Repeating keyword, round 68/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.197825" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.197781" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.197860" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.197919" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.197723" elapsed="0.000242"/>
+</kw>
+<msg time="2025-06-25T11:50:06.197976" level="INFO">Repeating keyword, round 69/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.198114" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198070" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198148" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.198208" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.198012" elapsed="0.000242"/>
+</kw>
+<msg time="2025-06-25T11:50:06.198265" level="INFO">Repeating keyword, round 70/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.198406" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198359" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198456" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.198515" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.198302" elapsed="0.000260"/>
+</kw>
+<msg time="2025-06-25T11:50:06.198575" level="INFO">Repeating keyword, round 71/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.198715" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198668" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198751" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.198809" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.198612" elapsed="0.000243"/>
+</kw>
+<msg time="2025-06-25T11:50:06.198867" level="INFO">Repeating keyword, round 72/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.199022" level="INFO">${random} = 0</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.198963" elapsed="0.000066"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199058" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.199115" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.198905" elapsed="0.000257"/>
+</kw>
+<msg time="2025-06-25T11:50:06.199173" level="INFO">Repeating keyword, round 73/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.199310" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199267" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199354" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.199415" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.199208" elapsed="0.000252"/>
+</kw>
+<msg time="2025-06-25T11:50:06.199471" level="INFO">Repeating keyword, round 74/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.199616" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199573" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199650" elapsed="0.000051"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.199719" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.199515" elapsed="0.000249"/>
+</kw>
+<msg time="2025-06-25T11:50:06.199775" level="INFO">Repeating keyword, round 75/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.199911" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199869" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.199947" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.200006" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.199811" elapsed="0.000240"/>
+</kw>
+<msg time="2025-06-25T11:50:06.200063" level="INFO">Repeating keyword, round 76/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.200205" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.200158" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.200240" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.200300" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.200098" elapsed="0.000248"/>
+</kw>
+<msg time="2025-06-25T11:50:06.200357" level="INFO">Repeating keyword, round 77/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.200706" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.200658" elapsed="0.000056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.200743" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.200800" elapsed="0.000008"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.200392" elapsed="0.000450"/>
+</kw>
+<msg time="2025-06-25T11:50:06.200868" level="INFO">Repeating keyword, round 78/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.201019" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.200972" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201057" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.201116" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.200911" elapsed="0.000251"/>
+</kw>
+<msg time="2025-06-25T11:50:06.201174" level="INFO">Repeating keyword, round 79/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.201313" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201268" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201349" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.201407" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.201211" elapsed="0.000241"/>
+</kw>
+<msg time="2025-06-25T11:50:06.201464" level="INFO">Repeating keyword, round 80/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.201600" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201557" elapsed="0.000065"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201650" elapsed="0.000044"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.201710" elapsed="0.000007"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.201500" elapsed="0.000249"/>
+</kw>
+<msg time="2025-06-25T11:50:06.201762" level="INFO">Repeating keyword, round 81/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.201909" level="INFO">${random} = 1</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201865" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.201945" elapsed="0.000043"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.202005" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.201806" elapsed="0.000244"/>
+</kw>
+<msg time="2025-06-25T11:50:06.202062" level="INFO">Repeating keyword, round 82/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.202198" level="INFO">${random} = 7</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.202156" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.202239" elapsed="0.000050"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.202309" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.202097" elapsed="0.000256"/>
+</kw>
+<msg time="2025-06-25T11:50:06.202364" level="INFO">Repeating keyword, round 83/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.202502" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.202459" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.202537" elapsed="0.000041"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.202596" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.202401" elapsed="0.000243"/>
+</kw>
+<msg time="2025-06-25T11:50:06.202655" level="INFO">Repeating keyword, round 84/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.202793" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.202748" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.202828" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.202883" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.202692" elapsed="0.000237"/>
+</kw>
+<msg time="2025-06-25T11:50:06.202941" level="INFO">Repeating keyword, round 85/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.203077" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203033" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203113" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.203170" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.202977" elapsed="0.000238"/>
+</kw>
+<msg time="2025-06-25T11:50:06.203227" level="INFO">Repeating keyword, round 86/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.203363" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203320" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203397" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.203456" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.203263" elapsed="0.000237"/>
+</kw>
+<msg time="2025-06-25T11:50:06.203512" level="INFO">Repeating keyword, round 87/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.203649" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203606" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203684" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.203744" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.203547" elapsed="0.000242"/>
+</kw>
+<msg time="2025-06-25T11:50:06.203799" level="INFO">Repeating keyword, round 88/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.203935" level="INFO">${random} = 2</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203892" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.203969" elapsed="0.000039"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.204025" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.203835" elapsed="0.000237"/>
+</kw>
+<msg time="2025-06-25T11:50:06.204083" level="INFO">Repeating keyword, round 89/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.204218" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.204175" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.204252" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.204309" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.204119" elapsed="0.000236"/>
+</kw>
+<msg time="2025-06-25T11:50:06.204381" level="INFO">Repeating keyword, round 90/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.204520" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.204475" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.204555" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.204612" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.204419" elapsed="0.000240"/>
+</kw>
+<msg time="2025-06-25T11:50:06.204672" level="INFO">Repeating keyword, round 91/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.204810" level="INFO">${random} = 4</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.204765" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.204845" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.204902" elapsed="0.000011"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.204708" elapsed="0.000239"/>
+</kw>
+<msg time="2025-06-25T11:50:06.204958" level="INFO">Repeating keyword, round 92/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.205095" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205052" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205130" elapsed="0.000040"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.205187" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.204995" elapsed="0.000236"/>
+</kw>
+<msg time="2025-06-25T11:50:06.205243" level="INFO">Repeating keyword, round 93/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.205379" level="INFO">${random} = 9</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205337" elapsed="0.000049"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205413" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.205472" elapsed="0.000010"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.205279" elapsed="0.000238"/>
+</kw>
+<msg time="2025-06-25T11:50:06.205529" level="INFO">Repeating keyword, round 94/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.205666" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205623" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205700" elapsed="0.000042"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.205759" elapsed="0.000007"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.205565" elapsed="0.000233"/>
+</kw>
+<msg time="2025-06-25T11:50:06.205808" level="INFO">Repeating keyword, round 95/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.206057" level="INFO">${random} = 3</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.205984" elapsed="0.000087"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.206114" elapsed="0.000064"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.206199" elapsed="0.000015"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.205880" elapsed="0.000377"/>
+</kw>
+<msg time="2025-06-25T11:50:06.206273" level="INFO">Repeating keyword, round 96/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.206469" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.206415" elapsed="0.000063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.206512" elapsed="0.000048"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.206578" elapsed="0.000014"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.206322" elapsed="0.000305"/>
+</kw>
+<msg time="2025-06-25T11:50:06.206641" level="INFO">Repeating keyword, round 97/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.206813" level="INFO">${random} = 10</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.206763" elapsed="0.000058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.206850" elapsed="0.000060"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.206928" elapsed="0.000013"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.206698" elapsed="0.000279"/>
+</kw>
+<msg time="2025-06-25T11:50:06.206989" level="INFO">Repeating keyword, round 98/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.207368" level="INFO">${random} = 8</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.207319" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.207428" elapsed="0.000044"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.207490" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.207029" elapsed="0.000508"/>
+</kw>
+<msg time="2025-06-25T11:50:06.207549" level="INFO">Repeating keyword, round 99/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.207703" level="INFO">${random} = 6</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.207656" elapsed="0.000055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.207753" elapsed="0.000044"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.207845" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.207588" elapsed="0.000298"/>
+</kw>
+<msg time="2025-06-25T11:50:06.207895" level="INFO">Repeating keyword, round 100/100.</msg>
+<kw name="nombre au hasard">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-25T11:50:06.208056" level="INFO">${random} = 5</msg>
+<var>${random}</var>
+<arg>random.randint(0, 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.208011" elapsed="0.000053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${random}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.208105" elapsed="0.000049"/>
+</kw>
+<return>
+<value>${random}</value>
+<status status="PASS" start="2025-06-25T11:50:06.208172" elapsed="0.000012"/>
+</return>
+<status status="PASS" start="2025-06-25T11:50:06.207947" elapsed="0.000271"/>
+</kw>
+<arg>100 times</arg>
+<arg>nombre au hasard</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.174849" elapsed="0.033384"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>reinit env</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.208331" elapsed="0.000028"/>
+</kw>
+<tag>toto</tag>
+<status status="PASS" start="2025-06-25T11:50:06.173870" elapsed="0.034517"/>
+</test>
+<kw name="Run Keyword If Any Tests Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="fin de suite">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}fin de la suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.208707" elapsed="0.000051"/>
+</kw>
+<status status="PASS" start="2025-06-25T11:50:06.208663" elapsed="0.000130"/>
+</kw>
+<arg>fin de suite</arg>
+<doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
+<status status="PASS" start="2025-06-25T11:50:06.208584" elapsed="0.000221"/>
+</kw>
+<doc>Ma suite qui fait pas grand chose
+suite de la doc
+suite 2 [image.jpg|/Users/dominiquemereaux/code/TPSEPT2023/Basic/tto_1.jpg]</doc>
+<status status="FAIL" start="2025-06-25T11:50:06.093049" elapsed="0.115769"/>
+</suite>
+<statistics>
+<total>
+<stat pass="30" fail="1" skip="2">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">critique</stat>
+<stat pass="2" fail="0" skip="0">globale</stat>
+<stat pass="3" fail="0" skip="0">regression</stat>
+<stat pass="30" fail="1" skip="2">toto</stat>
+</tag>
+<suite>
+<stat name="premierPas" id="s1" pass="30" fail="1" skip="2">premierPas</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-25T11:50:06.128753" level="ERROR">Error in file '/Users/dominiquemereaux/code/TPSEPT2023/Basic/premierPas.robot' on line 19: Importing library 'tarif' failed: ModuleNotFoundError: No module named 'tarif'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Users/dominiquemereaux/code/TPSEPT2023/.venv/bin
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python313.zip
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13
+  /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload
+  /Users/dominiquemereaux/code/TPSEPT2023/.venv/lib/python3.13/site-packages
+  /opt/homebrew/opt/python-tk@3.13/libexec</msg>
+<msg time="2025-06-25T11:50:06.140050" level="ERROR">message</msg>
+<msg time="2025-06-25T11:50:06.140189" level="WARN">bonjour</msg>
+</errors>
+</robot>

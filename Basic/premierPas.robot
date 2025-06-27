@@ -208,8 +208,8 @@ test du modele
 
 test du modele 2
   [Template]  modele concatenation
-  titi  toto   titi_tot
-  tata  tutu   tata_TU
+  titi  toto   titi_toto
+  tata  tutu   tata_tutu
 
 test nombre au hasard
   ${res}  nombre au hasard
