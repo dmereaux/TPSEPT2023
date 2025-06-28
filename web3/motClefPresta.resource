@@ -18,7 +18,7 @@ ${LOC_MENU_FEMMES}   //*[@id="category-5"]/a
 
 *** Keywords ***
 Ouvrir W3C alerte
-   Open Browser  ${URL2}  ${NAVIGATEUR}  #executable_path=${PATH_GC}
+   Open Browser  ${URL2}  ${NAVIGATEUR}   #executable_path=${PATH_GC}
    Maximize Browser Window
 
 Afficher l'alerte

@@ -1,3 +1,4 @@
 *** Test Cases ***;${item};${msg}  
 recherche MUG;MUG;Il y a 5 produits.
 recherche T-shirt;T-shirt;Il y a 1 produit.
+recherche MUG2;mug;Il y a 4 produits.
