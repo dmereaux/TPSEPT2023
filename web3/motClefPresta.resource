@@ -4,6 +4,7 @@ Library   SeleniumLibrary   #implicit_wait=5
 *** Variables ***
 ${URL}   http://www.qualifiez.fr/monPrestashop2/prestashop/index.php
 ${URL2}  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
+${URL3}  https://cfspart-idp.impots.gouv.fr/oauth2/authorize?authType=sso&prompt=login&scope=openid+profile+authChoice+otpEscape&state=e56d820faa8d0e29b4ea20ec31f4fff31a31ed68fb7207b51e276b5b05d7897b&client_id=52ed02940b0f1c57512f2d6fd064dddffccdea03&nonce=dmbQc1hq2bxRhDDGmg5NYg&response_type=code&redirect_uri=https%3A%2F%2Fcfspart.impots.gouv.fr%2F%3Fopenidconnectcallback%3D1
 ${NAVIGATEUR}     GC
 #${PATH_GC}   /Users/dominiquemereaux/code/driver/chromedriver
 ${LOC_CHAMP_RECHERCHE}   xpath=//*[@id="search_widget"]/form/input[2]
@@ -15,6 +16,8 @@ ${MESSAGE ERREUR}   Aucun produit ne correspond à votre recherche
 ${LOC_checkbox}    //*[@id="search_filters"]/section/ul/li[1]/label/span/input
 ${LOC_MENU_VETEMENT}  //*[@id="category-3"]/a
 ${LOC_MENU_FEMMES}   //*[@id="category-5"]/a
+${LOC_CONTINUER}    id=btnAction
+
 
 *** Keywords ***
 Ouvrir W3C alerte
@@ -96,3 +99,18 @@ verifier noir non selectionné
   Wait Until Element Is Visible  //*[@id="group_2"]/li[2]/label  timeout=5
   Element Should Be Enabled   //*[@id="group_2"]/li[2]/label/input
   Element Should Be Disabled   //*[@id="group_2"]/li[1]/label/input
+
+attendre element cliqueable
+   [Arguments]   ${tuple}   ${timeout}=10
+   Wait For Expected Condition   element_to_be_clickable    ${tuple}   timeout=${timeout}
+
+panier cliqueable
+    ${byElem}=   Evaluate  ("xpath","//*[@id='_desktop_cart']/div/div/span[1]")
+   attendre element cliqueable   ${byElem}
+   Click Element   xpath=//*[@id="_mobile_cart"]/div/div/a
+   Title Should Be   panier
+bouton continuer cliqueable
+    ${byElem}=   Evaluate  ("id","btnAction")
+   attendre element cliqueable   ${byElem}  30
+Aller sur page impot
+   Open Browser  ${URL3}  ${NAVIGATEUR}  
