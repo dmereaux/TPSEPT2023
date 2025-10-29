@@ -1,90 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-10-28T13:37:19.183136" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-10-29T16:39:42.606303" rpa="false" schemaversion="5">
 <suite id="s1" name="TPSEPT2023" source="/Users/dominiquemereaux/code/TPSEPT2023">
-<suite id="s1-s1" name="Web3" source="/Users/dominiquemereaux/code/TPSEPT2023/web3">
-<kw name="init web" type="SETUP">
+<suite id="s1-s1" name="Async" source="/Users/dominiquemereaux/code/TPSEPT2023/async">
+<suite id="s1-s1-s1" name="Recovery" source="/Users/dominiquemereaux/code/TPSEPT2023/async/recovery.robot">
+<test id="s1-s1-s1-t1" name="Test1" line="6">
+<kw name="deb" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>INIT_ROBOT</arg>
+<arg>Début du test</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-28T13:37:19.309218" elapsed="0.000200"/>
+<status status="PASS" start="2025-10-29T16:39:42.632625" elapsed="0.000121"/>
 </kw>
-<status status="PASS" start="2025-10-28T13:37:19.308736" elapsed="0.000785"/>
+<status status="PASS" start="2025-10-29T16:39:42.632372" elapsed="0.000444"/>
 </kw>
-<suite id="s1-s1-s1" name="Panier" source="/Users/dominiquemereaux/code/TPSEPT2023/web3/panier.robot">
-<test id="s1-s1-s1-t1" name="test impot" line="11">
-<kw name="Ouvrir Prestashop" owner="motClefPresta" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-10-28T13:37:19.427648" level="INFO">Opening browser 'GC' to base url 'http://www.qualifiez.fr/monPrestashop2/prestashop/index.php'.</msg>
-<arg>${URL}</arg>
-<arg>${NAVIGATEUR}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-10-28T13:37:19.427302" elapsed="3.404067"/>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-10-29T16:39:42.633077" level="FAIL">Erreur systeme</msg>
+<arg>Erreur systeme</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-10-29T16:39:42.632908" elapsed="0.001791">Erreur systeme</status>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-10-28T13:37:22.838232" level="INFO">Page title is 'monPrestashop'.</msg>
-<arg>monPrestashop</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-10-28T13:37:22.832387" elapsed="0.006197"/>
+<kw name="fin" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Fin du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.635128" elapsed="0.000132"/>
 </kw>
-<status status="PASS" start="2025-10-28T13:37:19.426042" elapsed="3.412673"/>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<kw name="recovery">
+<if>
+<branch type="IF" condition="&quot;${TEST_MESSAGE}&quot; == &quot;Erreur SUT&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Récupération après erreur SUT</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-10-29T16:39:42.637663" elapsed="0.000039"/>
 </kw>
-<kw name="Aller sur page impot" owner="motClefPresta">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-10-28T13:37:22.839866" level="INFO">Opening browser 'GC' to base url 'https://cfspart-idp.impots.gouv.fr/oauth2/authorize?authType=sso&amp;prompt=login&amp;scope=openid+profile+authChoice+otpEscape&amp;state=e56d820faa8d0e29b4ea20ec31f4fff31a31ed68fb7207b51e276b5b05d7897b&amp;client_id=52ed02940b0f1c57512f2d6fd064dddffccdea03&amp;nonce=dmbQc1hq2bxRhDDGmg5NYg&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fcfspart.impots.gouv.fr%2F%3Fopenidconnectcallback%3D1'.</msg>
-<arg>${URL3}</arg>
-<arg>${NAVIGATEUR}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-10-28T13:37:22.839671" elapsed="4.599901"/>
+<status status="NOT RUN" start="2025-10-29T16:39:42.637542" elapsed="0.000200"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${TEST_MESSAGE}&quot; == &quot;Erreur systeme&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Récupération après erreur système</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.637853" elapsed="0.000080"/>
 </kw>
-<status status="PASS" start="2025-10-28T13:37:22.839320" elapsed="4.601624"/>
+<kw name="Set Test Message" owner="BuiltIn">
+<msg time="2025-10-29T16:39:42.638067" level="INFO">Set test message to:
+PB</msg>
+<arg>PB</arg>
+<doc>Sets message for the current test case.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.637982" elapsed="0.000136"/>
 </kw>
-<kw name="bouton continuer cliqueable" owner="motClefPresta">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-10-28T13:37:27.443962" level="INFO">${byElem} = ('id', 'btnAction')</msg>
-<var>${byElem}</var>
-<arg>("id","btnAction")</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-10-28T13:37:27.442884" elapsed="0.003716"/>
+<status status="PASS" start="2025-10-29T16:39:42.637766" elapsed="0.000384"/>
+</branch>
+<status status="PASS" start="2025-10-29T16:39:42.637524" elapsed="0.000648"/>
+</if>
+<status status="PASS" start="2025-10-29T16:39:42.637393" elapsed="0.000805"/>
 </kw>
-<kw name="attendre element cliqueable" owner="motClefPresta">
-<kw name="Wait For Expected Condition" owner="SeleniumLibrary">
-<arg>element_to_be_clickable</arg>
-<arg>${tuple}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-10-28T13:37:27.447588" elapsed="9.665140"/>
+<arg>recovery</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.635336" elapsed="0.002892"/>
 </kw>
-<arg>${byElem}</arg>
-<arg>30</arg>
-<status status="PASS" start="2025-10-28T13:37:27.446951" elapsed="9.666522"/>
+<status status="PASS" start="2025-10-29T16:39:42.634928" elapsed="0.003339"/>
 </kw>
-<status status="PASS" start="2025-10-28T13:37:27.441970" elapsed="9.671581"/>
-</kw>
-<kw name="Fermer Prestashop" owner="motClefPresta" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-10-28T13:37:37.114767" elapsed="0.123399"/>
-</kw>
-<status status="PASS" start="2025-10-28T13:37:37.114252" elapsed="0.124088"/>
-</kw>
-<status status="PASS" start="2025-10-28T13:37:19.419649" elapsed="17.818811"/>
+<status status="FAIL" start="2025-10-29T16:39:42.631212" elapsed="0.007161">PB</status>
 </test>
-<status status="PASS" start="2025-10-28T13:37:19.309569" elapsed="17.939105"/>
+<test id="s1-s1-s1-t2" name="Test2" line="9">
+<kw name="deb" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Début du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.645129" elapsed="0.000126"/>
+</kw>
+<status status="PASS" start="2025-10-29T16:39:42.644941" elapsed="0.000372"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2025-10-29T16:39:42.645453" level="INFO">Execution passed with message:
+ok</msg>
+<arg>ok</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.645380" elapsed="0.000136">ok</status>
+</kw>
+<kw name="fin" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Fin du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.645832" elapsed="0.000090"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>recovery</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.645980" elapsed="0.000065"/>
+</kw>
+<status status="PASS" start="2025-10-29T16:39:42.645676" elapsed="0.000408"/>
+</kw>
+<status status="PASS" start="2025-10-29T16:39:42.643846" elapsed="0.002276">ok</status>
+</test>
+<test id="s1-s1-s1-t3" name="Test3" line="12">
+<kw name="deb" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Début du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.647944" elapsed="0.000085"/>
+</kw>
+<status status="PASS" start="2025-10-29T16:39:42.647815" elapsed="0.000259"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-10-29T16:39:42.648256" level="FAIL">Erreur SUT</msg>
+<arg>Erreur SUT</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-10-29T16:39:42.648152" elapsed="0.001197">Erreur SUT</status>
+</kw>
+<kw name="fin" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Fin du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.649770" elapsed="0.000123"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<kw name="recovery">
+<if>
+<branch type="IF" condition="&quot;${TEST_MESSAGE}&quot; == &quot;Erreur SUT&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Récupération après erreur SUT</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.650287" elapsed="0.000070"/>
+</kw>
+<status status="PASS" start="2025-10-29T16:39:42.650179" elapsed="0.000212"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${TEST_MESSAGE}&quot; == &quot;Erreur systeme&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Récupération après erreur système</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-10-29T16:39:42.650459" elapsed="0.000031"/>
+</kw>
+<kw name="Set Test Message" owner="BuiltIn">
+<arg>PB</arg>
+<doc>Sets message for the current test case.</doc>
+<status status="NOT RUN" start="2025-10-29T16:39:42.650533" elapsed="0.000030"/>
+</kw>
+<status status="NOT RUN" start="2025-10-29T16:39:42.650411" elapsed="0.000176"/>
+</branch>
+<status status="PASS" start="2025-10-29T16:39:42.650165" elapsed="0.000440"/>
+</if>
+<status status="PASS" start="2025-10-29T16:39:42.650070" elapsed="0.000556"/>
+</kw>
+<arg>recovery</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-10-29T16:39:42.649950" elapsed="0.000702"/>
+</kw>
+<status status="PASS" start="2025-10-29T16:39:42.649526" elapsed="0.001163"/>
+</kw>
+<status status="FAIL" start="2025-10-29T16:39:42.646972" elapsed="0.003756">Erreur SUT</status>
+</test>
+<status status="FAIL" start="2025-10-29T16:39:42.630032" elapsed="0.021758"/>
 </suite>
-<status status="PASS" start="2025-10-28T13:37:19.305473" elapsed="17.945292"/>
+<status status="FAIL" start="2025-10-29T16:39:42.628606" elapsed="0.024224"/>
 </suite>
-<status status="PASS" start="2025-10-28T13:37:19.186834" elapsed="18.065592"/>
+<status status="FAIL" start="2025-10-29T16:39:42.609481" elapsed="0.044411"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TPSEPT2023" id="s1" pass="1" fail="0" skip="0">TPSEPT2023</stat>
-<stat name="Web3" id="s1-s1" pass="1" fail="0" skip="0">TPSEPT2023.Web3</stat>
-<stat name="Panier" id="s1-s1-s1" pass="1" fail="0" skip="0">TPSEPT2023.Web3.Panier</stat>
+<stat name="TPSEPT2023" id="s1" pass="1" fail="2" skip="0">TPSEPT2023</stat>
+<stat name="Async" id="s1-s1" pass="1" fail="2" skip="0">TPSEPT2023.Async</stat>
+<stat name="Recovery" id="s1-s1-s1" pass="1" fail="2" skip="0">TPSEPT2023.Async.Recovery</stat>
 </suite>
 </statistics>
 <errors>

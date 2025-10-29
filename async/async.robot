@@ -1,5 +1,5 @@
 *** Settings ***
-Library     
+Library     AsyncLibrary
 
 *** Test Cases ***
 Example Test
@@ -15,12 +15,12 @@ Example Test
 
 *** Keywords ***
 Task1
-    Log    Task 1 started
+    Log To Console   Task 1 started
     Sleep    2
 
-    Log    Task 1 finished
+    Log To Console   Task 1 finished
 
 Task2
-    Log    Task 2 started
+    Log To Console   Task 2 started
     Sleep    3
-    Log    Task 2 finished
+    Log To Console  Task 2 finished

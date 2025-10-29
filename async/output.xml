@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-10-29T17:21:46.542605" rpa="false" schemaversion="5">
+<suite id="s1" name="Async" source="/Users/dominiquemereaux/code/TPSEPT2023/async">
+<suite id="s1-s1" name="Recovery" source="/Users/dominiquemereaux/code/TPSEPT2023/async/recovery.robot">
+<test id="s1-s1-t1" name="Test1" line="6">
+<kw name="deb" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>verifier systeme OK</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T17:21:46.558483" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Début du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T17:21:46.558609" elapsed="0.000050"/>
+</kw>
+<status status="PASS" start="2025-10-29T17:21:46.558296" elapsed="0.000392"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-10-29T17:21:46.558821" level="FAIL">Erreur systeme</msg>
+<arg>Erreur systeme</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-10-29T17:21:46.558737" elapsed="0.000152">Erreur systeme</status>
+</kw>
+<kw name="fin" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Fin du test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T17:21:46.559086" elapsed="0.000042"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<kw name="recovery">
+<if>
+<branch type="IF" condition="&quot;${TEST_MESSAGE}&quot; == &quot;Erreur SUT&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Récupération après erreur SUT</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-10-29T17:21:46.559422" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-10-29T17:21:46.559341" elapsed="0.000107"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${TEST_MESSAGE}&quot; == &quot;Erreur systeme&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Récupération après erreur système</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-29T17:21:46.559520" elapsed="0.000044"/>
+</kw>
+<kw name="Set Test Message" owner="BuiltIn">
+<msg time="2025-10-29T17:21:46.559648" level="INFO">Set test message to:
+PB</msg>
+<arg>PB</arg>
+<doc>Sets message for the current test case.</doc>
+<status status="PASS" start="2025-10-29T17:21:46.559595" elapsed="0.000069"/>
+</kw>
+<status status="PASS" start="2025-10-29T17:21:46.559463" elapsed="0.000213"/>
+</branch>
+<status status="PASS" start="2025-10-29T17:21:46.559329" elapsed="0.000357"/>
+</if>
+<status status="PASS" start="2025-10-29T17:21:46.559259" elapsed="0.000446"/>
+</kw>
+<arg>recovery</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-10-29T17:21:46.559168" elapsed="0.000550"/>
+</kw>
+<status status="PASS" start="2025-10-29T17:21:46.558999" elapsed="0.000736"/>
+</kw>
+<status status="FAIL" start="2025-10-29T17:21:46.558045" elapsed="0.001713">PB</status>
+</test>
+<status status="FAIL" start="2025-10-29T17:21:46.557547" elapsed="0.002362"/>
+</suite>
+<status status="FAIL" start="2025-10-29T17:21:46.543587" elapsed="0.016481"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Async" id="s1" pass="0" fail="1" skip="0">Async</stat>
+<stat name="Recovery" id="s1-s1" pass="0" fail="1" skip="0">Async.Recovery</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
