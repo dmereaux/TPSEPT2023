@@ -22,6 +22,13 @@ Ouvrir W3C alerte
    Open Browser  ${URL2}  ${NAVIGATEUR}   #executable_path=${PATH_GC}
    Maximize Browser Window
 
+visualiser les options
+  ${chrome_options}=  Evaluate  selenium.webdriver.ChromeOptions().capabilities 
+  Log To Console   ${chrome_options}
+  ${chrome_options}=  Evaluate  selenium.webdriver.ChromeOptions().accept_insecure_certs
+  Log To Console   ${chrome_options}
+
+
 Afficher l'alerte
    Select Frame  id=iframeResult
    Click Element  //button
