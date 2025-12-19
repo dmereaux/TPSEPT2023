@@ -13,6 +13,8 @@ ${toto}   %{PATH}
 @{liste1}   1  2  3
 &{dictionnaire}   animal=chien   nom=médor    
 *** Test Cases ***
+
+
 afficher IP
     Log to Console  ${IP}
 afficher liste

@@ -1,0 +1,8 @@
+[tool.robocop]
+exclude = ["deprecated.robot"]
+language = ["en", "fr"]
+
+[tool.robocop.lint]
+ignore = [
+    "DOC01"
+]

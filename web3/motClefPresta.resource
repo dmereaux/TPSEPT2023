@@ -17,8 +17,6 @@ ${LOC_checkbox}    //*[@id="search_filters"]/section/ul/li[1]/label/span/input
 ${LOC_MENU_VETEMENT}  //*[@id="category-3"]/a
 ${LOC_MENU_FEMMES}   //*[@id="category-5"]/a
 ${LOC_CONTINUER}    id=btnAction
-
-
 *** Keywords ***
 Ouvrir W3C alerte
    Open Browser  ${URL2}  ${NAVIGATEUR}   #executable_path=${PATH_GC}
@@ -53,7 +51,7 @@ Faire une recherche
 
 Contrôler le résultat de recherche égal à
   [Arguments]    ${texte-a-vérifier}
-  Wait Until Element Is Visible   ${LOC_NOMBRE_RESULTATS}  5
+  Wait Until Element Is Visible   ${LOC_NOMBRE_RESULTATS}  5s
   Element Text Should Be     ${LOC_NOMBRE_RESULTATS}   ${texte-a-vérifier}
 
 Contrôler pertinence de la recherche

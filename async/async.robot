@@ -24,3 +24,4 @@ Task2
     Log To Console   Task 2 started
     Sleep    3
     Log To Console  Task 2 finished
+    

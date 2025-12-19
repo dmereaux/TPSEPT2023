@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.2.2 (Python 3.13.2 on darwin)" name="Generator">
+<meta content="Robot Framework 7.0 (Python 3.11.11 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1068,48 +1068,58 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0)
+        if (total == 0) {
             return [0.0, 0.0, 0.0];
+        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1;
+            pass = 0.1
         if (fail > 0 && fail < 0.1)
-            fail = 0.1;
+            fail = 0.1
         if (skip > 0 && skip < 0.1)
-            skip = 0.1;
+            skip = 0.1
         if (pass > 99.95 && pass < 100)
-            pass = 99.9;
+            pass = 99.9
         if (fail > 99.95 && fail < 100)
-            fail = 99.9;
+            fail = 99.9
         if (skip > 99.95 && skip < 100)
-            skip = 99.9;
-        return [round1(pass), round1(skip), round1(fail)];
+            skip = 99.9
+        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1.0;
+            num1 = 1
         if (num2 > 0 && num2 < 1)
-            num2 = 1.0;
+            num2 = 1
         if (num3 > 0 && num3 < 1)
-            num3 = 1.0;
+            num3 = 1
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 >= num2 && num1 >= num3)
-                num1 = round1(num1 - 0.1);
-            else if (num2 >= num1 && num2 >= num3)
-                num2 = round1(num2 - 0.1);
-            else
-                num3 = round1(num3 - 0.1);
+            if (num1 > num2 && num1 > num3)
+                num1 -= 0.1;
+            else if (num2 > num1 && num2 > num3)
+                num2 -= 0.1;
+            else if (num3 > num1 && num3 > num2)
+                num3 -= 0.1;
+            else if (num1 > num3 && num1 == num2) {
+                num1 -= 0.1;
+                num2 -= 0.1;
+            }
+            else if (num1 > num2 && num1 == num3) {
+                num1 -= 0.1;
+                num3 -= 0.1;
+            }
+            else if (num2 > num1 && num2 == num3) {
+                num2 -= 0.1;
+                num3 -= 0.1;
+            }
         }
-        return [num1, num2, num3];
-    }
-    function round1(num) {
-        return Math.round(num*10) / 10;
+        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
     }
     return {
         Statistics: Statistics
@@ -1328,7 +1338,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1887,22 +1897,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,null,3020],[[1,4,5,0,[],[1,0,3014],[],[[6,0,0,[],[1,4,3008],[]]],[],[1,1,0,0]],[7,8,9,0,[],[0,null,6],[],[[10,0,0,[],[0,20521,2,11],[]],[12,0,0,[],[1,3025,3,13],[]],[14,0,0,[],[0,3029,2,15],[]]],[],[3,1,2,0]]],[],[],[4,2,2,0]];
+window.output["suite"] = [1,2,3,4,[],[0,0,232],[],[[5,0,6,[7],[0,9,2,8],[]],[9,0,10,[11],[1,11,1,12],[]],[13,0,14,[11],[0,12,220,15],[]]],[],[3,1,2,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Async","*/Users/dominiquemereaux/code/TPSEPT2023/async","*.","*/Users/dominiquemereaux/code/TPSEPT2023/async/async.robot","*async.robot","*Example Test","*Recovery","*/Users/dominiquemereaux/code/TPSEPT2023/async/recovery.robot","*recovery.robot","*Test1","eNqlzkEKwjAQheGrDNlX9xIDuhAEURdeYNo8rZDG0kmox9fUGlS6c5eBl49fS8ueKsciS9Wgu0CZEyRQzUIl4KlDgTuqGGCJvX3eEl0QGsZ2pudJMLrujP60PPpCAocoyuzR0+u9GOf0tT3z1SmzWW13b62c0BqIcOpL3Hhk77ge/vxW3JzNFQdn/6xIWq5I3HTFA3eGdhM=","*Test2","*ok","*Test3","*Erreur SUT"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Recovery","*/Users/dominiquemereaux/code/TPSEPT2023/async/recovery.robot","*recovery.robot","*<p>Recovery Suite\x3c/p>","*Test1","*<p>Test avec une erreur systeme\x3c/p>","*test:retry(2)","*Erreur systeme: 2 != 3","*Test2","*<p>Test qui passe correctement\x3c/p>","*recovery","*ok","*Test3","*<p>Test avec une erreur SUT\x3c/p>","*Several failures occurred:\n\n1) Erreur SUT\n\n2) Keyword name must be a string.\n\nAlso teardown failed:\nRecursionError: maximum recursion depth exceeded while getting the repr of an object"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:03","fail":2,"label":"All Tests","pass":2,"skip":0}],[],[{"elapsed":"00:00:03","fail":2,"id":"s1","label":"Async","name":"Async","pass":2,"skip":0},{"elapsed":"00:00:03","fail":0,"id":"s1-s1","label":"Async.Async","name":"Async","pass":1,"skip":0},{"elapsed":"00:00:00","fail":2,"id":"s1-s2","label":"Async.Recovery","name":"Recovery","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":2,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:00","fail":1,"label":"recovery","pass":1,"skip":0},{"elapsed":"00:00:00","fail":1,"label":"test:retry(2)","pass":0,"skip":0}],[{"elapsed":"00:00:00","fail":2,"id":"s1","label":"Recovery","name":"Recovery","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1761755236738;
+window.output["baseMillis"] = 1765555481696;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 27796;
+window.output["generated"] = 292;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2354,7 +2364,7 @@ function hideHiddenDetailsColumns(elem) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr onclick="tagDetailSelected('${label}')" class="row-${$item.index}">
-    <td class="stats-col-name" title="${doc}">
+    <td class="stats-col-name" title="{{html doc}}">
       <div class="stat-name">
         <a href="#tags?${label}">{{html label}}</a>
         {{if info}}(${info}){{/if}}

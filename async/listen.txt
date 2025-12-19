@@ -1,0 +1,7 @@
+Listener started
+Recovery ''
+- Test1 'Test avec une erreur systeme' [ recovery ] :: FAIL: PB
+- Test2 'Test qui passe correctement' [ recovery ] :: PASS
+- Test3 'Test avec une erreur SUT' [ recovery ] :: FAIL: Erreur SUT
+FAIL
+
